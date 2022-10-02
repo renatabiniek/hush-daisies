@@ -119,7 +119,11 @@ The list can be viewed [here](https://github.com/renatabiniek/hush-daisies/proje
   
 * Database Schema
 
-  [NEEDS UPDATE!]
+  A relational database was used for this project. The database consists of the following models: User (Django built-in model), UserProfileOrder, Product, Category, Order, OrderLineItem, Workshop, WorkshopTestimonials, WorkshopFavourites and Request. 
+  Django AllAuth was used for user authentication. The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. EmailField, URLField).
+
+  **Hush Daisies database schema:**  
+
   ![Database diagram image](docs/database/database-schema.png)
 
 
