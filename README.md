@@ -66,38 +66,82 @@ Hush Daisies
 **Agile methodology:**
 
   The development of this project was managed with the principles of Agile methodology in mind. 
-  Planned features were defined and organised into the following [Epics](https://github.com/renatabiniek/hush-daisies/milestones?with_issues=no) at the start of the project.  
-
-  EPIC | View and Navigation  
-  EPIC | Account  
-  EPIC | User profile  
-  EPIC | Admin  
-  EPIC | Products  
-  EPIC | Orders and payments  
-  EPIC | Workshops  
-  EPIC | Marketing & SEO  
-  EPIC | Contact
-
-  Epics were then broken down into atomic user stories and organised according to the MoSCoW prioritization approach. 
+  Planned features were defined and organised into the following [Epics](https://github.com/renatabiniek/hush-daisies/milestones) at the start of the project.  
+  Epics were then broken down into atomic [user stories](https://github.com/renatabiniek/hush-daisies/issues) and organised according to the MoSCoW prioritization approach. 
   Around the recommended 60% of user stories are identified as the must-have features. Further user stories were added throughout the development. 
   Only limited number of user stories was worked on, completed and tested in each iteration.
 
   The user stories were recorded and managed via the Github issues functionality and the Projects board. 
-  The list can be viewed [here](https://github.com/users/renatabiniek/projects/3).
+  The board and user stories status can be viewed [here](https://github.com/users/renatabiniek/projects/3).
 
-**Site User:** [NEEDS UPDATE!]
+  **EPIC | View and Navigation**  
+  
+   * As a site user I can quickly learn what the site is about so that I can decide if it offers something I want.  
+   * As a site user I can intuitively navigate through the site so that I can view desired content.  
+   * As a site user I can see notifications about any changes I have made so that I have a clear understanding of the status of the action.
+   * As a site user I can access the website on both mobile and desktop so that I can view the content anywhere.  
 
-* As a site user, I can 
+  **EPIC | Account**  
 
-**Registered User:**
+   * As an interested site user I can sign up for an account so that I can get access to additional site functionalities.  
+   * As a registered site user I can receive a confirmation email after creating an account so that I know the registration was successful.  
+   * As a registered site user I can easily log in and out so that I can access my account.  
+   * As a registered user I can see my username displayed on the page after I log in so that I know the login status.  
+   * As a registered site user I can reset my password so that I can recover my account access.  
+  
+  **EPIC | User profile**  
+  
+   * As a registered site user I can access my profile page so that I can view my previous orders and keep track of my purchases.  
+   * As a registered site user I can access my profile page so that I can view and edit my list of saved workshops.  
+   * As a registered site user I can save my default delivery details so that I can save time during checkout.  
 
-* 
+  **EPIC | Admin**  
 
+   * As a site admin I can add a product so that I can add new items to my store.
+   * As a site admin I can edit a product so that I can keep the products information up-to-date.  
+   * As a site admin I can delete a product so that I can remove items that are no longer for sale.  
+   * As a site admin I can approve or block comments so that only appropriate comments are displayed.  
+   * As a site admin I can add, edit and delete categories from the admin panel so that I can keep my content organised.  
+   * As a site admin I can add, edit and delete workshop information so that the content is up-to-date. 
+   * As a site admin I can receive and view details of requests submitted by my site's users so that  I can provide them with information they're looking for.  
+   
+  **EPIC | Products**  
 
+   * As a shopper I can view a list of products so that I can select some to purchase.  
+   * As a shopper I can click a product on the list so that I can view further information about the item before purchasing.  
+   * As a shopper I can easily identify different product categories so that I can narrow down my search for relevant products.  
+   * As a shopper I can sort the list of products so that I can easily identify find the most relevant products for me.  
+   * As a shopper I can search through the list of products by name or description so that I can easily find the most relevant products for me.  
+   * As a shopper I can see what I’ve searched for and the number of results so that I can quickly see whether the product is available.  
 
-**Site Admin:**
+  **EPIC | Orders and payments**  
+  
+   * As a shopper I can add products to my shopping bag so that I can store the items until I'm ready to purchase.  
+   * As a shopper I can adjust quantity of each item in my shopping bag so that I can make changes before checkout.  
+   * As a shopper I can view my shopping bag so that I can check view the products and total cost of the order before checkout.  
+   * As a shopper I can place an order as a guest so that I can still use the site without having to create an account.  
+   * As a shopper I can easily enter my payment details so that I can checkout without problems.  
+   * As a shopper I can receive an email confirmation of my order so that I can keep it for my records.  
 
-* 
+  **EPIC | Workshops**  
+
+   * As a site user I can view list of upcoming workshop organised by the store owner so that I can decide if they are of interest to me.  
+   * As a site user I can find the date, description, cost and reviews for each workshop so that I can make an informed decision about attending.  
+   * As a registered site user I can save workshops I'm interested in in my user profile so that I can come back to them later.  
+   * As a registered site user I can add my review of a workshop I attended so that I can share my opinion with the business and other users.  
+   * As a registered site user I can edit and remove my review of a workshop I attended so that I can update or remove information.  
+
+  **EPIC | Marketing & SEO**  
+  
+   * As a site user I can sign up for a newsletter so that I can receive news and promo offers from the store owner.  
+   * As the site owner I have a Facebook Business page created and linked on my site so that users can follow and interact with my store easily, and generate more business.  
+   * As the site owner I have relevant SEO keywords implemented on my site and site's metadata so that the site ranks higher in search results for these keywords and generates more traffic.  
+   * As the site owner I have sitemap.txt and robots.txt files created for the site so that **my site's ranking in search engine results is higher.  
+
+  **EPIC | Contact**  
+
+   * As a site user I can find Hush Daisies' social accounts so that I can stay up to date with their news.  
+   * As a site user I can contact the business so that I can ask a question or submit a special request.
 
 
 ### Structure:
