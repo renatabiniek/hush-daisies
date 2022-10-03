@@ -65,9 +65,9 @@ Hush Daisies
 
 **Agile methodology:**
 
-  The development of this project was managed with the principles of agile methodology in mind. 
+  The development of this project was managed with the principles of Agile methodology in mind. 
   Planned features were defined and organised into the following [Epics](https://github.com/renatabiniek/hush-daisies/milestones?with_issues=no) at the start of the project.  
-  
+
   EPIC | View and Navigation  
   EPIC | Account  
   EPIC | User profile  
