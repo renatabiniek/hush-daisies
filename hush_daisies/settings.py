@@ -82,6 +82,18 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# Temporarily login emails to the console to confirm links
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# allauth settings: authentication with email or username, mandatory verification, min length of username and login urls
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
 WSGI_APPLICATION = 'hush_daisies.wsgi.application'
 
 
