@@ -65,10 +65,25 @@ Hush Daisies
 
 **Agile methodology:**
 
-The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were defined at the start of the project and grouped according to the MoSCoW prioritization approach. Around the recommended 60% of user stories are identified as the must-have features. Further user stories were added throughout the development. 
+  The development of this project was managed with the principles of agile methodology in mind. 
+  Planned features were defined and organised into the following [Epics](https://github.com/renatabiniek/hush-daisies/milestones?with_issues=no) at the start of the project.  
+  
+  EPIC | View and Navigation  
+  EPIC | Account  
+  EPIC | User profile  
+  EPIC | Admin  
+  EPIC | Products  
+  EPIC | Orders and payments  
+  EPIC | Workshops  
+  EPIC | Marketing & SEO  
+  EPIC | Contact
 
-The user stories were recorded and managed via the Github issues functionality and the Projects Kanban Board. 
-The list can be viewed [here](https://github.com/renatabiniek/hush-daisies/projects/1). [NEEDS UPDATE!]
+  Epics were then broken down into atomic user stories and organised according to the MoSCoW prioritization approach. 
+  Around the recommended 60% of user stories are identified as the must-have features. Further user stories were added throughout the development. 
+  Only limited number of user stories was worked on, completed and tested in each iteration.
+
+  The user stories were recorded and managed via the Github issues functionality and the Projects board. 
+  The list can be viewed [here](https://github.com/users/renatabiniek/projects/3).
 
 **Site User:** [NEEDS UPDATE!]
 
