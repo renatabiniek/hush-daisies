@@ -439,8 +439,11 @@ I tested the program considering the user stories from the UX section as well.
 
 ### Issues and Bugs
 
-* **[NEEDS UPDATE!]**
+* **Django version not showing in requirements.txt**
+  
+  After an issue with my Gitpod workspace, Django v=3.2 dissapeared from the requirements.txt file. Re-installing correct version and freezing requirements again solved the issue.  
 
+* 
 
 ### Devices and browsers tested
 
