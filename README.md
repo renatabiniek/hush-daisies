@@ -170,28 +170,37 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 
   The project was developed from initial wireframes and some modifications were made during the development process to assure better usability, and sufficient content.
 
-
-  *Final wireframes:* [NEEDS UPDATE!]
-
   *Mobile:*
 
   [Mobile - Home](docs/wireframes/mobile/Mobile-Home.png)  
   [Mobile - SignIn](docs/wireframes/mobile/Mobile-SignIn.png)  
-  [Mobile - Tools](docs/wireframes/mobile/Mobile-Tools.png)  
-  [Mobile - Categories](docs/wireframes/mobile/Mobile-Categories.png)
-  [Mobile - Manage](docs/wireframes/mobile/Mobile-Manage.png)  
+  [Mobile - Shop](docs/wireframes/mobile/Mobile-Shop.png)  
+  [Mobile - Shopping Bag](docs/wireframes/mobile/Mobile-Shopping-Bag.png)  
+  [Mobile - Checkout](docs/wireframes/mobile/Mobile-Checkout.png)  
+  [Mobile - Order Confirmed](docs/wireframes/mobile/Mobile-Order-Confirmed.png)  
+  [Mobile - Workshops](docs/wireframes/mobile/Mobile-Workshops.png)  
+  [Mobile - Workshop Management](docs/wireframes/mobile/Mobile-Workshop-Management.png)  
+  [Mobile - Product Management](docs/wireframes/mobile/Mobile-Product-Management.png)  
+  [Mobile - Account](docs/wireframes/mobile/Mobile-Account.png)  
+  [Mobile - Custom Request](docs/wireframes/mobile/Mobile-Custom-Request.png)  
 
-  [Mobile - All in pdf](docs/wireframes/mobile/Mobile-MoodBox.pdf) 
+  [Mobile - All in pdf](docs/wireframes/mobile/HushDaisies-Mobile.pdf) 
   
   *Desktop:*
 
   [Desktop - Home](docs/wireframes/desktop/Desktop-Home.png)  
-  [Desktop - SignIn](docs/wireframes/desktop/Desktop-Signin.png)  
-  [Desktop - Tools](docs/wireframes/desktop/Desktop-Tools.png)  
-  [Desktop - Categories](docs/wireframes/desktop/Desktop-Categories.png)
-  [Desktop - Manage](docs/wireframes/desktop/Desktop-Manage.png)  
+  [Desktop - SignIn](docs/wireframes/desktop/Desktop-SignIn.png)  
+  [Desktop - Shop](docs/wireframes/desktop/Desktop-Shop.png)  
+  [Desktop - Shopping Bag](docs/wireframes/desktop/Desktop-Shopping-Bag.png)  
+  [Desktop - Checkout](docs/wireframes/desktop/Desktop-Checkout.png)  
+  [Desktop - Order Confirmed](docs/wireframes/desktop/Desktop-Order-Confirmed.png)  
+  [Desktop - Workshops](docs/wireframes/desktop/Desktop-Workshops.png)  
+  [Desktop - Workshop Management](docs/wireframes/desktop/Desktop-Workshop-Management.png)  
+  [Desktop - Product Management](docs/wireframes/desktop/Desktop-Product-Management.png)  
+  [Desktop - Account](docs/wireframes/desktop/Desktop-Account.png)  
+  [Desktop - Custom Request](docs/wireframes/desktop/Desktop-Custom-Request.png)  
 
-  [Desktop - All in pdf](docs/wireframes/desktop/Desktop-MoodBox.pdf) 
+  [Desktop - All in pdf](docs/wireframes/desktop/HushDaisies-Desktop.pdf) 
 
   
 * Database Schema
