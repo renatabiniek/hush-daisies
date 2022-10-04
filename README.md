@@ -2,7 +2,8 @@
 
 1. [**Introduction**](#Introduction)
 2. [**User Experience (UX)**](#User-Experience-(UX))
-    * [Project goals](#Project-goals)
+    * [User's goals](#User's-goals)
+    * [Site owner's goals](#Site-owner's-goals)
     * [Target audience](#Target-audience)
     * [User stories](#User-stories)
     * [Structure](#Structure)
@@ -43,23 +44,32 @@
 ## Introduction
 ---
 
-Hush Daisies 
-
+Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalouge includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready made designs or contact the studio owners with a custom request. In addition to their flower catalouge, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to their favourites. 
 
 ## User Experience (UX)
 ---
-### Project goals  
+### User's goals  
 
-* 
+* to purchase a unique dried flower arrangement
+* to order a custom made design for their home or special occasion
+* to see a list of upcoming workshops so that they can register their interest to learn a new skill or take part in a social event
+* create a user profile with saved delivery details, purchase history and list of favourite workshops
 
-*
+### Site owner's goals  
 
+* sell hand-made dried flower arrangements
+* create custom design based on special requests received from users
+* offer workshops to interested users to promote skills of dried flower arrangement
+* bring together local community with in-person themed workshops in north County Dublin
 
 ### Target audience
 
-* 
-
-  
+* all flower lovers
+* people looking for alternative floral decorations for their home or a special occasion
+* couples looking for long lasting bouquets and decorations for their wedding day
+* people driven by sustainability and care for environment
+* adults interested in learning dried flower arrangement skills
+* adults living locally looking to connect and socialise within a like-minded community
 
 ### User stories:
 
