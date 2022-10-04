@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # project apps
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,10 @@ ROOT_URLCONF = 'hush_daisies.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),  # root templates directory
+            os.path.join(BASE_DIR, 'templates', 'allauth'),  # custom allauth
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
