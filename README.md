@@ -1,36 +1,39 @@
 # Table of Contents 
 
 1. [**Introduction**](#Introduction)
-2. [**User Experience (UX)**](#User-Experience-(UX))
-    * [User's goals](#User's-goals)
-    * [Site owner's goals](#Site-owner's-goals)
+
+2. [**E-commerce Business Model**](#E-commerce-business-model)
+
+3. [**User Experience (UX)**](#User-Experience-(UX))
+    * [User goals](#User-goals)
+    * [Site owner goals](#Site-owner-goals)
     * [Target audience](#Target-audience)
     * [User stories](#User-stories)
     * [Structure](#Structure)
     * [Design](#Design)
 
-3. [**Features**](#Features)
+4. [**Features**](#Features)
     * [Existing Features](#Existing-Features)
     * [Features to be implemented in the future](#Features-to-be-implemented-in-the-future)
 
-4. [**Technologies used**](#Technologies-used)
+5. [**Technologies used**](#Technologies-used)
 
-5. [**Deployment**](#Deployment)
+6. [**Deployment**](#Deployment)
     * [Deploying to Heroku](#Deploying-to-Heroku)
     * [Forking to GitHub Repository](#Forking-to-GitHub-Repository)
     * [Making a local clone](#Making-a-local-clone)
 
-6. [**Testing**](#Testing)
+7. [**Testing**](#Testing)
     * [Testing Approach](#Testing-Approach)
     * [User stories testing from the UX section](#User-stories-testing-from-the-UX-section)
     * [Validator Testing](#Validator-Testing)
     * [Issues and Bugs](#Issues-and-Bugs)
 
-7. [**Credits**](#Credits)
+8. [**Credits**](#Credits)
 
-8. [**Acknowledgments**](#Acknowledgments)
+9. [**Acknowledgments**](#Acknowledgments)
 
-9. [**Disclaimer**](#Disclaimer)
+10. [**Disclaimer**](#Disclaimer)
 
 <br>
 
@@ -46,16 +49,21 @@
 
 Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalouge includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready made designs or contact the studio owners with a custom request. In addition to their flower catalouge, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to their favourites. 
 
+## E-commerce Business Model  
+---
+
+Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisify emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strenghtneing user's trust. The business owners are invested in maintainig good relationship with the customer, by allowign easy contact, accomodating sepcial requests and organising in person workshops.  
+
 ## User Experience (UX)
 ---
-### User's goals  
+### User goals  
 
 * to purchase a unique dried flower arrangement
 * to order a custom made design for their home or special occasion
 * to see a list of upcoming workshops so that they can register their interest to learn a new skill or take part in a social event
 * create a user profile with saved delivery details, purchase history and list of favourite workshops
 
-### Site owner's goals  
+### Site owner goals  
 
 * sell hand-made dried flower arrangements
 * create custom design based on special requests received from users
