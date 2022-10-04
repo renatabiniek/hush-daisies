@@ -1,22 +1,63 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
+
+    {% block meta %}
     <!-- Required meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hush Daisies is an independent LGBTQ owned floral studio in north Dublin offering unique, long-lasting dried flower arrangements, wreaths, wedding bouquets delivered in Ireland and in-person dry flower workshops in Malahide.">
+    <meta name="keywords"
+        content="dried flowers, dried floral arrangements, dried flower home decor, alternative bouquets, wedding bouquets, dried bouquets, alternative wedding flowers, Ireland, Dublin, Malahide, dried flower workshop Dublin, dried flower workshop, florist studio, small business, LGBTQ, LGBTQ events Dublin">
+    {% endblock %}
 
+    {% block extra_meta %}
+    {% endblock %}
+    
+    {% block corecss %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% endblock %}
+    
+    {% block extra_css %}
+    {% endblock %}
 
-    <title>Hush Daisies</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-
+    {% block corejs %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>Hush Daisies {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="container-fluid fixed-top"></header>
+    
+    <!-- Display of messages for user actions -->
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    <!-- Additional header underneath the main header, specific to some pages -->
+    {% block page_header %}
+    {% endblock %}
+    
+    <!-- Main content, page specific -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Space for page specific JavaScript to load at the end of the body -->
+    {% block postloadjs %}
+    {% endblock %}
+
+
   </body>
 </html>
