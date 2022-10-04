@@ -4,7 +4,7 @@
 
 2. [**E-commerce Business Model**](#E-commerce-business-model)
 
-3. [**User Experience (UX)**](#User-Experience-(UX))
+3. [**User Experience (UX)**](#User-Experience)
     * [User goals](#User-goals)
     * [Site owner goals](#Site-owner-goals)
     * [Target audience](#Target-audience)
@@ -54,7 +54,7 @@ Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist 
 
 Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisify emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strenghtneing user's trust. The business owners are invested in maintainig good relationship with the customer, by allowign easy contact, accomodating sepcial requests and organising in person workshops.  
 
-## User Experience (UX)
+## User Experience
 ---
 ### User goals  
 
