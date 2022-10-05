@@ -215,15 +215,19 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 
 ### Design: 
 
-* **Colour scheme**
+* **Colour scheme**  
+  
+  The number of chosen colours is minimal so as to not overload the site design. The colour palette consists of a couple of subdued colours that are similar to those of a dried flower bouquet. The goal was to create a calm, beautiful look that would aid the shopping experience. The main theme Charcoal shade was derived from the hero image colours using Eye Dropper and the complimentary Pastel Pink was added to the scheme using the colour scheme generator Coolors. In addition, black and white were used for text and background, for best contrast.
+  
+  The colour combinations have been checked and improved for accessibility using Color Contrast Accessibility Validator.
 
-[NEEDS UPDATE!]
+  ![Colour scheme image](docs/colour-scheme.png)
 
 
 * **Typography**
 
-  [NEEDS UPDATE!]
- 
+  Open Sans is used throughout the entire website, with sans-serif as the fallback option in case the original font family isn't imported correctly for some reason. This is a clean and modern font, with a neutral but friendly appearance. It's highly legible on any screen size which is important for best shopping experience. The font was sourced from Google Fonts.
+
 
 * **Imagery**
 
@@ -295,7 +299,7 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 * [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - to display and run the command line terminal in the browser
 * [drawSQL](https://drawsql.app/) - to create the database diagram model
 * [Balsamiq](https://balsamiq.com/) - to create wireframes for the site as part of the preparation work for the project
-* [Google Fonts](https://fonts.google.com/) - to import Courgette and Montserrat fonts into the HTML file which were then used throughout the site
+* [Google Fonts](https://fonts.google.com/) - to import Open Sans font into the HTML file which was then used throughout the site
 * [Coolors](https://coolors.co/ ) - to create cohesive colour scheme for the site
 * [Eye Dropper](https://eyedropper.org/) - to pick specific colours from images 
 * [Favicon.io](https://favicon.io/) - to create a favicon for the site
