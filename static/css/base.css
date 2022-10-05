@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+
+/*------------------------------------ Home*/
+.hero-img {
+    background-image: url(../../media/background-image.jpg);
+    height: 95vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
