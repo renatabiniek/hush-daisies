@@ -48,14 +48,58 @@
     <title>Hush Daisies {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header>
+    <header class="container-fluid nav-background">
+       <!-- Logo -->
+      <div class="row pt-2 pl-4">
+        <div class="col-12 col-lg-6 my-auto py-2 text-left">
+          <a class="logo navbar-brand" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> <span class="d-none d-md-inline">Hush
+            Daisies</span></span></a>
+        </div>
+        <div class="col-12 col-lg-6 my-auto py-1 pr-4">
+          <!-- Dropdown with options depending on the user status -->
+          <ul class="list-inline list-unstyled text-right my-0">
+            <li class="list-inline-item dropdown">
+              <a class="main-nav-link nav-link dropdown-toggle" href="#" id="account-options" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- If user is authenticated display username -->
+                {% if request.user.is_authenticated %}
+                <span class="font-italic">{{ user.username }}</span>{% else %}Log In{% endif %}
+                <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i></a>
+              <div class="dropdown-menu" aria-labelledby="account-options">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a class="dropdown-item" href="#">Product Management</a>
+                <a class="dropdown-item" href="#">Workshop Management</a>
+                {% endif %}
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
+                {% else %}
+                <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
+                <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
+                {% endif %}
+              </div>
+          </li>
+          <!-- Shopping bag icon -->
+          <li class="list-inline-item">
+            <a class="nav-link main-nav-link" href="#">
+              <!--Outlined icon if no items in basket, filled icon if items in basket -->
+              <div><i class="bi bi-basket{% if grand_total %}-fill{% endif %}" aria-hidden="true">
+                  €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+      
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-dark nav-background py-4 w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark nav-background py-2 w-100">
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         {% include 'includes/main-nav.html' %}
+        
       </nav>
     </header>
 

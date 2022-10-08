@@ -42,10 +42,12 @@ body {
     font-size: 2.2rem;
     font-weight: bolder;
     letter-spacing: 2px;
+    color: white !important;
 }
 
 .main-nav-link {
     font-size: 1.5rem;
+    color: white !important;
 }
 
 .logged-in {
