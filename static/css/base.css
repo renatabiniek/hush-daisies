@@ -5,11 +5,12 @@ html, body {
 /*------------------------------------ General*/
 
 h2 {
-    color: #334448;
+    color: #2B5357;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
+    color: #1C1C1C;
     background-color: white;
 }
 
@@ -24,6 +25,31 @@ body {
 }
 
 .callout {
-    background-color: black;
+    background-color: #2B5357;
     color: white;
+}
+
+/*------------------------------------ Navigation*/
+.nav-background {
+    background-color:#2B5357;
+}
+
+.logo-icon {
+    color: #D1A9AF !important;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.main-nav-link {
+    font-size: 1.5rem;
+}
+
+.logged-in {
+    font-weight: bolder;
+    color: white;
+    letter-spacing: 2px;
 }

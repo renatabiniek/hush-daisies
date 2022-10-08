@@ -48,8 +48,70 @@
     <title>Hush Daisies {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header>
-    
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark nav-background py-4 w-100">
+        <!-- Navbar with brand and links -->
+        <div class="container-fluid mb-3">
+          <!-- Logo -->
+          <a class="navbar-brand logo" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> Hush
+              Daisies</span></a>
+          <!-- Nav links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link main-nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link main-nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link main-nav-link" href="#">Workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link main-nav-link" href="#">Our Studio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link main-nav-link mr-5" href="#">Custom Orders</a>
+            </li>
+            <!-- Dropdown with  pages -->
+            <li class="nav-item dropdown ml-5">
+              <a class="nav-link main-nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- If user is authenticated display username -->
+                {% if request.user.is_authenticated %}<span class="font-italic">{{ user.username }}</span>{% else %}Sign In{% endif %}
+                <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Sign In</a>
+                <a class="dropdown-item" href="#">Sign Out</a>
+                <a class="dropdown-item" href="#">Sign Up</a>
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">Product Management</a>
+                <a class="dropdown-item" href="#">Workshop Management</a>
+              </div>
+            </li>
+            <!-- Shopping bag icon -->
+            <li class="nav-item">
+              <a class="nav-link main-nav-link" href="#">
+                <!--Outlined icon if items in basket -->
+                <div><i class="bi bi-basket" aria-hidden="true"></i></div>
+                <!--Filled icon if items in basket -->
+                <!-- <i class="bi bi-basket-fill" aria-hidden="true"></i> -->
+                <!-- <p class="my-0">0.00</p> -->
+              </a>
+            </li>
+
+
+
+            <!-- End of dropdown with category pages -->
+
+          </ul>
+
+        </div>
+        </div>
+      </nav>
+    </header>
+
     <!-- Display of messages for user actions -->
     {% if messages %}
     <div class="message-container"></div>
