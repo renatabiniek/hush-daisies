@@ -1,0 +1,61 @@
+<!-- Navbar with brand and links -->
+<div class="container-fluid mb-3">
+    <!-- Logo -->
+    <a class="navbar-brand logo" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> Hush
+        Daisies</span></a>
+    <!-- Nav links -->
+    <ul class="navbar-nav w-auto mx-auto">
+      <li class="nav-item">
+        <a class="nav-link main-nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link main-nav-link dropdown-toggle" href="#" id="all-products-link" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+        <div class="dropdown-menu" aria-labelledby="all-products-link">
+            <a href="" class="dropdown-item">By Price</a>
+            <a href="" class="dropdown-item ">By Category</a>
+            <a href="" class="dropdown-item">All Products</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link main-nav-link" href="#">Workshops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link main-nav-link" href="#">Our Studio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link main-nav-link mr-5" href="#">Custom Orders</a>
+      </li>
+      <!-- Dropdown with options depending on the user status -->
+      <li class="nav-item dropdown ml-5 mr-3">
+        <a class="nav-link main-nav-link dropdown-toggle" href="#" id="account-options" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- If user is authenticated display username -->
+          {% if request.user.is_authenticated %}
+          <span class="font-italic">{{ user.username }}</span>{% else %}Log In{% endif %}
+          <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i></a>
+          <div class="dropdown-menu" aria-labelledby="account-options">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a class="dropdown-item" href="#">Product Management</a>
+            <a class="dropdown-item" href="#">Workshop Management</a>
+            {% endif %}
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
+            {% else %}
+            <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
+            <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
+            {% endif %}
+          </div>              
+      </li>
+      <!-- Shopping bag icon -->
+      <li class="nav-item">
+        <a class="nav-link main-nav-link" href="#">
+          <!--Outlined icon if no items in basket, filled icon if items in basket -->
+          <div><i class="bi bi-basket{% if grand_total %}-fill{% endif %}" aria-hidden="true">
+              €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
