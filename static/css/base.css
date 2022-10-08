@@ -2,10 +2,17 @@ html, body {
     height: 100%;
 }
 
+/*------------------------------------ General*/
+
+h2 {
+    color: #334448;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: white;
 }
+
 
 /*------------------------------------ Home*/
 .hero-img {
@@ -14,4 +21,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.callout {
+    background-color: black;
+    color: white;
 }
