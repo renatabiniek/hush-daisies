@@ -73,40 +73,38 @@
             <li class="nav-item">
               <a class="nav-link main-nav-link mr-5" href="#">Custom Orders</a>
             </li>
-            <!-- Dropdown with  pages -->
+            <!-- Dropdown with options depending on the user status -->
             <li class="nav-item dropdown ml-5">
               <a class="nav-link main-nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!-- If user is authenticated display username -->
-                {% if request.user.is_authenticated %}<span class="font-italic">{{ user.username }}</span>{% else %}Sign In{% endif %}
-                <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Sign In</a>
-                <a class="dropdown-item" href="#">Sign Out</a>
-                <a class="dropdown-item" href="#">Sign Up</a>
-                <a class="dropdown-item" href="#">My Profile</a>
-                <a class="dropdown-item" href="#">Product Management</a>
-                <a class="dropdown-item" href="#">Workshop Management</a>
-              </div>
+                {% if request.user.is_authenticated %}
+                <span class="font-italic">{{ user.username }}</span>{% else %}Log In{% endif %}
+                <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  {% if request.user.is_authenticated %}
+                  {% if request.user.is_superuser %}
+                  <a class="dropdown-item" href="#">Product Management</a>
+                  <a class="dropdown-item" href="#">Workshop Management</a>
+                  {% endif %}
+                  <a class="dropdown-item" href="#">My Profile</a>
+                  <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
+                  {% else %}
+                  <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
+                  <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
+                  {% endif %}
+                </div>              
             </li>
             <!-- Shopping bag icon -->
             <li class="nav-item">
               <a class="nav-link main-nav-link" href="#">
                 <!--Outlined icon if items in basket -->
-                <div><i class="bi bi-basket" aria-hidden="true"></i></div>
+                <div><i class="bi bi-basket" aria-hidden="true"> 0.00</i></div>
                 <!--Filled icon if items in basket -->
                 <!-- <i class="bi bi-basket-fill" aria-hidden="true"></i> -->
-                <!-- <p class="my-0">0.00</p> -->
               </a>
             </li>
-
-
-
-            <!-- End of dropdown with category pages -->
-
           </ul>
-
         </div>
         </div>
       </nav>
