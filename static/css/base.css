@@ -82,6 +82,7 @@ a:focus {
 .contact-link {
     text-decoration: underline;
 }
+
 /*------------------------------------ Footer*/
 
 .footer-text,
@@ -110,6 +111,26 @@ a:focus {
     font-weight: bolder;
     letter-spacing: 2px;
 }
+
+/* Back to top button */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 999999999;
+    background-color: #D1A9AF;
+
+}
+
+.top-icon {
+    font-size: 2rem;
+    color: #2B5357;
+    font-weight: bold;
+}
+
+
+/*------------------------------------ Home page sections*/
 
 .icn-home {
     font-size: 2rem;

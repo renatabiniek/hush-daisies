@@ -112,4 +112,19 @@
     </div>
 </section>
 
+<!-- Back to top button -->
+<div class="back-to-top">
+    <a id="top-link" class=" d-flex h-100" role="button" aria-label="Click the button to go back to the top of the page."><i class="bi bi-arrow-up-square top-icon px-2"></i></a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Back to top button -->
+<script>
+    $('#top-link').click(function (e) {
+        window.scrollTo(0,0);
+    })
+</script>
 {% endblock %}
