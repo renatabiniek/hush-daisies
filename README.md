@@ -484,8 +484,11 @@ I tested the program considering the user stories from the UX section as well.
 ### Credits
 
 * [NEEDS UPDATE!]
-
-* 
+* Logos for the As seen in section taken from the official sites [One Fab Day](https://onefabday.com/) and [Ireland's Homes Interior and Living](https://www.ihil.net//)
+* Most of the images were sourced from [Unsplash](https://unsplash.com/):
+  * [Hero image](https://unsplash.com/photos/OuWeHz4lPZg)
+  * [Our studio image](https://unsplash.com/photos/p0ZvBVpW3KY)
+  * [Custom orders image](https://unsplash.com/photos/XPCdZXncj64)
 
 ### Acknowledgments
 
