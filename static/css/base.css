@@ -111,3 +111,8 @@ a:focus {
     letter-spacing: 2px;
 }
 
+.icn-home {
+    font-size: 2rem;
+    color: #D1A9AF;
+    font-weight: bolder;
+}
