@@ -125,3 +125,20 @@ a:focus {
     color: #2B5357;
     font-weight: bolder;
 }
+
+.in-press {
+    color: #2B5357;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.in-press:hover,
+.in-press:active,
+.in-press:focus {
+    color: #2B5357;
+    font-size: 1.5rem;
+}
+
+.image-size {
+    width: 200px;
+}
