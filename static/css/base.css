@@ -116,3 +116,12 @@ a:focus {
     color: #D1A9AF;
     font-weight: bolder;
 }
+
+.section-title {
+    letter-spacing: 2px;
+}
+
+.text-highlight {
+    color: #2B5357;
+    font-weight: bolder;
+}
