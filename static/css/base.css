@@ -72,6 +72,16 @@ a:focus {
     letter-spacing: 2px;
 }
 
+#custom-order-banner {
+    background-color: #D1A9AF;
+    color: #2B5357;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.contact-link {
+    text-decoration: underline;
+}
 /*------------------------------------ Footer*/
 
 .footer-text,
