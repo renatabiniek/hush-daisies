@@ -4,7 +4,7 @@ html, body {
 
 /*------------------------------------ General*/
 
-h2 {
+h1, h2, .lead-home {
     color: #2B5357;
 }
 
@@ -14,6 +14,14 @@ body {
     background-color: white;
 }
 
+/* remove link decoration and set colour to inherit */
+a,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
 
 /*------------------------------------ Home*/
 .hero-img {
@@ -24,10 +32,18 @@ body {
     background-position: center;
 }
 
-.callout {
+.callout-btn {
     background-color: #2B5357;
     color: white;
 }
+
+.callout-btn:hover,
+.callout-btn:active,
+.callout-btn:focus {
+    font-size: 1.5rem;
+    color: white;
+}
+
 
 /*------------------------------------ Navigation*/
 .nav-background {
@@ -55,3 +71,33 @@ body {
     color: white;
     letter-spacing: 2px;
 }
+
+/*------------------------------------ Footer*/
+
+.footer-text,
+.footer-link {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover,
+.footer-link:active,
+.footer-link:focus {
+    font-size: 1.1rem;
+}
+
+.footer-icon {
+    font-size: 1.2rem;
+}
+
+.footer-icon:hover,
+.footer-icon:active,
+.footer-icon:focus {
+    font-size: 1.6rem;
+}
+
+.footer-heading {
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+

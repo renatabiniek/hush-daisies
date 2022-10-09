@@ -51,9 +51,9 @@
     <header class="container-fluid nav-background">
        <!-- Logo -->
       <div class="row pt-2 pl-4">
-        <div class="col-12 col-lg-6 my-auto py-2 text-left">
-          <a class="logo navbar-brand" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> <span class="d-none d-md-inline">Hush
-            Daisies</span></span></a>
+        <div class="col-12 col-lg-6 my-auto pt-2 text-left">
+          <a class="logo navbar-brand" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> Hush
+            Daisies</span></a>
         </div>
         <div class="col-12 col-lg-6 my-auto py-1 pr-4">
           <!-- Dropdown with options depending on the user status -->
@@ -92,7 +92,7 @@
       </div>
       
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-dark nav-background py-2 w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark nav-background pt-2 pb-4 pb-md-2 w-100">
        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,6 +119,42 @@
     <!-- Space for page specific JavaScript to load at the end of the body -->
     {% block postloadjs %}
     {% endblock %}
+
+    <!-- Footer -->
+    <footer class="mt-auto nav-background footer-text">
+      <div class="container-fluid pt-5 justify-content">
+        <div class="row text-center">
+          <!-- Social links -->
+          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Follow us</h5>
+            <ul class="m-0 text-center list-inline">
+              <li class="list-inline-item"><a href="https://facebook.com" target="_blank" rel="noopener"
+                  aria-label="Visit our Facebook page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-facebook"
+                    aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="https://twitter.com" target="_blank" rel="noopener"
+                  aria-label="Visit our Twitter page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-twitter"
+                    aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="https://instagram.com" target="_blank" rel="noopener"
+                  aria-label="Visit our Instagram page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-instagram"
+                    aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Newsletter</h5></div>
+          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Links</h5>
+            <ul class="m-0 text-center list-unstyled">
+              <li class="pb-2"><a href="#" target="_blank" rel="noopener"
+                  aria-label="Read our Terms and Conditions. Link opens in new tab" class="footer-link">Terms and Conditions</a></li>
+              <li><a href="#" target="_blank" rel="noopener"
+                  aria-label="Read our Privacy Policy. Link opens in new tab" class="footer-link">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row text-center py-3">
+          <div class="col"><span>&copy; <a href="{% url 'home' %}" class="footer-link"> Hush Daisies</a> 2022.
+            <span>Site created for educational purposes.</span></div>
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
