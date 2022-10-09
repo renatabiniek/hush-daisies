@@ -47,7 +47,6 @@
         </div>
         <hr class="mt-5">
     </div>
-
 </section>
 
 <!-- Our studio section -->
@@ -55,8 +54,8 @@
     <div class="container">
         <div class="text-center mb-sm-3 mb-md-5"><h2 class="section-title">Our Studio</h2></div>
         <div class="row">
-            <div class="col-12 col-md-6">
-                <img src="/media/hush-daisies-owners.jpg" alt="Photo of two female florist artists who own the shop" class="img-fluid">
+            <div class="col-12 col-md-6 text-center">
+                <img src="{% static 'site-images/hush-daisies-owners.jpg' %}" alt="Photo of two female florist artists who own the shop" class="img-fluid">
             </div>
             <div class="col-12 col-md-6">
                 <p>We are Alice and Lily, wife & wife, and we create dry flower bouquets, wreaths and home decorations from our cozy studio in the middle of north county Dublin.</p>
@@ -69,32 +68,47 @@
                     aria-label="Go to see the list of all workshops."><span class="contact-link text-highlight"> workshops in Malahide</span>, so join us to learn a new skill or just to have some craic!</p>
             </div>
         </div>     
+        <hr class="mt-5">
     </div>
 </section>
 
+<!-- Custom orders & contact section -->
+<section id="custom-orders" class="mt-sm-3 mt-md-5 mb-5">
+    <div class="container">
+        <div class="text-center mb-sm-3 mb-md-5"><h2 class="section-title">Custom orders</h2></div>
+        <div class="row">
+            <div class="col-12 col-md-6 mt-sm-3 mt-md-4">
+                <p>We can create custom arrangements for weddings, events, hotels or gifts.</p>
+                <p>Let us know a little more about your vision or the event, and let us create something special for you!</p>
+                <div class="my-5"> 
+                    <a href="#" class="callout-btn btn btn-lg rounded-3 py-2">Get in touch</a>
+                </div>
+              </div>
+            <div class="col-12 col-md-6 mt-sm-3 mt-md-4 text-center">
+                <img src="{% static 'site-images/custom-orders.jpg' %}" alt="" class="img-fluid">
+            </div>
+        </div>     
+        <hr class="mt-5">
+    </div>
+</section>
+
+<!-- As seen in press section -->
 <section class="mt-sm-3 mt-md-5 mb-5">
     <div class="container">
         <div class="text-center mb-sm-3 mb-md-5">
             <h2 class="section-title">As Seen In</h2>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 pr-3 text-right"><a href="https://onefabday.com/wedding-flowers/"
+            <div class="col-12 col-md-6 text-center mt-sm-5 mt-md-3 mb-5"><a href="https://onefabday.com/wedding-flowers/"
                     target="_blank" rel="noopener" aria-label="Visit One Fab Day page. Link opens in new tab"><img
-                        src="/media/one-fab-day.png" alt="Logo of the One Fab Day site."
+                        src="{% static 'site-images/one-fab-day.png' %}" alt="Logo of the One Fab Day site."
                         class="img-fluid image-size"></a>
-
             </div>
-            <div class="col-12 col-md-6 pl-3 text-left"><a href="https://www.irishhome.ie/" target="_blank"
+            <div class="col-12 col-md-6 text-center mt-sn-5 mt-md-3 mb-5"><a href="https://www.irishhome.ie/" target="_blank"
                     rel="noopener" aria-label="Visit Irish Home Magazine page. Link opens in new tab"><img
-                        src="/media/irish-home.png" alt="Logo of the Irish Home site." class="img-fluid image-size"></a>
+                        src="{% static 'site-images/irish-home.png' %}" alt="Logo of the Irish Home site." class="img-fluid image-size"></a>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="custom-orders" class="mt-sm-3 mt-md-5 mb-3">
-    <div class="container">
-        <div class="text-center mb-sm-3 mb-md-5"><h2 class="section-title">Custom Orders</h2></div>
     </div>
 </section>
 
