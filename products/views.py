@@ -5,9 +5,15 @@ from .models import Product
 
 
 def show_all_products(request):
-    """Show all available products"""
+    """
+    Show all products to the superuser,
+    and only available ones to other users.
+    """
 
-    products = Product.objects.all()
+    if request.user.is_superuser:
+        products = Product.objects.all()
+    else:
+        products = Product.objects.filter(is_available=True)
 
     context = {
         'products': products,
