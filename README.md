@@ -478,8 +478,14 @@ I tested the program considering the user stories from the UX section as well.
   
   Images inserted with the {{ MEDIA_URL }} template tag were not showing. 
 
-  Solution: 
+  **Worked:** 
   Adding "django.template.context_processors.media" to the  “context_processors” in settings.py resolved this issue.
+
+* **Horizontal divider not displaying correctly**
+
+  I had an issue with horizontal divider not showing up or not showing up as expected on the product page after creating the for loop. The column containing the divider was showing when inspected with the dev tools but with unexpected link tag <a>. 
+
+  **Worked:** Found a missing closing anchor tag in the card-body section, and fixed it.
 
 ### Devices and browsers tested
 
