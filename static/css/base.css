@@ -85,6 +85,11 @@ a:focus {
 
 /*------------------------------------ Footer*/
 
+.page-footer {
+    position: sticky;
+    top: 100vh;
+}
+
 .footer-text,
 .footer-link {
     color: white;
