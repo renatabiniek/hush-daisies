@@ -5,17 +5,70 @@
 {% block content %}
 
 
-<!--  section -->
+<!--  All products section -->
 <section class="mt-sm-3 mt-md-5 mb-3">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-12 col-md-4">
-                {{ products }}
+    <div class="container-fluid">
+        <!-- Page title with horizontal divider of 50% width -->
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="section-title">All florals</h1>
+                <hr class="w-50 ">
             </div>
         </div>
-    </div>
+        <!-- Product container -->
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row ">COLUMN FOR CATEGORIES</div>
+                <div class="row ">COLUMN FOR SEARCH BAR AND SORTING</div>
+                <div class="row">
+                    <!-- For each product generate a column with a Bootstrap card -->
+                    {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            <!-- If there's a product image, display the image; otherwise display a placeholder -->
+                            {% if product.image %}
+                            <a href=""><img class="card-img-top img-fluid" src="{{ product.image.url }}"
+                                    alt="{{ product.name }}"></a>
+                            {% else %}
+                            <a href=""><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ product.name }}"></a>
+                            {% endif %}
+                            <!-- Card body with name & category -->
+                            <div class="card-body pt-3 px-1">
+                                <h5 class="card-title mb-1">{{ product.name }}</h5>
+                                <p class="category-link mb-0 text-left"><a href="#"><i class="bi bi-flower1"></i>
+                                        {{ product.category.friendly_name }}</p>
+                            </div>
+                            <!-- Card footer with price & admin product management links -->
+                            <div class="card-footer border-0 pt-0 bg-white text-left">
+                                <div class="row">
+                                    <div class="col px-0">
+                                        <p class="text-left price-tag">€ {{ product.price }}</p>
+                                    </div>
+                                </div>
+                                {% if request.user.is_superuser %}
+                                <div class="row">
+                                    <div class="col px-0">
+                                        <h5 class="text-left">Manage product:</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-md-3 px-0">
+                                        <p>EDIT</p>
+                                    </div>
+                                    <div class="col-6 col-md-3 px-0">
+                                        <p>DELETE</p>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 </section>
-
 
 <!-- Back to top button -->
 <div class="back-to-top">

@@ -169,3 +169,22 @@ a:focus {
     width: 200px;
     height: 50px;
 }
+
+/*------------------------------------ Product page*/
+
+.category-link {
+    color: #2B5357;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.category-link:hover,
+.category-links:active,
+.category-link:focus {
+    font-size: 1.1rem;
+}
+
+.price-tag {
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
