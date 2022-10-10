@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 def home(request):
-    """ Render a home page template """
+    """Render a home page template"""
     return render(request, 'home/index.html')
