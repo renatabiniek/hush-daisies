@@ -3,8 +3,6 @@
 
 
 {% block content %}
-
-
 <!--  All products section -->
 <section class="mt-sm-3 mt-md-5 mb-3">
     <div class="container-fluid">
@@ -12,18 +10,21 @@
         <div class="row">
             <div class="col text-center">
                 <h1 class="section-title">All florals</h1>
-                <hr class="w-50 ">
+                <hr class="divider w-50 ">
             </div>
         </div>
         <!-- Product container -->
         <div class="row">
             <div class="product-container col-10 offset-1">
+                <!-- Product categories  -->
                 <div class="row ">COLUMN FOR CATEGORIES</div>
+                <!-- Sorting and search  -->
                 <div class="row ">COLUMN FOR SEARCH BAR AND SORTING</div>
+                <!-- Beginning of product row loop  -->
                 <div class="row">
                     <!-- For each product generate a column with a Bootstrap card -->
                     {% for product in products %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
                         <div class="card h-100 border-0">
                             <!-- If there's a product image, display the image; otherwise display a placeholder -->
                             {% if product.image %}
@@ -35,44 +36,47 @@
                             {% endif %}
                             <!-- Card body with name & category -->
                             <div class="card-body pt-3 px-1">
-                                <h5 class="card-title mb-1">{{ product.name }}</h5>
+                                <h5 class="card-title mb-2">{{ product.name }}</h5>
                                 <p class="category-link mb-0 text-left"><a href="#"><i class="bi bi-flower1"></i>
-                                        {{ product.category.friendly_name }}</p>
+                                        {{ product.category.friendly_name }}</p></a>
                             </div>
                             <!-- Card footer with price & admin product management links -->
                             <div class="card-footer border-0 pt-0 bg-white text-left">
                                 <div class="row">
                                     <div class="col px-0">
                                         <p class="text-left price-tag">€ {{ product.price }}</p>
-                                    </div>
-                                </div>
-                                {% if request.user.is_superuser %}
-                                <div class="row">
-                                    <div class="col px-0">
+                                        {% if request.user.is_superuser %}
                                         <h5 class="text-left">Manage product:</h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 col-md-3 px-0">
                                         <p>EDIT</p>
-                                    </div>
-                                    <div class="col-6 col-md-3 px-0">
                                         <p>DELETE</p>
+                                        {% endif %}
                                     </div>
                                 </div>
-                                {% endif %}
                             </div>
+                            <!-- End of card footer -->
                         </div>
+                        <!-- End of product card -->
                     </div>
+
+                    <!-- Include divider between products on various screens -->
+                    {% include 'includes/divider.html' %}
+    
+                    <!-- End of product column -->
                     {% endfor %}
+                    <!-- End of foor loop-->
                 </div>
+                <!-- End of product row  -->
             </div>
+            <!-- End of product container -->
         </div>
+        <!-- End of product row -->
+    </div>
+    <!-- End of container fluid for the page -->
 </section>
 
 <!-- Back to top button -->
 <div class="back-to-top">
-    <a id="top-link" class=" d-flex h-100" role="button"
+    <a id="top-link" class="d-flex h-100" role="button"
         aria-label="Click the button to go back to the top of the page."><i
             class="bi bi-arrow-up-square top-icon px-2"></i></a>
 </div>

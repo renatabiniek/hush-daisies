@@ -176,15 +176,21 @@ a:focus {
     color: #2B5357;
     text-transform: uppercase;
     font-weight: bolder;
+    font-size: 0.8rem;
 }
 
 .category-link:hover,
 .category-links:active,
 .category-link:focus {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .price-tag {
     font-weight: bolder;
     letter-spacing: 2px;
+}
+
+.divider {
+    width: 90%;
+    border-top: 0.1rem solid #D1A9AF;
 }
