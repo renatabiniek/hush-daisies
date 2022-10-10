@@ -1,0 +1,1 @@
+web: gunicorn hush_daisies.wsgi:application
