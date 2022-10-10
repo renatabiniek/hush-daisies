@@ -483,9 +483,18 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Horizontal divider not displaying correctly**
 
-  I had an issue with horizontal divider not showing up or not showing up as expected on the product page after creating the for loop. The column containing the divider was showing when inspected with the dev tools but with unexpected link tag <a>. 
+  I had an issue with horizontal divider not showing up or not showing up as expected on the product page after creating the for loop. The column containing the divider was showing when inspected with the dev tools but with unexpected anchor link tag. 
 
   **Worked:** Found a missing closing anchor tag in the card-body section, and fixed it.
+
+* **Could not build wheels for backports.zoneinfo**  
+  
+  During the initial deployment to Heroku, the build was failing due to the error:
+  ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects  
+  Push rejected, failed to compile Python app.  
+  
+  **Worked:** Changed the version in settings.py to backports.zoneinfo==0.2.1;python_version<"3.9" as per this [Stackoverflow post](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta)
+  
 
 ### Devices and browsers tested
 
