@@ -494,6 +494,12 @@ I tested the program considering the user stories from the UX section as well.
   Push rejected, failed to compile Python app.  
   
   **Worked:** Changed the version in settings.py to backports.zoneinfo==0.2.1;python_version<"3.9" as per this [Stackoverflow post](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta)
+
+* **Connecting Django to AWS**
+
+  While connecting Django to S3 Bucket, static folder wasn't created and I was getting an error about MediaStorage in the deployed app. 
+
+  **Worked:** There was a typo in my custom_storages file, I renamed the incorrect class to MediaStorage and re-deployed the project. The static folder was created correctly.
   
 
 ### Devices and browsers tested
