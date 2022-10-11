@@ -9,7 +9,7 @@
         <!-- Page title with horizontal divider of 50% width -->
         <div class="row">
             <div class="col text-center">
-                <h1 class="section-title">All florals</h1>
+                <h1 class="section-title">Products</h1>
                 <hr class="divider w-50">
             </div>
         </div>
@@ -17,7 +17,14 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <!-- Product categories  -->
-                <div class="row ">COLUMN FOR CATEGORIES</div>
+                <div class="row mb-5">
+                    <div class="col text-center mt-3">
+                        <span class="badge category-badge px-2"><a href="{% url 'products' %}">All florals</a></span>
+                        {% for cat in cats %}
+                        <span class="badge category-badge px-2"><a href="{% url 'products' %}?category={{ cat.name }}">{{ cat.friendly_name }}</a></span>
+                        {% endfor %}
+                    </div>
+                </div>
                 <!-- Sorting and search  -->
                 <div class="row ">COLUMN FOR SEARCH BAR AND SORTING</div>
                 <!-- Beginning of product row loop  -->

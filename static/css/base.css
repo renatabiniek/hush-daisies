@@ -219,3 +219,10 @@ a:focus {
     font-size: 1rem;
     color: white;
 }
+
+.category-badge {
+    background-color: #2B5357;
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+}
