@@ -10,7 +10,7 @@ class StaticStorage(S3Boto3Storage):
     location = settings.STATICFILES_LOCATION
 
 
-class StaticStorage(S3Boto3Storage):
+class MediaStorage(S3Boto3Storage):
     """
     Store media files in the location
     defined in settings.py
