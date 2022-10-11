@@ -172,7 +172,8 @@ a:focus {
 
 /*------------------------------------ Product page*/
 
-.category-link {
+.category-link,
+.back-link {
     color: #2B5357;
     text-transform: uppercase;
     font-weight: bolder;
@@ -180,8 +181,12 @@ a:focus {
 }
 
 .category-link:hover,
-.category-links:active,
-.category-link:focus {
+.category-link:active,
+.category-link:focus,
+.back-link:hover,
+.back-link:active,
+.back-link:focus  {
+    color: #2B5357;
     font-size: 1rem;
 }
 
