@@ -90,8 +90,10 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
   Only limited number of user stories was worked on, completed and tested in each iteration.
 
   The user stories were recorded and managed via the Github issues functionality and the Projects board. 
-  The board and user stories status can be viewed [here](https://github.com/users/renatabiniek/projects/3).
+  The board and user stories status can be viewed [here](https://github.com/users/renatabiniek/projects/3).  
 
+  **Epics:**  
+  
   **EPIC | View and Navigation**  
   
    * As a site user I can quickly learn what the site is about so that I can decide if it offers something I want.  
@@ -159,7 +161,11 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
   **EPIC | Contact**  
 
    * As a site user I can find Hush Daisies' social accounts so that I can stay up to date with their news.  
-   * As a site user I can contact the business so that I can ask a question or submit a special request.
+   * As a site user I can contact the business so that I can ask a question or submit a special request.  
+   
+  **Kanban board**  
+
+  ![Kanban board image](docs/kanban-board.png)
 
 
 ### Structure:
