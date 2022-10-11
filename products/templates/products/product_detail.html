@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<!--  Product details section -->
+<section>
+    <div class="container-fluid px-5 mt-sm-5 mt-md-5 mb-5">
+        <!-- Image and product details columns -->
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 my-5 text-center">
+                <!-- If there's a product image, display the image; otherwise display a placeholder -->
+                {% if product.image %}
+                <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                {% endif %}
+            </div>
+            <!-- Product description -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="mt-sm-3 mb-5 mt-md-5">
+                    <h2 class="mb-3 product-title">{{ product.name }}</h2>
+                    <p class="category-link mb-3"><a href="#"><i class="bi bi-flower1"></i>
+                        {{ product.category.friendly_name }}</p></a>
+                    <p class="price-tag">€ {{ product.price }}</p>
+                    <hr class="divider w-100">
+                    <p>{{ product.description }}</p>
+                    {% if request.user.is_superuser %}
+                    <h5 class="text-left">Manage product:</h5>
+                    <p>EDIT</p>
+                    <p>DELETE</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+    <a id="top-link" class="d-flex h-100" role="button"
+        aria-label="Click the button to go back to the top of the page."><i
+            class="bi bi-arrow-up-square top-icon px-2"></i></a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Back to top button -->
+<script>
+    $('#top-link').click(function (e) {
+        window.scrollTo(0, 0);
+    })
+</script>
+{% endblock %}

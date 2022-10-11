@@ -194,3 +194,7 @@ a:focus {
     width: 90%;
     border-top: 0.1rem solid #D1A9AF;
 }
+
+.product-title {
+    text-transform: capitalize;
+}
