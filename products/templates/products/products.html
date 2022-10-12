@@ -25,7 +25,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <!-- Sorting and search  -->
+                <!-- Search  -->
                 <div class="row justify-content-between">
                     <!-- Search result count and description -->
                     <div class="col-12 col-md-4 text-left">
@@ -42,7 +42,7 @@
                         <!-- Search bar -->
                         <form method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
-                                <input class="form-control" type="text" name="q" placeholder="Search all florals...">
+                                <input class="form-control search-form" type="text" name="q" placeholder="Search all florals...">
                                 <div class="input-group-append">
                                     <button class="form-control btn" type="submit">
                                         <span><i class="bi bi-search teal-text" aria-hidden="true"></i></span>
@@ -52,6 +52,17 @@
                         </form>
                     </div>
                 </div>
+                <!-- Sorting -->
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-5">
+                        <select id="sorting-selector" class="custom-select custom-select-sm" aria-label="Sorting options">
+                            <option selected value="reset">Sort by...</option>
+                            <option value="price_asc">Price (low to high)</option>
+                            <option value="price_desc">Price (high to low)</option>
+                            <option value="name_asc">Name A-Z</option>
+                            <option value="name_desc">Name Z-A</option>
+                        </select>
+                    </div>
                 <!-- Beginning of product row loop  -->
                 <div class="row">
                     <!-- For each product generate a column with a Bootstrap card -->

@@ -226,3 +226,7 @@ a:focus {
     font-size: 18px;
     font-weight: lighter;
 }
+
+.search-form {
+    border-color: #D1A9AF;
+}
