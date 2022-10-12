@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}
+| {{ product.name }}
+{% endblock %}
 
 {% block content %}
 <!--  Product details section -->
