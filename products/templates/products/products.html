@@ -27,7 +27,17 @@
                 </div>
                 <!-- Sorting and search  -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-md-4"></div>
+                    <!-- Search result count and description -->
+                    <div class="col-12 col-md-4 text-left">
+                        <p>{{ products|length }} items 
+                            {% if search_term %} found for <span class="text-uppercase">"{{ search_term }}"</span>
+                            {% else %} 
+                                {% if current_categories %} in {{ current_categories.get.friendly_name }}
+                                {% else %}
+                                in All florals
+                                {% endif %}
+                            {% endif %}</p>
+                    </div>
                     <div class="col-12 col-md-4 mb-5">
                         <!-- Search bar -->
                         <form method="GET" action="{% url 'products' %}">
