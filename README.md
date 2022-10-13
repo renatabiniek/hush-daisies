@@ -505,8 +505,15 @@ I tested the program considering the user stories from the UX section as well.
 
   While connecting Django to S3 Bucket, static folder wasn't created and I was getting an error about MediaStorage in the deployed app. 
 
-  **Worked:** There was a typo in my custom_storages file, I renamed the incorrect class to MediaStorage and re-deployed the project. The static folder was created correctly.
-  
+  **Worked:** There was a typo in my custom_storages file, I renamed the incorrect class to MediaStorage and re-deployed the project. The static folder was created correctly.  
+
+* **Multiple objects returned**  
+
+  ![Category filter error image](docs/bugs/category-filter.png)
+
+  This bug was found after adding category labels to the products list page, as well as dynamic descriptions to the search results counter. While all the labels on the product page were returning correct results and description, when *All Florals* nav link was clicked in the main navigation menu, it returned an error. I realised that using get() on the current_categories was returning a query set of categories specified in the *All Florals* link in the navbar, and not a single category as other links, therefore, it was impossible to get the category name.
+
+  **Worked:** Adding extra conditions to the result count display for mulitple or no categories selected resolved this issue.
 
 ### Devices and browsers tested
 
