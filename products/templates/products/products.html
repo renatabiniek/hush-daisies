@@ -35,9 +35,10 @@
                         <p>{{ products|length }} items 
                             {% if search_term %} found for <span class="text-uppercase">"{{ search_term }}"</span>
                             {% else %} 
-                                {% if current_categories %} in {{ current_categories.get.friendly_name }}
-                                {% else %}
+                                {% if current_categories|length > 1 or not current_categories %} 
                                 in All florals
+                                {% else %}
+                                in {{ current_categories.get.friendly_name}}
                                 {% endif %}
                             {% endif %}</p>
                     </div>
