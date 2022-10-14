@@ -81,6 +81,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # for MEDIA_URL template tag
                 'django.template.context_processors.media',
+                # for shopping basket
+                'basket.contexts.basket_contents',
             ],
         },
     },
@@ -206,3 +208,7 @@ if 'USE_AWS' in os.environ:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Calculation of delivery costs
+FREE_DELIVERY_THRESHOLD = 100
+STANDARD_DELIVERY_PERCENTAGE = 10
