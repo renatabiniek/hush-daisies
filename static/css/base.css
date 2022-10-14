@@ -31,6 +31,15 @@ a:focus {
     color: inherit;
 }
 
+.section-title,
+.page-title {
+    letter-spacing: 2px;
+}
+
+.page-title {
+    border-bottom: 0.01rem solid #D1A9AF;
+}
+
 /*------------------------------------ Home*/
 .hero-img {
     background-image: url(../site-images/background-image.jpg);
@@ -153,10 +162,6 @@ a:focus {
     font-weight: bolder;
 }
 
-.section-title {
-    letter-spacing: 2px;
-}
-
 .text-highlight {
     color: #2B5357;
     font-weight: bolder;
@@ -218,7 +223,7 @@ a:focus {
 .action-btn:hover,
 .action-btn:active,
 .action-btn:focus {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: white;
 }
 

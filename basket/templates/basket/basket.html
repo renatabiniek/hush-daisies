@@ -4,9 +4,25 @@
 
 {% block content %}
 <section>
-    <div class="container">
-        <div clas="row"></div>
-        <div clas="row"></div>
+    <div class="container mt-sm-3 mt-md-5">
+        <!-- Shopping basket heading -->
+        <div clas="row ">
+            <div class="col">
+                <h1 class="page-title pb-1">Your shopping basket</h1>
+            </div>
+        </div>
+        <!-- Basket contents -->
+        <div clas="row">
+            <div class="col">
+                {% if basket_items %}
+                {% else %}
+                <p class="lead mt-5">No items in your basket.</p>
+                <p class="my-5"> 
+                    <a href="{% url 'products' %}" class="btn action-btn py-2">Add something!</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </section>
 
