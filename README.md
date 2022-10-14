@@ -515,6 +515,10 @@ I tested the program considering the user stories from the UX section as well.
 
   **Worked:** Adding extra conditions to the result count display for mulitple or no categories selected resolved this issue.
 
+* **Product without category not showing on the product list when filtered**  
+
+  I noticed that if there was no category assigned to a product, it was not being included in the product list when All florals nav link was clicked. This was due to the filter being limited to specific category names. Changed it to all products and that resolved the issue. 
+
 ### Devices and browsers tested
 
 [NEEDS UPDATE!]
