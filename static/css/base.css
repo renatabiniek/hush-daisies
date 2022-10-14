@@ -87,9 +87,11 @@ a:focus {
     font-weight: bolder;
 }
 
-.contact-link {
+.contact-link,
+.current {
     text-decoration: underline;
 }
+
 
 /*------------------------------------ Footer*/
 
@@ -230,3 +232,4 @@ a:focus {
 .search-form {
     border-color: #D1A9AF;
 }
+

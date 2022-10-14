@@ -1,29 +1,31 @@
 <!-- Navbar with brand and links -->
 <div class="collapse navbar-collapse mb-3" id="main-nav">
 
-    <!-- Nav links -->
-    <ul class="navbar-nav w-auto mx-auto">
-      <li class="nav-item pr-1">
-        <a class="nav-link main-nav-link" href="{% url 'home' %}">Home</a>
-      </li>
-      <li class="nav-item pr-1 dropdown">
-        <a class="nav-link main-nav-link dropdown-toggle" href="#" id="all-products-link" role="button"
+  <!-- Nav links -->
+  <ul class="navbar-nav w-auto mx-{% with url_name=request.resolver_match.url_name %}auto">
+    
+    <li class="nav-item pr-1 active">
+      <a class="nav-link main-nav-link {% if url_name == 'home' %}current{% endif %}" href="{% url 'home' %}">Home</a>
+    </li>
+    <li class="nav-item pr-1 dropdown">
+      <a class="nav-link main-nav-link dropdown-toggle {% if url_name == 'products' %}current{% endif %}" href="#" id="all-products-link" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-        <div class="dropdown-menu text-capitalize" aria-labelledby="all-products-link">
-            <a href="{% url 'products' %}?category=bouquets_and_bunches" class="dropdown-item">Bouquets &amp; Bunches</a>
-            <a href="{% url 'products' %}?category=wreaths" class="dropdown-item ">Wreaths</a>
-            <a href="{% url 'products' %}?category=bridal_bouquets" class="dropdown-item ">Bridal bouquets</a>
-            <a href="{% url 'products' %}" class="dropdown-item">All Florals</a>
-        </div>
-      </li>
-      <li class="nav-item pr-1">
-        <a class="nav-link main-nav-link" href="#">Workshops</a>
-      </li>
-      <li class="nav-item pr-1">
-        <a class="nav-link main-nav-link" href="{% url 'home' %}#our-studio">Our Studio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link main-nav-link mr-5" href="{% url 'home' %}#custom-orders">Custom Orders</a>
-      </li>
-  </div>
-  </div>
+      <div class="dropdown-menu text-capitalize" aria-labelledby="all-products-link">
+        <a href="{% url 'products' %}?category=bouquets_and_bunches" class="dropdown-item">Bouquets &amp; Bunches</a>
+        <a href="{% url 'products' %}?category=wreaths" class="dropdown-item ">Wreaths</a>
+        <a href="{% url 'products' %}?category=bridal_bouquets" class="dropdown-item ">Bridal bouquets</a>
+        <a href="{% url 'products' %}" class="dropdown-item">All Florals</a>
+      </div>
+    </li>
+    <li class="nav-item pr-1">
+      <a class="nav-link main-nav-link {% if url_name == 'workshops' %}current{% endif %}" href="#">Workshops</a>
+    </li>
+    <li class="nav-item pr-1">
+      <a class="nav-link main-nav-link" href="{% url 'home' %}#our-studio">Our Studio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link main-nav-link mr-5" href="{% url 'home' %}#custom-orders">Custom Orders</a>
+    </li>
+    {% endwith %}
+  </ul>
+</div>
