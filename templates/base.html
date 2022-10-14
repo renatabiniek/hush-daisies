@@ -84,7 +84,7 @@
           </li>
           <!-- Shopping bag icon -->
           <li class="list-inline-item">
-            <a class="nav-link main-nav-link" href="#">
+            <a class="nav-link main-nav-link" href="{% url 'view_basket' %}">
               <!--Outlined icon if no items in basket, filled icon if items in basket -->
               <div><i class="bi bi-basket{% if grand_total %}-fill{% endif %}" aria-hidden="true">
                   €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>

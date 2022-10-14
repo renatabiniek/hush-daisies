@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # project apps
     'home',
     'products',
+    'basket',
     # other
     'storages', 
 ]
