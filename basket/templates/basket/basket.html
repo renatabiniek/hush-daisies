@@ -13,20 +13,39 @@
         </div>
         <!-- Basket contents -->
         {% if basket_items %}
+        {% for item in basket_items %}
         <div class="row">
-            <div class="col">Item</div>
-            <div class="col">Product title</div>
-            <div class="col">Price</div>
-            <div class="col">Qty</div>
-            <div class="col">Subtotal</div>
-            <div class="col">Remove</div>            
+            <!-- Image -->
+            <div class="col-12 col-md-2">
+                <img class="image-fluid w-100" src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{{ MEDIA_URL }}noimage.png{% endif %}" 
+                alt="{% if item.product.image %}Photo of {{ item.product.image.url }}{% else %} No product image yet {% endif %}">
+            </div>
+            <!-- Product name -->
+            <div class="col-12 col-md-2 align-self-center"><p class="my-0 teal-text"><strong>{{ item.product.name }}</strong></p></div>
+            <div class="col-12 col-md-2 align-self-center"><p class="my-0">€{{ item.product.price }} each</p></div>
+            <div class="col-12 col-md-3 align-self-center"><p class="my-0">{{ item.quantity }}</p></div>
+            <div class="col-12 col-md-2 align-self-center"><p class="my-0">Subtotal</p></div>
+            <div class="col-12 col-md-1 align-self-center">
+                <p class="my-0"><a href=""><i class="bi bi-trash" aria-hidden="true"></i></a></p>
+            </div>
         </div>
-        <div class="row mt-5">
+        <hr class="divider pb-3">
+        {% endfor %}
+        <div class="row mt-5 mb-5">
             <div class="col text-right">
-                <p>Basket total:</p>
-                <p>Delivery:</p>
-                <p>Grand total:</p>
-                <div>Free delivery on orders over {{ free_delivery_treshold }}</div>
+                <p>Basket total: €{{ total|floatformat:2 }}</p>
+                <p>Delivery: €{{ delivery|floatformat:2 }}</p>
+                <p>Grand total:  €{{ grand_total|floatformat:2 }}</p>
+                {% if free_delivery_spend > 0 %}
+                <p>Did you know we offer free delivery on orders over {{ free_delivery_treshold }} ?</p>
+                <p>Spend {{ free_delivery_spend }} more to save on delivery costs!</p>
+                {% endif %}
+            </div>
+            <div class="col-12 text-right">
+                <!-- Keep shopping button -->
+                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep shopping</a>
+                <!-- Secure checkout button -->
+                <a href="#" class="action-btn btn-sm btn rounded-3 py-2"><span>Secure checkout</span> <span><i class="bi bi-lock-fill" aria-hidden="true"></i></span></a>
             </div>
         </div>
         {% else %}
