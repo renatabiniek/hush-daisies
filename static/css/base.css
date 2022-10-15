@@ -238,3 +238,15 @@ a:focus {
     border-color: #D1A9AF;
 }
 
+.btn-inverted {
+    background-color: white;
+    color: #2B5357;
+    border: 0.1rem solid #2B5357;
+ }
+ 
+ .btn-inverted:hover,
+ .btn-inverted:active,
+ .btn-inverted:focus {
+     font-size: 1.1rem;
+     color: #2B5357;
+ }

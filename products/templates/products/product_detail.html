@@ -31,7 +31,7 @@
                     <hr class="divider w-100">
                     <p>{{ product.description }}</p>
                     <!-- Quantity selector -->
-                    <form class="form" action="" method="POST">
+                    <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
@@ -44,6 +44,8 @@
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
+                                <!-- Keep shopping button -->
+                                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep shopping</a>
                                 <!-- Add to shopping basket button -->
                                 <input type="submit" class="action-btn btn-sm btn rounded-3 py-2" value="Add to basket">
                             </div>
@@ -51,7 +53,6 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-
                     {% if request.user.is_superuser %}
                     <h5 class="text-left section-title teal-text">Manage product:</h5>
                     <p>EDIT</p>
