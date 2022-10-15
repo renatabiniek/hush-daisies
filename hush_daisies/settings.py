@@ -210,5 +210,5 @@ if 'USE_AWS' in os.environ:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Calculation of delivery costs
-FREE_DELIVERY_THRESHOLD = 100
+FREE_DELIVERY_THRESHOLD = 80
 STANDARD_DELIVERY_PERCENTAGE = 10

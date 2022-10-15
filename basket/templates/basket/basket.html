@@ -17,7 +17,7 @@
         <div class="row">
             <!-- Image -->
             <div class="col-12 col-md-2">
-                <img class="image-fluid w-100" src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{{ MEDIA_URL }}noimage.png{% endif %}" 
+                <img class="image-fluid img-thumbnail w-100" src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{{ MEDIA_URL }}noimage.png{% endif %}" 
                 alt="{% if item.product.image %}Photo of {{ item.product.image.url }}{% else %} No product image yet {% endif %}">
             </div>
             <!-- Product name -->
@@ -32,13 +32,14 @@
         <hr class="divider pb-3">
         {% endfor %}
         <div class="row mt-5 mb-5">
+            <!-- Order summary -->
             <div class="col text-right">
-                <p>Basket total: €{{ total|floatformat:2 }}</p>
-                <p>Delivery: €{{ delivery|floatformat:2 }}</p>
-                <p>Grand total:  €{{ grand_total|floatformat:2 }}</p>
-                {% if free_delivery_spend > 0 %}
-                <p>Did you know we offer free delivery on orders over {{ free_delivery_treshold }} ?</p>
-                <p>Spend {{ free_delivery_spend }} more to save on delivery costs!</p>
+                <p><span><strong>Basket total:</strong></span> <span class="pl-2">€{{ total|floatformat:2 }}</span></p>
+                <p><span><strong>Delivery:</strong></span> <span class="pl-2">€{{ delivery|floatformat:2 }}</span></p>
+                <p><span><strong>Grand total:</strong></span> <span class="pl-2">€{{ grand_total|floatformat:2 }}</span></p>
+                {% if free_delivery_countdown > 0 %}
+                <p class="mb-0 font-italic">Did you know we offer free delivery on orders over €{{ free_delivery_treshold }}?
+                <p class="font-italic">Spend <span class="teal-text"><strong>€{{ free_delivery_countdown }}</strong></span> more to save on delivery costs!</p>
                 {% endif %}
             </div>
             <div class="col-12 text-right">
