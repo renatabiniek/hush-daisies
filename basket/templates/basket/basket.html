@@ -4,29 +4,40 @@
 
 {% block content %}
 <section>
-    <div class="container mt-sm-3 mt-md-5">
+    <div class="container ">
         <!-- Shopping basket heading -->
-        <div clas="row ">
-            <div class="col">
+        <div class="row">
+            <div class="col mt-sm-3 mt-md-5 mb-5">
                 <h1 class="page-title pb-1">Your shopping basket</h1>
             </div>
         </div>
         <!-- Basket contents -->
-        <div clas="row">
-            <div class="col">
-                {% if basket_items %}
-                <div>
-                    {{ basket_items }}
-                </div>
-                {% else %}
-                <p class="lead mt-5">No items in your basket.</p>
-                <p class="my-5"> 
-                    <a href="{% url 'products' %}" class="btn action-btn py-2">Add something!</a>
-                </div>
-                {% endif %}
+        {% if basket_items %}
+        <div class="row">
+            <div class="col">Item</div>
+            <div class="col">Product title</div>
+            <div class="col">Price</div>
+            <div class="col">Qty</div>
+            <div class="col">Subtotal</div>
+            <div class="col">Remove</div>            
+        </div>
+        <div class="row mt-5">
+            <div class="col text-right">
+                <p>Basket total:</p>
+                <p>Delivery:</p>
+                <p>Grand total:</p>
+                <div>Free delivery on orders over {{ free_delivery_treshold }}</div>
             </div>
         </div>
-        <div> Free delivery on orders over {{ free_delivery_treshold }}</div>
+        {% else %}
+        <div class="row">
+            <div class="col">
+                <p class="lead mt-5">No items in your basket.</p>
+                <p class="my-5">
+                    <a href="{% url 'products' %}" class="btn action-btn py-2">Add something!</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </section>
 
