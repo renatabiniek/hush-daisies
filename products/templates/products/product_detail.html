@@ -36,10 +36,27 @@
                         <div class="form-row">
                             <div class="col-12">
                                 <p class="section-title teal-text">Quantity:</p>
-                                <div class="form-group w-50">
+                                <div class="form-group w-25">
                                     <div class="input-group">
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="20"
-                                            data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <!-- Button before the quantity box to decrease the qty -->
+                                        <div class="input-group-prepend">
+                                            <button
+                                                class="decrement-qty btn btn-qty rounded-0" data-item_id="{{ product.id }}"
+                                                id="decrement-qty_{{ product.id }}" aria-hidden="Decrease quantity">
+                                                <i class="bi bi-dash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <input class="form-control qty_input text-center" type="number" name="quantity"
+                                            value="1" min="1" max="20" data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
+                                        <!-- Button after the quantity box to increase the qty -->
+                                        <div class="input-group-append">
+                                            <button
+                                                class="increment-qty btn btn-qty rounded-0" data-item_id="{{ product.id }}"
+                                                id="increment-qty_{{ product.id }}" aria-hidden="Increase quantity"><i
+                                                    class="bi bi-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -84,6 +101,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
+
+<!-- Icrement/Decrement qty -->
+{% include 'products/includes/qty_input_script.html' %}
+
 <!-- Back to top button -->
 <script>
     $('#top-link').click(function (e) {

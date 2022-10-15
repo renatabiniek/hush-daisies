@@ -1,17 +1,26 @@
-html, body {
-    height: 100%;
-}
-
 /*------------------------------------ General*/
 
-h1, h2, .lead-home {
-    color: #2B5357;
+html, body {
+    height: 100%;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     color: #1C1C1C;
     background-color: white;
+}
+
+h1, h2, .lead-home {
+    color: #2B5357;
+}
+
+.section-title,
+.page-title {
+    letter-spacing: 2px;
+}
+
+.page-title {
+    border-bottom: 0.01rem solid #D1A9AF;
 }
 
 .teal-text {
@@ -31,25 +40,10 @@ a:focus {
     color: inherit;
 }
 
-.section-title,
-.page-title {
-    letter-spacing: 2px;
-}
-
-.page-title {
-    border-bottom: 0.01rem solid #D1A9AF;
-}
-
-/*------------------------------------ Home*/
-.hero-img {
-    background-image: url(../site-images/background-image.jpg);
-    height: 95vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.callout-btn, .action-btn {
+/*------------------------------------ Buttons*/
+.callout-btn, 
+.action-btn,
+.btn-qty {
     background-color: #2B5357;
     color: white;
 }
@@ -61,6 +55,45 @@ a:focus {
     color: white;
 }
 
+.btn-qty {
+    border: 0.01rem solid #2B5357;
+}
+
+.btn-qty:hover,
+.btn-qty:active,
+.btn-qty:focus {
+    background-color: white;
+    color: #2B5357;
+}
+
+.action-btn:hover,
+.action-btn:active,
+.action-btn:focus {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.btn-inverted {
+    background-color: white;
+    color: #2B5357;
+    border: 0.1rem solid #2B5357;
+ }
+ 
+ .btn-inverted:hover,
+ .btn-inverted:active,
+ .btn-inverted:focus {
+     font-size: 1.1rem;
+     color: #2B5357;
+ }
+
+/*------------------------------------ Home*/
+.hero-img {
+    background-image: url(../site-images/background-image.jpg);
+    height: 95vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /*------------------------------------ Navigation*/
 .nav-background {
@@ -153,7 +186,6 @@ a:focus {
     font-weight: bold;
 }
 
-
 /*------------------------------------ Home page sections*/
 
 .icn-home {
@@ -220,13 +252,6 @@ a:focus {
     letter-spacing: 2px;
 }
 
-.action-btn:hover,
-.action-btn:active,
-.action-btn:focus {
-    font-size: 1.1rem;
-    color: white;
-}
-
 .category-badge {
     background-color: #2B5357;
     color: white;
@@ -237,16 +262,3 @@ a:focus {
 .search-form {
     border-color: #D1A9AF;
 }
-
-.btn-inverted {
-    background-color: white;
-    color: #2B5357;
-    border: 0.1rem solid #2B5357;
- }
- 
- .btn-inverted:hover,
- .btn-inverted:active,
- .btn-inverted:focus {
-     font-size: 1.1rem;
-     color: #2B5357;
- }
