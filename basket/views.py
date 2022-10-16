@@ -1,5 +1,5 @@
 """Views for Basket app"""
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 # Create your views here.
 
@@ -48,7 +48,23 @@ def adjust_basket(request, item_id):
         basket[item_id] = quantity
     else:
         basket.pop(item_id)
-    
+          
     request.session['basket'] = basket
     return redirect(reverse('view_basket'))
 
+
+def remove_from_basket(request, item_id):
+    """
+    Remove item from the basket. Intended qty is zero.
+    Get basket from the session, remove item, override the basket session.
+    Http 200 repsonse implying that the item was removed.
+    If error, raisew server error (http 500)
+    """
+    try:
+        basket = request.session.get('basket', {})
+        basket.pop(item_id)
+        
+        request.session['basket'] = basket
+        return HttpResponse(status=200)
+    except Exception as error:
+        return HttpResponse(status=500) 
