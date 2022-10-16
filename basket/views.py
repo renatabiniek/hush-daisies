@@ -1,5 +1,5 @@
 """Views for Basket app"""
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
@@ -43,7 +43,6 @@ def adjust_basket(request, item_id):
     quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
     print(quantity)
-
 
     if quantity > 0:
         basket[item_id] = quantity
