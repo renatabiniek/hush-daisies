@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-
+<!-- basket_tools contain subtotal calculation function -->
+{% load basket_tools %}
 
 {% block content %}
 <section>
@@ -21,7 +22,7 @@
                 alt="{% if item.product.image %}Photo of {{ item.product.image.url }}{% else %} No product image yet {% endif %}">
             </div>
             <!-- Product name -->
-            <div class="col-12 col-md-2 align-self-center"><p class="my-0 teal-text"><strong>{{ item.product.name }}</strong></p></div>
+            <div class="col-12 col-md-2 align-self-center"><p class="my-0 teal-text product-title"><strong>{{ item.product.name }}</strong></p></div>
             <div class="col-12 col-md-2 align-self-center"><p class="my-0">€{{ item.product.price }} each</p></div>
             <!-- Quantity selector form -->
             <div class="col-12 col-md-3 align-self-center">
@@ -53,9 +54,9 @@
                 </form>
                <a class="update-link float-right"><small>Update</small></a>
             </div>
-            <div class="col-12 col-md-2 align-self-center"><p class="my-0">Subtotal</p></div>
+            <div class="col-12 col-md-2 align-self-center"><p class="my-0">Subtotal: €{{ item.product.price | calculate_subtotal:item.quantity }}</p></div>
             <div class="col-12 col-md-1 align-self-center">
-                <a class="remove-icon my-0" id="remove_{{ item.item_id }}"><i class="bi bi-trash" aria-hidden="true"></i></a>
+                <a class="remove-icon my-0" id="remove_{{ item.item_id }}"><i class="bi bi-trash bin-icon" aria-hidden="true"></i></a>
             </div>
         </div>
         <hr class="divider pb-3">
@@ -68,7 +69,7 @@
                 <p><span><strong>Grand total:</strong></span> <span class="pl-2">€{{ grand_total|floatformat:2 }}</span></p>
                 {% if free_delivery_countdown > 0 %}
                 <p class="mb-0 font-italic">Did you know we offer free delivery on orders over €{{ free_delivery_treshold }}?
-                <p class="font-italic">Spend <span class="teal-text"><strong>€{{ free_delivery_countdown }}</strong></span>git  more to save on delivery costs!</p>
+                <p class="font-italic">Spend <span class="teal-text"><strong>€{{ free_delivery_countdown }}</strong></span> more to save on delivery costs!</p>
                 {% endif %}
             </div>
             <div class="col-12 text-right">

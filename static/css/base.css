@@ -277,14 +277,15 @@ a:focus {
     cursor: pointer;
 }
 
-.remove-icon {
+.remove-icon > i {
     color: #2B5357;
+    font-size: 1.4rem;
 }
 
-.remove-icon:hover,
-.remove-icon:active,
-.remove-icon:focus {
-    font-size: 1.3rem;
+.remove-icon:hover > i,
+.remove-icon:active > i,
+.remove-icon:focus > i {
+    font-size: 1.6rem;
     color: #2B5357;
 } 
 
