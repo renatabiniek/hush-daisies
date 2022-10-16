@@ -25,7 +25,7 @@
             <div class="col-12 col-md-2 align-self-center"><p class="my-0">€{{ item.product.price }} each</p></div>
             <!-- Quantity selector form -->
             <div class="col-12 col-md-3 align-self-center">
-                <form class= "update-form mt-4" action="" method="POST">
+                <form class= "form update-form mt-4" action="{% url 'adjust_basket' item.item_id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <div class="input-group">
@@ -51,12 +51,11 @@
                         </div>
                     </div>
                 </form>
-                <p class="mb-0 text-right"><a class="update-link teal-text" href=""><small>Update</small></a></p>
+               <a class="update-link float-right"><small>Update</small></a>
             </div>
-            <!-- <p class="my-0">{{ item.quantity }}</p> -->
             <div class="col-12 col-md-2 align-self-center"><p class="my-0">Subtotal</p></div>
             <div class="col-12 col-md-1 align-self-center">
-                <p class="my-0"><a class="remove-icon" id="remove_{{ item.item_id }}" href=""><i class="bi bi-trash" aria-hidden="true"></i></a></p>
+                <a class="remove-icon my-0" id="remove_{{ item.item_id }}"><i class="bi bi-trash" aria-hidden="true"></i></a>
             </div>
         </div>
         <hr class="divider pb-3">
@@ -118,11 +117,11 @@
         var url = `/basket/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
-        $.post(url, data);
-        .done(function() {
+        $.post(url, data)
+         .done(function() {
             location.reload();
         });
-    });
+    })
 </script>
 
 <!-- Back to top button -->

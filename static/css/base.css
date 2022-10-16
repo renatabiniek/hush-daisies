@@ -266,14 +266,15 @@ a:focus {
 /*------------------------------------ Basket page*/
 
 .update-link {
-    text-decoration: underline;
+    cursor: pointer;
+    border-bottom: 0.1rem solid #D1A9AF;
 }
 
 .update-link:hover,
 .update-link:active,
 .update-link:focus {
     font-size: 1.1rem;
-    color: #2B5357;
+    cursor: pointer;
 }
 
 .remove-icon {
