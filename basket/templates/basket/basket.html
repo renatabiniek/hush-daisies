@@ -23,10 +23,40 @@
             <!-- Product name -->
             <div class="col-12 col-md-2 align-self-center"><p class="my-0 teal-text"><strong>{{ item.product.name }}</strong></p></div>
             <div class="col-12 col-md-2 align-self-center"><p class="my-0">€{{ item.product.price }} each</p></div>
-            <div class="col-12 col-md-3 align-self-center"><p class="my-0">{{ item.quantity }}</p></div>
+            <!-- Quantity selector form -->
+            <div class="col-12 col-md-3 align-self-center">
+                <form class= "update-form mt-4" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group">
+                            <!-- Button before the quantity box to decrease the qty -->
+                            <div class="input-group-prepend">
+                                <button
+                                    class="decrement-qty btn btn-sm btn-qty rounded-0" data-item_id="{{ item.item_id }}"
+                                    id="decrement-qty_{{ item.item_id }}" aria-hidden="Decrease quantity">
+                                    <i class="bi bi-dash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
+                                value="{{ item.quantity }}" min="1" max="20" data-item_id="{{ item.item_id }}"
+                                id="id_qty_{{ item.item_id }}">
+                            <!-- Button after the quantity box to increase the qty -->
+                            <div class="input-group-append">
+                                <button
+                                    class="increment-qty btn btn-sm btn-qty rounded-0" data-item_id="{{ item.item_id }}"
+                                    id="increment-qty_{{ item.item_id }}" aria-hidden="Increase quantity"><i
+                                        class="bi bi-plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <p class="mb-0 text-right"><a class="update-link teal-text" href=""><small>Update</small></a></p>
+            </div>
+            <!-- <p class="my-0">{{ item.quantity }}</p> -->
             <div class="col-12 col-md-2 align-self-center"><p class="my-0">Subtotal</p></div>
             <div class="col-12 col-md-1 align-self-center">
-                <p class="my-0"><a href=""><i class="bi bi-trash" aria-hidden="true"></i></a></p>
+                <p class="my-0"><a class="remove-icon" id="remove_{{ item.item_id }}" href=""><i class="bi bi-trash" aria-hidden="true"></i></a></p>
             </div>
         </div>
         <hr class="divider pb-3">
@@ -70,8 +100,33 @@
 
 {% block postloadjs %}
 {{ block.super }}
+
+<!-- Icrement/Decrement qty -->
+{% include 'products/includes/qty_input_script.html' %}
+
+
+<script type="text/javascript">
+    // Update qty on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+    // Remove item on click
+    $('.remove-icon').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/basket/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data);
+        .done(function() {
+            location.reload();
+        });
+    });
+</script>
+
 <!-- Back to top button -->
-<script>
+<script type="text/javascript">
     $('#top-link').click(function (e) {
         window.scrollTo(0,0);
     })

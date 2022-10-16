@@ -262,3 +262,28 @@ a:focus {
 .search-form {
     border-color: #D1A9AF;
 }
+
+/*------------------------------------ Basket page*/
+
+.update-link {
+    text-decoration: underline;
+}
+
+.update-link:hover,
+.update-link:active,
+.update-link:focus {
+    font-size: 1.1rem;
+    color: #2B5357;
+}
+
+.remove-icon {
+    color: #2B5357;
+}
+
+.remove-icon:hover,
+.remove-icon:active,
+.remove-icon:focus {
+    font-size: 1.3rem;
+    color: #2B5357;
+} 
+
