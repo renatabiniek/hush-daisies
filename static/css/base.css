@@ -289,3 +289,21 @@ a:focus {
     color: #2B5357;
 } 
 
+/*------------------------------------ Toasts*/
+
+/* message container positioned top right */
+.message-container {
+    z-index: 999999999;
+    position: fixed;
+    top: 72px;
+    right: 15px;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+/* toast border */
+.toast-capper {
+    height: 2px;
+}

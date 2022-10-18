@@ -1,5 +1,7 @@
 """Views for Basket app"""
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -17,8 +19,10 @@ def add_to_basket(request, item_id):
     If matching item (item key) already in the bag, increase qty. Otherwise, add it to the basket.
     Put basket variable into the session, which overrides the variable in the session with the updated version.
     Redirect the user to the redirect_url.
+    Get the product and add messages.
     """
 
+    product = Product.objects.get(pk=item_id)    
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
@@ -27,6 +31,7 @@ def add_to_basket(request, item_id):
         basket[item_id] += quantity
     else:
         basket[item_id] = quantity
+        messages.success(request, f'{product.name} added to the basket')
     
     request.session['basket'] = basket
     return redirect(redirect_url)

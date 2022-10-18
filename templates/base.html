@@ -115,7 +115,26 @@
 
     <!-- Display of messages for user actions -->
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+      {% for message in messages %}
+          <!-- Django message levels -->
+          {% with message.level as level %}
+              <!-- error -->
+              {% if level == 40 %} 
+                  {% include 'includes/toasts/toast-error.html' %}
+              <!-- warning -->
+              {% elif level == 30 %}
+                  {% include 'includes/toasts/toast-warning.html' %}
+              <!-- success -->
+              {% elif level == 25 %}   
+                  {% include 'includes/toasts/toast-success.html' %}
+              {% else %}
+              <!-- info -->
+                 {% include 'includes/toasts/toast-info.html' %}
+              {% endif %}
+          {% endwith %}
+      {% endfor %}
+    </div>
     {% endif %}
 
     <!-- Additional header underneath the main header, specific to some pages -->
@@ -128,6 +147,10 @@
 
     <!-- Space for page specific JavaScript to load at the end of the body -->
     {% block postloadjs %}
+    <script type="text/javascript">
+      // Call the show option on all elements with 'toast' class
+      $('.toast').toast('show');
+    </script>
     {% endblock %}
 
     <!-- Footer -->
