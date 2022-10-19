@@ -8,6 +8,51 @@
         </button>
     </div>
     <div class="toast-body bg-white">
-        {{ message }}
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr class="divider mt-1 mb-3">
+            </div>
+        </div>
+        {% if grand_total %}
+        <p class="bg-white py-1 teal-text section-title">Your Basket ({{ product_count }})</p>
+        <div class="basket-notification-wrapper">
+            {% for item in basket_items %}
+            <div class="row">
+                <!-- Image column -->
+                <div class="col-3 my-1">
+                    {% if item.product.image %}
+                    <img class="w-100" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+                <!-- Product name and qty -->
+                <div class="col-9">
+                    <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
+                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Oder summary row with free delivery message and checkout button -->
+        <div class="row">
+            <div class="col mt-3 mb-1">
+                <strong>
+                    <p class="teal-text">Total{% if free_delivery_countdown > 0 %} (Exc. delivery){% endif %}:
+                        <span class="float-right">€{{ total|floatformat:2 }}</span>
+                    </p>
+                </strong>
+                {% if free_delivery_countdown > 0 %}
+                <p class="mb-0 p-2 text-center bg-info shadow-sm">Get free delivery if you spend <span
+                        class="teal-text"><strong>€{{ free_delivery_countdown }}</strong></span> more!</p>
+                {% endif %}
+                <a href="{% url 'view_basket' %}" class="action-btn btn-block btn rounded-0 py-2">
+                    <span class="text-uppercase">View basket &amp; checkout</span> <span><i class="bi bi-lock-fill"
+                            aria-hidden="true"></i></span>
+                </a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>

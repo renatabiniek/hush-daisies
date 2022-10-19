@@ -307,3 +307,14 @@ a:focus {
 .toast-capper {
     height: 2px;
 }
+
+.bg-info {
+    background-color: #D1A9AF !important;
+}
+
+/* wrapper to restrict basket preview from gettingtoo large */
+.basket-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
