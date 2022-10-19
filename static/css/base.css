@@ -130,7 +130,7 @@ a:focus {
 }
 
 .contact-link,
-.current {
+.current, {
     text-decoration: underline;
 }
 

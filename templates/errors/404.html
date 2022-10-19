@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Page Not Found{% endblock %}
+
+{% block content %}
+
+<!-- 404 Error Page Not Found section with link to home page.-->
+<section>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-12 mt-5 mb-5 mx-auto text-center">
+                <h2 class="display-4 pb-5"><i class="bi bi-signpost-split"></i> You might be lost... </h2>
+                <p class="">This page doesn't exist.</p>
+                <p class="">Find your way home by clicking <a class="current teal-text"
+                        href="{% url 'home' %}">here</a> or <a href="{% url 'products' %}" class="current teal-text">keep shopping.</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}
