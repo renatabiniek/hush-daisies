@@ -1,4 +1,4 @@
-""" Admin setup for orders and checkout """
+"""Admin setup for orders and checkout"""
 from django.contrib import admin
 from .models import Order, OrderLineItem
 

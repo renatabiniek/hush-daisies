@@ -1,4 +1,4 @@
-""" Config for Checkout app """
+"""Config for Checkout app"""
 
 from django.apps import AppConfig
 
