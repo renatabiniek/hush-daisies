@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-<!-- basket_tools contain subtotal calculation function -->
+<!-- Basket_tools contain subtotal calculation function -->
 {% load basket_tools %}
 
 {% block extra_css %}
@@ -22,7 +22,62 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p>Almost there! Please fill out the form below to complete your order and proceed to payment.</p>
+                <p class="px-3">Almost there! Please fill out the form below to complete your order and proceed to payment.</p>
+                <!-- Form -->
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    {% csrf_token %}
+                    <!-- Form divided into 3 fieldsets, rendered as crispy fields-->
+                    <!-- Personal info -->
+                    <fieldset class="px-3 mb-3">
+                        <legend class="fieldset-label teal-text section-title w-auto pb-2">Your Details</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                    </fieldset>
+                    <!-- Delivery info -->
+                    <fieldset class="px-3 mb-3">
+                        <legend class="fieldset-label teal-text section-title w-auto pb-2">Delivery Details</legend>
+                        {{ order_form.house_number_or_name | as_crispy_field }}
+                        {{ order_form.street_address_1 | as_crispy_field }}
+                        {{ order_form.street_address_2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        {{ order_form.country  | as_crispy_field }}
+                        <!-- Save info to user profile section -->
+                        <div class="form-check form-check-inline float-right mr-0">
+                            {% if user.is_authenticated %}
+                            <label class="form-check-label" for="id-save-info">Save delivery information to my profile</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                            {% else %}
+                            <label class="form-check-label" for="id-save-info">
+                                <a href="{% url 'account_login' %}" class="account-link">Log in</a> or
+                                <a href="{% url 'account_signup' %}" class="account-link">create an account</a> to save delivery information
+                            {% endif %}
+                        </div> 
+                    </fieldset>
+                     <!-- Payment info -->
+                    <fieldset class="px-3 mb-3">
+                        <legend class="fieldset-label teal-text section-title w-auto pb-2">Payment Details</legend>
+                        <!-- Stripe fields for credit card -->
+                        <div class="mb-3" id="card-element"></div>
+                        <!-- Stripe card errors will be shown here -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
+                    <!-- Submit button section -->
+                    <div class="mt-2 mb-2 text-right">
+                        <!-- Return to basket button -->
+                        <a href="{% url 'view_basket' %}" class="btn-inverted btn rounded-3 py-2 mb-2 text-uppercase">Return to basket</a>
+                        <!-- Complete order button -->
+                        <button id="submit-button" class="btn action-btn rounded-3 py-2 mb-2">
+                            <span class="text-uppercase">Secure checkout</span> 
+                            <span><i class="bi bi-lock-fill" aria-hidden="true"></i></span>
+                        </button>
+                        <p class="small text-danger">
+                            <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

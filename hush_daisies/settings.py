@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'basket',
     'checkout',
     # other
-    'storages', 
+    'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hush_daisies.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -85,6 +88,10 @@ TEMPLATES = [
                 # for shopping basket
                 'basket.contexts.basket_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
