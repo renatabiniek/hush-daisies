@@ -3,6 +3,7 @@
 from django import forms
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
     """Form to capture customer info and delivery details"""
     class Meta:
@@ -19,7 +20,7 @@ class OrderForm(forms.ModelForm):
             'postcode',
             'country',
         )
-    
+
     def __init__(self, *args, **kwargs):
         """
         Override init method to add placeholders and class, 
