@@ -1,10 +1,10 @@
 """Views for Checkout app"""
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import Order, OrderLineItem
 from products.models import Product
 from basket.contexts import basket_contents
 
@@ -60,7 +60,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_basket'))
 
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number])
                 )
@@ -110,4 +110,25 @@ def checkout(request):
 
     return render(request, template, context)
 
+
+def checkout_success(request, order_number):
+    """
+    Show order completion confirmation page with order summary 
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(
+        request, f'Your order { order_number } has been \
+                   successfully processed. Order confirmation \
+                   will be sent to { order.email }.'
+                   )
+    # delete basket from the session
+    if 'basket' in request.session:
+        del request.session['basket']
     
+    template = 'checkout/checkout_succes.html'
+    context = {
+        'order': order,
+    }
+
+    return render(request, template, context)

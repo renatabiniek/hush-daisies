@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+| Thank you!
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <!-- Checkout heading -->
+        <div class="row">
+            <div class="col mt-sm-3 mt-md-5 mb-5">
+                <h1 class="page-title pb-1">Thank You!</h1>
+                <p>Below you'll find the summary of your order <strong>{{ order.order_number }}</strong>.
+                We have also sent an order confirmation via email to <strong>{{ order.email }}</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Oder summary -->
+            <div class="col-12 col-lg-7"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7 text-right">
+                <!-- Back to shop button -->
+                <a href="{% url 'products' %}" class="action-btn btn-sm btn rounded-3 py-2">Keep shopping</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+    <a id="top-link" class=" d-flex h-100" role="button" aria-label="Click the button to go back to the top of the page."><i class="bi bi-arrow-up-square top-icon px-2"></i></a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+<!-- Back to top button -->
+<script type="text/javascript">
+    $('#top-link').click(function (e) {
+        window.scrollTo(0,0);
+    })
+</script>
+{% endblock %}
