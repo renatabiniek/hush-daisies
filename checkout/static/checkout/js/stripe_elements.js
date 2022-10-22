@@ -35,6 +35,21 @@ var style = {
   };
 
 var card = elements.create('card', {style: style});
-
 card.mount('#card-element',);
+
+// Handle real-time validation for errors on the card element
+card.addEventListener('change', function(event) {
+  var errorDiv = document.getElementById('card-errors');
+  if (event.error) {
+      var html = `
+      <span role="alert">
+          <i class="bi bi-x-square-fill" aria-hidden="true"></i>
+      </span>
+      <span>${event.error.message}</span>
+      `;
+      $(errorDiv).html(html);
+  } else {
+      errorDiv.textContent = '';
+  }
+})
 
