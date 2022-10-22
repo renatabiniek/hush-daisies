@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 
 from .forms import OrderForm
+from basket.contexts import basket_contents
 
 # Create your views here.
 
@@ -18,7 +19,12 @@ def checkout(request):
                 Try adding something to purchase and try again!") 
             )
         return redirect(reverse('products'))
-    
+    # store the basket contents
+    current_basket = basket_contents(request)
+    # get the total
+    total = current_basket['grand_total']
+    # stripe requires the amount to charge as integer
+    stripe_total = round(total * 100)
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {

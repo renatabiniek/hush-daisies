@@ -1,5 +1,6 @@
 /**
  * Handles creating Stripe elements and submitting payment form 
+ * Credit: Code Institute, Boutique Ado walkthrough
  */
 
 /*
