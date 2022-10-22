@@ -142,6 +142,12 @@
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <!-- Checkout JS -->
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
 <!-- Back to top button -->
 <script type="text/javascript">
     $('#top-link').click(function (e) {
