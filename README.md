@@ -520,6 +520,14 @@ I tested the program considering the user stories from the UX section as well.
   I noticed that if there was no category assigned to a product, it was not being included in the product list when All florals nav link was clicked. This was due to the filter being limited to specific category names. Changed it to all products and that resolved the issue. 
 
 * **AttributeError: 'Settings' object has no attribute 'FREE_DELIVERY_TRESHOLD'**
+  
+  I was getting this error at the checkout stage after pressing the Secure Checkout button. I've double checked that I have the correct settings and it turned out I miss-spelled "threshold".
+
+* **Success message not displaying in toat in checkout success**  
+
+  Once order has been placed I expected to see the toast message on the order confirmation page but it wasn't showing. It turned out I was overriding JS script from the base.html that has toast script in checkout_success.html. Adding {{ block.super }} to retain the original script resolved the issue.
+
+  
 
 
 ### Devices and browsers tested
