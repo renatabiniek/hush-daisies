@@ -324,16 +324,3 @@ a:focus {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
-/*------------------------------------ Checkout*/
-.account-link {
-    text-decoration: underline;
-    color: #2B5357;
-    font-weight: bolder;
-}
-
-.account-link:hover,
-.account-link:active,
-.account-link:focus {
-    color: #2B5357;
-}

@@ -120,8 +120,6 @@ def checkout_success(request, order_number):
                    successfully processed. Order confirmation \
                    will be sent to { order.email }.')
     save_info = request.session.get('save_info')
-   
-
     # delete basket from the session
     if 'basket' in request.session:
         del request.session['basket']
