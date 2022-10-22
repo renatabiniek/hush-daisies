@@ -519,6 +519,9 @@ I tested the program considering the user stories from the UX section as well.
 
   I noticed that if there was no category assigned to a product, it was not being included in the product list when All florals nav link was clicked. This was due to the filter being limited to specific category names. Changed it to all products and that resolved the issue. 
 
+* **AttributeError: 'Settings' object has no attribute 'FREE_DELIVERY_TRESHOLD'**
+
+
 ### Devices and browsers tested
 
 [NEEDS UPDATE!]

@@ -55,7 +55,8 @@ card.addEventListener('change', function(event) {
 })
 
 // Handle form submission
-var from = document.getElementById('payment-form');
+var form = document.getElementById('payment-form');
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     // disable to prevent multiple submissions

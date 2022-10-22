@@ -113,20 +113,20 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Show order completion confirmation page with order summary 
+    Show order completion confirmation page with order summary
     """
-    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(
-        request, f'Your order { order_number } has been \
+    messages.success(request, f'Your order { order_number } has been \
                    successfully processed. Order confirmation \
-                   will be sent to { order.email }.'
-                   )
+                   will be sent to { order.email }.')
+    save_info = request.session.get('save_info')
+   
+
     # delete basket from the session
     if 'basket' in request.session:
         del request.session['basket']
-    
-    template = 'checkout/checkout_succes.html'
+   
+    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }
