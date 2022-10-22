@@ -11,10 +11,10 @@
  */
 
  // Get Stripe public key and client secret
- var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
- var client_secret = $('#id_client_secret').text().slice(1, -1);
+ var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+ var clientSecret = $('#id_client_secret').text().slice(1, -1);
 // Create instance of stripe elements using public key
-var stripe = Stripe(stripe_public_key);
+var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 
 // Create card element, add style and mount it to the Payment details in checkout.html
@@ -54,3 +54,33 @@ card.addEventListener('change', function(event) {
   }
 })
 
+// Handle form submission
+var from = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    // disable to prevent multiple submissions
+    card.update({ 'disabled': true});
+    $('#submit-button').attr('disabled', true);
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: card,
+        },
+  }).then(function(result) {
+      if (result.error) {
+          var errorDiv = document.getElementById('card-errors');
+          var html = `
+              <span role="alert">
+                  <i class="bi bi-x-square-fill" aria-hidden="true"></i>
+              </span>
+              <span>${result.error.message}</span>`;
+          $(errorDiv).html(html);
+          // re-enable
+          card.update({ 'disabled': false});
+          $('#submit-button').attr('disabled', false);
+      } else {
+          if (result.paymentIntent.status === 'succeeded') {
+              form.submit();
+            }
+      }
+  });
+});
