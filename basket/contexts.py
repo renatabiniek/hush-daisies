@@ -14,7 +14,7 @@ def basket_contents(request):
     basket_items = []
     total = 0
     product_count = 0
-    # get the basket from the session 
+    # get the basket from the session
     basket = request.session.get('basket', {})
     # iterate through items in the basket from the session
     for item_id, quantity in basket.items():
