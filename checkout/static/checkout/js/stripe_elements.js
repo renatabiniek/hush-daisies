@@ -11,8 +11,8 @@
  */
 
  // Get Stripe public key and client secret
- var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
- var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+var clientSecret = $('#id_client_secret').text().slice(1, -1);
 // Create instance of stripe elements using public key
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
@@ -36,23 +36,23 @@ var style = {
   };
 
 var card = elements.create('card', {style: style});
-card.mount('#card-element',);
+card.mount('#card-element');
 
 // Handle real-time validation for errors on the card element
 card.addEventListener('change', function(event) {
-  var errorDiv = document.getElementById('card-errors');
-  if (event.error) {
-      var html = `
-      <span role="alert">
+    var errorDiv = document.getElementById('card-errors');
+    if (event.error) {
+        var html = `
+        <span role="alert">
           <i class="bi bi-x-square-fill" aria-hidden="true"></i>
-      </span>
-      <span>${event.error.message}</span>
-      `;
-      $(errorDiv).html(html);
-  } else {
-      errorDiv.textContent = '';
-  }
-})
+        </span>
+        <span>${event.error.message}</span>
+        `;
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+});
 
 // Handle form submission
 var form = document.getElementById('payment-form');
@@ -72,9 +72,9 @@ form.addEventListener('submit', function(event) {
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     // object to pass this to cache_checkout_data view
     var postData = {
-      'csrfmiddlewaretoken': csrfToken,
-      'client_secret': clientSecret,
-      'save_info': saveInfo,
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
     };
     // triggers cache_checkout_data view
     var url = '/checkout/cache_checkout_data/';
@@ -88,7 +88,6 @@ form.addEventListener('submit', function(event) {
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.email.value),
                     address:{
-                        house: $.trim(form.house_number_or_name.value),
                         line1: $.trim(form.street_address_1.value),
                         line2: $.trim(form.street_address_2.value),
                         city: $.trim(form.town_or_city.value),
@@ -101,7 +100,6 @@ form.addEventListener('submit', function(event) {
                 name: $.trim(form.full_name.value),
                 phone: $.trim(form.phone_number.value),
                 address: {
-                    house: $.trim(form.house_number_or_name.value),
                     line1: $.trim(form.street_address_1.value),
                     line2: $.trim(form.street_address_2.value),
                     city: $.trim(form.town_or_city.value),
