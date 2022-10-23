@@ -12,6 +12,7 @@ from products.models import Product
 from basket.contexts import basket_contents
 
 import stripe
+import json
 
 # Create your views here.
 
@@ -19,8 +20,27 @@ import stripe
 @require_POST
 def cache_checkout_data(request):
     """
-    Cache the form data and add to confrimed payment method
+    Make POST request with client secret from the payment
+    intent before calling confirmed payment method in stripe js.
+    Split to get the payment intent id. Set up Stripe with
+    the secret key to modify the payment intent.
+    Return status=200 for OK, status=400 for error.
     """
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(
+            request, 'Sorry, your payment cannot be processed right now. \
+                      Please try again later.'
+                      )
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
