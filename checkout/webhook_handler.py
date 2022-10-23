@@ -1,5 +1,11 @@
 from django.http import HttpResponse
 
+from .models import Order, OrderLineItem
+from products.models import Product
+
+import json
+import time
+
 """Handler for Stripe webhooks"""
 """Credit: Code Institute, Boutique Ado walkthrough"""
 
@@ -61,6 +67,8 @@ class StripeWebhookHandler:
                     street_address_2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
+                    original_basket=basket,
+                    stripe_pid=pid,
                     )
                 order_exists = True
                 break
@@ -86,6 +94,8 @@ class StripeWebhookHandler:
                     street_address_1=shipping_details.address.line1,
                     street_address_2=shipping_details.address.line2,
                     county=shipping_details.address.state,
+                    original_basket=basket,
+                    stripe_pid=pid,
                 )
                 # load basket from json version in the payment intent and iterate
                 for item_id, quantity in json.loads(basket).items():
