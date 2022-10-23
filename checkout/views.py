@@ -75,7 +75,7 @@ def checkout(request):
         if not basket:
             messages.error(request, (
                 "Your basket is empty at the moment. \
-                Try adding something to purchase and try again!") 
+                Try adding something to purchase and try again!")
                 )
             return redirect(reverse('products'))
         # store the basket contents
