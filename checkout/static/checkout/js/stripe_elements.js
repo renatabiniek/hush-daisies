@@ -20,7 +20,7 @@ var elements = stripe.elements();
 // Create card element, add style and mount it to the Payment details in checkout.html
 var style = {
   base: {
-      color: '#2B5357',
+      color: '#1C1C1C',
       fontFamily: '"Open Sans", sans-serif',
       fontSize: '16px',
       letterSpacing: '2px',
