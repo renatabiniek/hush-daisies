@@ -40,9 +40,9 @@ you can <span class="text-highlight"><a href="{{ signup_url }}">sign up here</a>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <!-- Back home button -->
-  <a class="btn-inverted btn btn-sm rounded-0 mb-2" href="{% url 'home' %}">Home</a>
+  <a class="btn btn-sm btn-inverted" href="{% url 'home' %}">Home</a>
   <!-- Forgot password button -->
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction btn btn-sm action-btn" type="submit">{% trans "Sign In" %}</button>
   <p>
     <a class="button secondaryAction text-info" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>

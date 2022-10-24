@@ -270,6 +270,10 @@ a:focus {
     border-color: #D1A9AF;
 }
 
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
 /*------------------------------------ Basket page*/
 
 .update-link {
@@ -324,4 +328,25 @@ a:focus {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/*------------------------------------ Allauth*/
+
+.allauth-form-inner-content p {
+    margin-top: 1rem;
+}
+
+.allauth-form-inner-content input {
+    border: 1px solid #2B5357;
+    box-shadow: 0px 0px 0px 0.5px rgba(43, 83, 89, 0.1),
+    0px 2px 5px 0px rgba(43, 83, 89, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+}
+
+.allauth-form-inner-content input:focus,
+.allauth-form-inner-content input:active {
+    box-shadow: 0 1px 3px 0 #2B5357;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
 }
