@@ -1,6 +1,7 @@
-.auth-title {
-    color: #2B5357;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    border-bottom: 0.01rem solid #D1A9AF;
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#profile-update-form input {
+    color: #1C1C1C;
 }
