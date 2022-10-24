@@ -18,6 +18,7 @@ h1, h2, .lead-home {
 .page-title,
 .summary-title {
     letter-spacing: 2px;
+    text-transform: capitalize;
 }
 
 .page-title {
