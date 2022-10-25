@@ -9,6 +9,8 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from basket.contexts import basket_contents
 
 import stripe
@@ -149,6 +151,8 @@ def checkout_success(request, order_number):
     """
     Show order completion confirmation page with order summary.
     If user logged in, assign order to user.
+    If save info box was checked, pull data from order to user profile.
+    Create instance of UserProfileForm using the form data.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
@@ -158,7 +162,21 @@ def checkout_success(request, order_number):
         # Attached the user profile to the order
         order.user_profile = profile
         order.save()
-
+        # Save user information
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_house_number_or_name': order.house_number_or_name,
+                'default_street_address_1': order.street_address_1,
+                'default_street_address_2': order.street_address_2,
+                'default_town_or_city': order.town_or_city,
+                'default_county': order.county,
+                'default_postcode': order.postcode,
+                'default_country': order.country,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
     messages.success(request, f'Your order { order_number } has been \
                    successfully processed. Order confirmation \
                    will be sent to { order.email }.')

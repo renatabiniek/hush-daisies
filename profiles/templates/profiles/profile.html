@@ -52,29 +52,28 @@
                             <tr>
                                 <td>
                                     <!-- Order number links to previous order -->
-                                    <a href="{% url 'past_orders' order.order_number %}" 
-                                    title="{{ order.order_number }}">
+                                    <a href="{% url 'past_order' order.order_number %}" 
+                                    title="{{ order.order_number }}" class="small text-info">
                                     {{ order.order_number|truncatechars:6}}
                                     </a>
                                 </td>
-                                <td>{{ order.order_date }}</td>
+                                <td class="small">{{ order.date|date:'d M Y' }}</td>
                                 <!-- Orders list -->
                                 <td>
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
                                         <li class="small">
-                                            {{ item.product_name }} x {{ item.quantity }}
+                                            {{ item.product.name|title }} x {{ item.quantity }}
                                         </li>
                                         {% endfor %}
                                     </ul>
                                 </td>
-                                <td>€{{ order.grand_total }}</td>
+                                <td class="small">€{{ order.grand_total }}</td>
                             </tr>
                             {% endfor %}
                             </tbody>
                         </table>
                     </div>
-                    {{ orders }}
                     {% else %}
                     <!-- If no order history -->
                     <div>
