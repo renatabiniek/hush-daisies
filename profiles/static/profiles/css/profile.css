@@ -1,7 +1,21 @@
-#profile-update-form input::placeholder {
+#profile-update-form input::placeholder,
+#id_default_country option:first-child {
     color: #aab7c4;
 }
 
-#profile-update-form input {
+#profile-update-form input,
+#id_default_country,
+#id_default_country option:not(:first-child) {
     color: #1C1C1C;
+    border: 1px solid #2B5357;
+    box-shadow: 0px 0px 0px 0.5px rgba(43, 83, 89, 0.1),
+    0px 2px 5px 0px rgba(43, 83, 89, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
 }
+
+#profile-update-form input:focus,
+#profile-update-form input:active,
+#id_default_country:focus,
+#id_default_country:active {
+    box-shadow: 0 1px 3px 0 #2B5357;
+}
+
