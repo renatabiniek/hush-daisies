@@ -8,16 +8,15 @@ class UserProfileForm(forms.ModelForm):
     """Form to capture default user info"""
     class Meta:
         """
-        Render all form fields except 'user' 
+        Render all form fields except 'user'
         as this shouldn remain the same
         """
         model = UserProfile
         exclude = ('user',)
 
-
     def __init__(self, *args, **kwargs):
         """
-        Override init method to add placeholders and class, 
+        Override init method to add placeholders and class,
         and set autofocus on first field.
         """
         super().__init__(*args, **kwargs)
@@ -41,4 +40,3 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'profile-form-input'
             self.fields[field].label = False
-

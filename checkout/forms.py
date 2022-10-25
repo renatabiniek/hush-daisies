@@ -23,7 +23,7 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Override init method to add placeholders and class, 
+        Override init method to add placeholders and class,
         and set autofocus on first field.
         """
         super().__init__(*args, **kwargs)
@@ -49,4 +49,3 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-
