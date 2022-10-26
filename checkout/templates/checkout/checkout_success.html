@@ -96,7 +96,7 @@
                             <p class="mb-0 ">{{ order.phone_number }}</p>
                         </div>
                     </div>
-                    {% if house_number_or_name %}
+                    {% if order.house_number_or_name %}
                     <div class="row mt-2">
                         <div class="col-12 col-md-4">
                             <p class="mb-0 checkout-heading">House No or Name</p>
@@ -114,7 +114,7 @@
                             <p class="mb-0 ">{{ order.street_address_1 }}</p>
                         </div>
                     </div>
-                    {% if street_address_2 %}
+                    {% if order.street_address_2 %}
                     <div class="row mt-2">
                         <div class="col-12 col-md-4">
                             <p class="mb-0 checkout-heading">Street Address 2</p>
@@ -132,7 +132,7 @@
                             <p class="mb-0 ">{{ order.town_or_city }}</p>
                         </div>
                     </div>
-                    {% if postcode %}
+                    {% if order.postcode %}
                     <div class="row mt-2">
                         <div class="col-12 col-md-4">
                             <p class="mb-0 checkout-heading">Postcode</p>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     {% endif %}
-                    {% if county %}
+                    {% if order.county %}
                     <div class="row mt-2">
                         <div class="col-12 col-md-4">
                             <p class="mb-0 checkout-heading">County</p>

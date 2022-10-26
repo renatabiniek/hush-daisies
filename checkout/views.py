@@ -127,7 +127,27 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            # generate pre-populated order form
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': str(profile.user),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'house_number_or_name': profile.default_house_number_or_name,
+                    'street_address_1': profile.default_street_address_1,
+                    'street_address_2': profile.default_street_address_2,
+                    'county': profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            # empty form if user not authenticated
+            order_form = OrderForm()
 
     # message alert if no public key was set
     if not stripe_public_key:
