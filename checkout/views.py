@@ -46,11 +46,13 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """Show checkout page for the user to enter the detials and complete the order.
-    Get basket from the session. If nothing in the basket, show error message and redirect back to product page.
-    Create instance of Order Form (empty for now).
-    If POST request: get basket, put form data into dictionary, create instance of the form.
-    If form is valid, save the order. """
+    """Show checkout page for the user to enter the detials
+    and complete the order. Get basket from the session.
+    If nothing in the basket, show error message and redirect back
+    to product page. Create instance of Order Form (empty for now).
+    If POST request: get basket, put form data into dictionary,
+    create instance of the form. If form is valid, save the order.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -90,8 +92,8 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(
-                        request, "One of the products in your basket couldn't be found \
-                        in our database. Please contact us for help."
+                        request, "One of the products in your basket couldn't \
+                        be found in our database. Please contact us for help."
                         )
                     order.delete()
                     return redirect(reverse('view_basket'))

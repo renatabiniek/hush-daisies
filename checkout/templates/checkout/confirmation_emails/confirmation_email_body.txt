@@ -1,0 +1,30 @@
+Hello {{ order.full_name }},
+
+thank you for your order. We'll start working on it and send you a quick text on {{ order.phone_number }} once it's dispatched.
+
+Here are the details of your order:
+
+{% for item in order.lineitems.all %}
+{{ item.product.name|title }} x {{ item.quantity }}
+{% endfor %}
+
+Order Number: {{ order.order_number }}
+Oder Date: {{ order.date|date:'d M Y' }}
+Order Total: €{{ order.order_total }}
+Delivery: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Delivery details:
+{{ order.full_name }}
+{{ order.street_address_1 }}
+{% if order.street_address_2 %}{{ order.street_address_2 }}{% endif %}
+{{ order.town_or_city }}
+{% if order.postcode %}{{ order.postcode }}{% endif %}
+{% if order.county %}{{ order.county }}{% endif %}
+{{ order.country.name }}
+
+
+If you have any questions about your order, send us an email at {{ contact_email }}.
+
+Thank you again for supporting our small floral business,
+Hush Daisies xxx
