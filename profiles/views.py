@@ -28,7 +28,7 @@ def profile(request):
     # populate form with user's current profile info
     form = UserProfileForm(instance=user_profile)
     # get user's orders
-    orders = user_profile.orders.all()
+    orders = user_profile.orders.all().order_by('-date')
 
     template = 'profiles/profile.html'
     context = {
