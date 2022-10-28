@@ -142,7 +142,8 @@ a:focus {
 }
 
 .contact-link,
-.current {
+.current, 
+.admin-link {
     text-decoration: underline;
 }
 

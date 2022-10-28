@@ -71,9 +71,9 @@
                         </div>
                     </form>
                     {% if request.user.is_superuser %}
-                    <h5 class="text-left section-title teal-text">Manage product:</h5>
-                    <p>EDIT</p>
-                    <p>DELETE</p>
+                    <h5 class="text-left section-title small mt-4">Manage product:</h5>
+                    <a class="small admin-link text-info pr-2" href="{% url 'edit_product' product.id %}">EDIT</a>
+                    <a class="small admin-link text-danger pl-2" href="{% url 'delete_product' product.id %}">DELETE</a>
                     {% endif %}
                 </div>
             </div>
