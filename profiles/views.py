@@ -24,9 +24,15 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile was updated.')
-
-    # populate form with user's current profile info
-    form = UserProfileForm(instance=user_profile)
+        else:
+            messages.error(
+                request,
+                'Profile not updated. Please check the form and try again.'
+                )
+    else:
+        # populate form with user's current profile info
+        form = UserProfileForm(instance=user_profile)
+  
     # get user's orders
     orders = user_profile.orders.all().order_by('-date')
 
