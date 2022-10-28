@@ -4,12 +4,11 @@ from django.db import models
 
 
 class Category(models.Model):
-
     
     class Meta:
         """Correct the spelling for the plural form"""
         verbose_name_plural = 'Categories'
-        
+       
     """Category model"""
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)

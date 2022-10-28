@@ -11,7 +11,11 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
-   
+        labels = {
+            'is_available': 'Is the product ready for sale?'
+        }
+
+
     def __init__(self, *args, **kwargs):
         """
         Override init to make changes to the fields.
@@ -22,6 +26,6 @@ class ProductForm(forms.ModelForm):
         categories = Category.objects.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
-        self.field['category'].choices = friendly_names
+        self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-teal'

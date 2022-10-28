@@ -39,6 +39,10 @@ h1, h2, .lead-home {
     color: #D1A9AF;
 }
 
+.border-teal {
+    border: 1px solid #2B5357;
+}
+
 /* remove link decoration and set colour to inherit */
 a,
 a:hover,

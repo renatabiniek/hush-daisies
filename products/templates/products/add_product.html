@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+| Add a product
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <!-- Add product form heading -->
+        <div class="row">
+            <div class="col col-md-6 mt-sm-3 mt-md-5 mb-5">
+                <h1 class="page-title pb-1">Product Management</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Product form, crispy form -->
+            <div class="col col-md-6">
+                <h4 class="section-title teal-text mb-4">Add new product</h2>
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-3" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                <div class="text-right mb-5">
+                    <a class="btn btn-sm btn-inverted" href="{% url 'products' %}">Back to Products</a>
+                    <button class="btn btn-sm action-btn" type="submit">Add Product</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

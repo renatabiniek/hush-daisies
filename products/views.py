@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -77,6 +78,7 @@ def show_all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
 def show_product_detail(request, product_id):
     """Show details of individual products."""
 
@@ -87,3 +89,15 @@ def show_product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    """View for superuser to add products in the frontend"""
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
