@@ -92,8 +92,25 @@ def show_product_detail(request, product_id):
 
 
 def add_product(request):
-    """View for superuser to add products in the frontend"""
-    form = ProductForm()
+    """
+    View for superuser to add products in the frontend.
+    If POST: new instance of the product form.
+    """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product was added to the store!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(
+                request, 
+                'Product not added. Please check the form \
+                for errors and try submitting again.'
+                )
+    else:
+        form = ProductForm()
+        
     template = 'products/add_product.html'
     context = {
         'form': form,
