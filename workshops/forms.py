@@ -1,5 +1,6 @@
 """Workshop forms"""
 from django import forms
+from products.widgets import CustomClearableFileInput
 from .models import Workshop, Level
 
 
@@ -11,6 +12,16 @@ class WorkshopForm(forms.ModelForm):
     class Meta:
         model = Workshop
         fields = '__all__'
+        widgets = {
+            'date': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={'type': 'date'}
+                ),
+            'start_time': forms.TimeInput(
+                format=('%H:%M'),
+                attrs={'type': 'time'}
+                ),
+            }
 
     def __init__(self, *args, **kwargs):
         """
