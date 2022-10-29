@@ -31,7 +31,7 @@ class Workshop(models.Model):
 
     name = models.CharField(max_length=50, unique=True)
     level = models.ForeignKey(
-        Level, on_delete=models.CASCADE, 
+        Level, on_delete=models.CASCADE,
         related_name='workshops'
         )
     date = models.DateField()

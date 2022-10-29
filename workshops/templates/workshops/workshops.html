@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+| Workshops
+{% endblock %}
+
+{% block content %}
+<!--  All workshops section -->
+<section class="mt-sm-3 mt-md-5 mb-3">
+    <div class="container-fluid">
+        <!-- Page title with horizontal divider of 50% width -->
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="section-title">Workshops</h1>
+                <hr class="divider w-50">
+            </div>
+        </div>
+        <!-- Workshop container -->
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <!-- Workshop categories  -->
+                <div class="row mb-5"></div>
+
+                <!-- Beginning of workshop row loop  -->
+                <div class="row">{{ workshops }}</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+    <a id="top-link" class="d-flex h-100" role="button"
+        aria-label="Click the button to go back to the top of the page."><i
+            class="bi bi-arrow-up-square top-icon px-2"></i></a>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Back to top button -->
+<script type="text/javascript">
+    $('#top-link').click(function (e) {
+        window.scrollTo(0, 0);
+    })
+</script>
+
+{% endblock %}
