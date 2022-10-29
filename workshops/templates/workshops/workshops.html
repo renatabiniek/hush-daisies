@@ -26,7 +26,8 @@
                 <!-- Workshop intro  -->
                 <div class="row mb-5">
                     <div class="col text-center">
-                        <p class="mb-1">Hi <span class="text-highlight">{% if user.is_authenticated %}{{ user.username }}</span>{% else %}there{% endif %}!<br>Do you want to learn more about drying and arranging flowers?</p>
+                        <p class="mb-1">Hi <span class="text-highlight">{% if user.is_authenticated %}{{ user.username }}</span>{% else %}there{% endif %}!<br>
+                            Do you want to learn more about drying, preserving and arranging flowers?</p>
                         <p class="mb-1">How about making your own unique Christmas wreath that will last many years?</p>
                         <p class="mb-1">Join us at one of our workshops to master a new skill or simply hang out with
                             like-minded people.</p>
@@ -88,7 +89,7 @@
                                         <a href="#" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
                                         {% if request.user.is_superuser %}
                                         <h5 class="text-left section-title small mt-3">Manage workshop:</h5>
-                                        <a class="small admin-link text-info pr-2" href="">EDIT</a>
+                                        <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
                                         <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
                                             data-target="">DELETE</a>
                                         {% endif %}

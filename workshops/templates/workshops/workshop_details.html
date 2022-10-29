@@ -39,7 +39,7 @@
                     <p>{{ workshop.description }}</p>
                     {% if request.user.is_superuser %}
                     <h5 class="text-left section-title small mt-4">Manage workshop:</h5>
-                    <a class="small admin-link text-info pr-2" href="#">EDIT</a>
+                    <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
                     <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
                         data-target="">DELETE</a>
                     {% endif %}

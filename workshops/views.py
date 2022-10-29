@@ -91,3 +91,42 @@ def add_workshop(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_workshop(request, workshop_id):
+    """
+    View for superuser to edit workshop details in the frontend.
+    If POST: new instance of the workshop form matched with workshop id
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the store owner can do that!')
+        return redirect(reverse('show_workshops'))
+
+    workshop = get_object_or_404(Workshop, pk=workshop_id)
+    if request.method == 'POST':
+        form = WorkshopForm(request.POST, request.FILES, instance=workshop)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, f'Workshop "{ workshop }" was updated!'
+                )
+            return redirect(reverse('workshop_details', args=[workshop.id]))
+        else:
+            messages.error(
+                request,
+                'Workshop not updated. Please check the form \
+                for errors and try submitting again.'
+                )
+    else:
+        form = WorkshopForm(instance=workshop)
+        messages.info(request, f'You are editing "{ workshop }"')
+
+    template = 'workshops/edit_workshop.html'
+    context = {
+        'form': form,
+        'workshop': workshop,
+        'on_profile_page': True,
+    }
+
+    return render(request, template, context)
