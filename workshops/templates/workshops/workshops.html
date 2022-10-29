@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
+{% endblock %}
+
 {% block extra_title %}
 | Workshops
 {% endblock %}
@@ -19,15 +23,67 @@
         <!-- Workshop container -->
         <div class="row">
             <div class="product-container col-10 offset-1">
+                <!-- Workshop intro  -->
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <p class="mb-1">Hi <span class="text-highlight">{% if user.is_authenticated %}{{ user.username }}</span>{% else %}there{% endif %}!<br>Do you want to learn more about drying and arranging flowers?</p>
+                        <p class="mb-1">How about making your own unique Christmas wreath that will last many years?</p>
+                        <p class="mb-1">Join us at one of our workshops to master a new skill or simply hang out with
+                            like-minded people.</p>
+                        <p class="mb-1">Browse the list of all workshops and <span><a href="#"
+                            aria-label="Contact us via a contact form."><span class="contact-link text-highlight"> get in touch with us</span></a> if you want us to save
+                            a spot for you.</p>
+                        <p class="mb-1 mt-4">We'd love to meet you!</p>
+                    </div>
+                </div>
                 <!-- Workshop categories  -->
                 <div class="row mb-5"></div>
-
                 <!-- Beginning of workshop row loop  -->
-                <div class="row">{{ workshops }}</div>
+                <div class="row">
+                    <!-- For each workshop generate a column with a Bootstrap card -->
+                    {% for workshop in workshops %}
+                    <div class="col-sm-6 col-md-6 col-lg-3 mb-5 offset-lg-2">
+                        <div class="card h-100 border-0">
+                            <!-- If there's a workshop image, display the image; otherwise display a placeholder -->
+                            {% if workshop.image %}
+                            <a href="#"><img class="card-img-top img-fluid" src="{{ workshop.image.url }}"
+                                    alt="{{ workshop.name }}"></a>
+                            {% else %}
+                            <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ workshop.name }}"></a>
+                            {% endif %}
+                            <!-- Card body with name & category -->
+                            <div class="card-body pt-3 px-1">
+                                <h5 class="card-title product-title mb-2">{{ workshop.name }}</h5>
+                            </div>
+                            <!-- Card footer with price & admin product management links -->
+                            <div class="card-footer border-0 pt-0 bg-white text-left">
+                                <div class="row">
+                                    <div class="col px-0">
+                                        <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
+                                        <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts at {{ workshop.start_time }}</p>
+                                        <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
+                                        <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
+                                        <a href="#" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
+                                        {% if request.user.is_superuser %}
+                                        <h5 class="text-left section-title small mt-3">Manage workshop:</h5>
+                                        <a class="small admin-link text-info pr-2" href="">EDIT</a>
+                                        <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
+                                            data-target="">DELETE</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
 
+                            </div>
+                            <!-- End of card footer -->
+                        </div>
+                        <!-- End of workshop card -->
+                    </div>
+                    {% endfor %}
+                    <!-- End of foor loop-->
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 <!-- Back to top button -->
