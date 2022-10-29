@@ -24,7 +24,8 @@
                 <div class="mt-sm-3 mb-5 mt-md-5">
                     <h2 class="mb-3 product-title">{{ product.name }}</h2>
                     {% if product.category %}
-                    <p class="category-link mb-3"><a href="{% url 'products' %}?category={{ product.category.name }}"><i class="bi bi-flower1" aria-hidden="true"></i>
+                    <p class="category-link mb-3"><a href="{% url 'products' %}?category={{ product.category.name }}"><i
+                                class="bi bi-flower1" aria-hidden="true"></i>
                             {{ product.category.friendly_name }}</p></a>
                     {% endif %}
                     <p class="price-tag">€ {{ product.price }}</p>
@@ -40,9 +41,9 @@
                                     <div class="input-group">
                                         <!-- Button before the quantity box to decrease the qty -->
                                         <div class="input-group-prepend">
-                                            <button
-                                                class="decrement-qty btn btn-qty rounded-0" data-item_id="{{ product.id }}"
-                                                id="decrement-qty_{{ product.id }}" aria-hidden="Decrease quantity">
+                                            <button class="decrement-qty btn btn-qty rounded-0"
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}"
+                                                aria-hidden="Decrease quantity">
                                                 <i class="bi bi-dash" aria-hidden="true"></i>
                                             </button>
                                         </div>
@@ -51,10 +52,10 @@
                                             id="id_qty_{{ product.id }}">
                                         <!-- Button after the quantity box to increase the qty -->
                                         <div class="input-group-append">
-                                            <button
-                                                class="increment-qty btn btn-qty rounded-0" data-item_id="{{ product.id }}"
-                                                id="increment-qty_{{ product.id }}" aria-hidden="Increase quantity"><i
-                                                    class="bi bi-plus" aria-hidden="true"></i>
+                                            <button class="increment-qty btn btn-qty rounded-0"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}"
+                                                aria-hidden="Increase quantity"><i class="bi bi-plus"
+                                                    aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -62,7 +63,8 @@
                             </div>
                             <div class="col-12 mb-3">
                                 <!-- Keep shopping button -->
-                                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep shopping</a>
+                                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep
+                                    shopping</a>
                                 <!-- Add to shopping basket button -->
                                 <input type="submit" class="action-btn btn-sm btn rounded-3 py-2" value="Add to basket">
                             </div>
@@ -73,11 +75,37 @@
                     {% if request.user.is_superuser %}
                     <h5 class="text-left section-title small mt-4">Manage product:</h5>
                     <a class="small admin-link text-info pr-2" href="{% url 'edit_product' product.id %}">EDIT</a>
-                    <a class="small admin-link text-danger pl-2" href="{% url 'delete_product' product.id %}">DELETE</a>
+                    <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
+                        data-target="#deleteModal{{ product.id }}">DELETE</a>
                     {% endif %}
                 </div>
             </div>
-
+            <!-- Delete modal -->
+            <div class="modal fade" id="deleteModal{{ product.id }}" tabindex="-1"
+                aria-labelledby="deleteModalLabel{{ product.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel{{ product.id }}">Delete product</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close message">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete <span class="text-uppercase">{{ product.name }}</span>?</p>
+                            <p><strong>This action cannot be undone.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <form action="{% url 'delete_product' product.id %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" value="{{ product.id }}" name="tool_id"
+                                    class="btn btn-primary">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <!-- Back to all products link -->

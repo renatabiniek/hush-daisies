@@ -144,7 +144,7 @@ a:focus {
 .contact-link,
 .current, 
 .admin-link {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 /*------------------------------------ Footer*/
