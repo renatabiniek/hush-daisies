@@ -1,12 +1,10 @@
 """View for workshops"""
-from django.shortcuts import render
-
-# Create your views here.
-
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Level, Workshop
+from .forms import WorkshopForm
 
 # Create your views here.
 
@@ -57,3 +55,39 @@ def workshop_details(request, workshop_id):
     }
 
     return render(request, 'workshops/workshop_details.html', context)
+
+
+@login_required
+def add_workshop(request):
+    """
+    View for superuser to add workshop in the frontend.
+    If POST: new instance of the workshop form.
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the store owner can do that!')
+        return redirect(reverse('show_workshops'))
+
+    if request.method == 'POST':
+        form = WorkshopForm(request.POST, request.FILES)
+        if form.is_valid():
+            workshop = form.save()
+            messages.success(
+                request, f'New workshop "{ workshop }" was added!'
+                )
+            return redirect(reverse('workshop_details', args=[workshop.id]))
+        else:
+            messages.error(
+                request,
+                'Workshop not added. Please check the form \
+                for errors and try submitting again.'
+                )
+    else:
+        form = WorkshopForm()
+
+    template = 'workshops/add_workshop.html'
+    context = {
+        'form': form,
+        'on_profile_page': True,
+    }
+
+    return render(request, template, context)
