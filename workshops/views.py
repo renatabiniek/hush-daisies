@@ -120,7 +120,7 @@ def edit_workshop(request, workshop_id):
                 )
     else:
         form = WorkshopForm(instance=workshop)
-        messages.info(request, f'You are editing "{ workshop }"')
+        messages.info(request, f'You are editing "{workshop}"')
 
     template = 'workshops/edit_workshop.html'
     context = {
@@ -130,3 +130,16 @@ def edit_workshop(request, workshop_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_workshop(request, workshop_id):
+    """View for admin to delete a workshop"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the store owner can do that!')
+        return redirect(reverse('show_workshops'))
+
+    workshop = get_object_or_404(Workshop, pk=workshop_id)
+    workshop.delete()
+    messages.success(request, f'Workshop "{workshop}" deleted!')
+    return redirect(reverse('show_workshops'))
