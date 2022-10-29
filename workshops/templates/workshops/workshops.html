@@ -41,6 +41,7 @@
                 <!-- Beginning of workshop row loop  -->
                 <div class="row">
                     <!-- For each workshop generate a column with a Bootstrap card -->
+                    {% if workshops %}
                     {% for workshop in workshops %}
                     <div class="col-sm-6 col-md-6 col-lg-3 mb-5 offset-lg-2">
                         <div class="card h-100 border-0">
@@ -81,6 +82,13 @@
                     </div>
                     {% endfor %}
                     <!-- End of foor loop-->
+                    {% else %}
+                    <div class="col mb-5 text-center">
+                        <p class="mb-1"><em>Sorry, there are no workshops planned at the moment...</em></p>
+                        <p class="mt-0"><em>Check again later or have a look around in our shop!</em></p>
+                        <a href="{% url 'products' %}" class="action-btn btn-sm btn rounded-3 py-2 mb-5" role="button" aria-label="Go to shop page">Browse products</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
