@@ -91,9 +91,11 @@
                                         <h5 class="text-left section-title small mt-3">Manage workshop:</h5>
                                         <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
                                         <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
-                                            data-target="">DELETE</a>
+                                        data-target="#deleteModal{{ workshop.id }}">DELETE</a>
                                         {% endif %}
                                     </div>
+                                    <!-- Delete modal -->
+                                    {% include 'workshops/includes/delete_workshop_modal.html' %}
                                 </div>
                             </div>
                             <!-- End of card footer -->
