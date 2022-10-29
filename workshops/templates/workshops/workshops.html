@@ -47,15 +47,15 @@
                         <div class="card h-100 border-0">
                             <!-- If there's a workshop image, display the image; otherwise display a placeholder -->
                             {% if workshop.image %}
-                            <a href="#"><img class="card-img-top img-fluid" src="{{ workshop.image.url }}"
+                            <a href="{% url 'workshop_details' workshop.id %}"><img class="card-img-top img-fluid" src="{{ workshop.image.url }}"
                                     alt="{{ workshop.name }}"></a>
                             {% else %}
-                            <a href="#"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                            <a href="{% url 'workshop_details' workshop.id %}"><img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
                                     alt="{{ workshop.name }}"></a>
                             {% endif %}
                             <!-- Card body with name & category -->
                             <div class="card-body pt-3 px-1">
-                                <h5 class="card-title product-title mb-2">{{ workshop.name }}</h5>
+                                <h5 class="card-title product-title mb-2"><a href="{% url 'workshop_details' workshop.id %}">{{ workshop.name }}</a></h5>
                             </div>
                             <!-- Card footer with price & admin product management links -->
                             <div class="card-footer border-0 pt-0 bg-white text-left">
@@ -74,7 +74,6 @@
                                         {% endif %}
                                     </div>
                                 </div>
-
                             </div>
                             <!-- End of card footer -->
                         </div>

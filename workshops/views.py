@@ -19,3 +19,15 @@ def show_workshops(request):
     }
 
     return render(request, 'workshops/workshops.html', context)
+
+
+def workshop_details(request, workshop_id):
+    """Show details of individual workshops"""
+
+    workshop = get_object_or_404(Workshop, pk=workshop_id)
+
+    context = {
+        'workshop': workshop,
+    }
+
+    return render(request, 'workshops/workshop_details.html', context)

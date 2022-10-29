@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'workshops/css/workshops.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+| {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<!--  Workshop details section -->
+<section>
+    <div class="container-fluid px-5 mt-sm-5 mt-md-5 mb-5">
+        <!-- Image and workshop details columns -->
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 my-5 text-center">
+                <!-- If there's a workshop image, display the image; otherwise display a placeholder -->
+                {% if workshop.image %}
+                <img class="img-fluid" src="{{ workshop.image.url }}" alt="{{ workshop.name }}">
+                {% else %}
+                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workshop.name }}">
+                {% endif %}
+            </div>
+            <!-- Workshop description -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="mt-sm-3 mb-5 mt-md-5">
+                    <h2 class="mb-3 product-title">{{ workshop.name }}</h2>
+                    <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
+                    <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts at {{ workshop.start_time }}</p>
+                    <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
+                    <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
+                    <div class="text-right">
+                        <a href="#"><i class="bi bi-bookmark-heart float-left icn-workshop p-1"><span class="small font-weight-bold"> Add to favourites</span></i></a>
+                        <a href="#" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
+                    </div>
+                    <hr class="divider w-100">
+                    <p>{{ workshop.description }}</p>
+                    {% if request.user.is_superuser %}
+                    <h5 class="text-left section-title small mt-4">Manage workshop:</h5>
+                    <a class="small admin-link text-info pr-2" href="#">EDIT</a>
+                    <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
+                        data-target="">DELETE</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Back to all workshops link -->
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-3 mb-5">
+                <a class="back-link" href="{% url 'show_workshops' %}"><i class="bi bi-chevron-left" aria-hidden="true"></i> Back to all
+                    workshops</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to top button -->
+<div class="back-to-top">
+    <a id="top-link" class="d-flex h-100" role="button"
+        aria-label="Click the button to go back to the top of the page."><i
+            class="bi bi-arrow-up-square top-icon px-2"></i></a>
+</div>
+
+{% endblock %}
+
