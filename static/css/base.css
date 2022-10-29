@@ -269,6 +269,7 @@ a:focus {
     color: white;
     font-size: 18px;
     font-weight: lighter;
+    padding: .7rem;
 }
 
 .search-form {
