@@ -39,6 +39,24 @@
                 <!-- Workshop categories  -->
                 <div class="row mb-5"></div>
                 <!-- Beginning of workshop row loop  -->
+                <!-- Sorting -->
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-5 offset-lg-2">
+                        <select id="workshop-sorting-selector" class="custom-select custom-select-sm" aria-label="Sorting options">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <option value="level_asc" {% if current_sorting == 'level_asc' %}selected{% endif %}>Level (A-Z)</option>
+                            <option value="level_desc" {% if current_sorting == 'level_desc' %}selected{% endif %}>Level (Z-A)</option>
+                            <option value="location_asc" {% if current_sorting == 'location_asc' %}selected{% endif %}>Location (A-Z)</option>
+                            <option value="location_desc" {% if current_sorting == 'location_desc' %}selected{% endif %}>Location (Z-A)</option>
+                        </select>
+                    </div>
+                    <!-- Search result count -->
+                    <div class="col-12 col-md-4 text-right">
+                        <p>{{ workshops|length }} workshops</p>
+                    </div>
+                </div>
                 <div class="row">
                     <!-- For each workshop generate a column with a Bootstrap card -->
                     {% if workshops %}
@@ -109,6 +127,32 @@
     $('#top-link').click(function (e) {
         window.scrollTo(0, 0);
     })
+</script>
+
+<!-- Sorting within select dropdown box -->
+<!-- Credit: Code Institute, Boutique Ado walkthrough -->
+<script type="text/javascript">
+    $('#workshop-sorting-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+
 </script>
 
 {% endblock %}
