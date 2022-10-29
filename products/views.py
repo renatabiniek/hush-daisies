@@ -16,7 +16,7 @@ def show_all_products(request):
     Show all products to the superuser,
     and only available ones to other users.
     """
-    
+
     if request.user.is_superuser:
         products = Product.objects.all()
     else:
@@ -101,7 +101,7 @@ def add_product(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only the store owner can do that!')
         return redirect(reverse('products'))
-      
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
