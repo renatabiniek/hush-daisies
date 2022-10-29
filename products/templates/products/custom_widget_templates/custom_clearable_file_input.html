@@ -1,6 +1,6 @@
 {% if widget.is_initial %}
     <p class="small mb-1">{{ widget.initial_text }}:</p>
-    <a href="{{ widget.value.url }}" class="thumbnail">
+    <a href="{{ widget.value.url }}">
         <img width="96" height="96" src="{{ widget.value.url }}" alt="photo of {{ widget.value }}">
     </a>
     {% if not widget.required %}
@@ -12,8 +12,10 @@
     {{ widget.input_text }}
 {% endif %}
 <!-- File input -->
-<span class="btn action-btn btn-file">
-    <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"
+<span class="btn action-btn btn-file rounded-0 my-2">
+    Select image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"
     {% include "django/forms/widgets/attrs.html" %}>
 </span>
+<!-- Name of chosen file will display here -->
+<p class="text-danger small mt-2" id="filename"></p>
 
