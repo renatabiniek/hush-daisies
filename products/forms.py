@@ -1,5 +1,6 @@
 """Product forms"""
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
@@ -15,6 +16,11 @@ class ProductForm(forms.ModelForm):
             'is_available': 'Is the product ready for sale?'
         }
 
+    # Replace image field on the form with widget field
+    image = forms.ImageField(
+        label="Image", required=False,
+        widget=CustomClearableFileInput
+        )
 
     def __init__(self, *args, **kwargs):
         """
