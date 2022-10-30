@@ -1,16 +1,16 @@
 <!-- Delete workshop modal -->
-<div class="modal fade" id="deleteModal{{ workshop.id }}" tabindex="-1"
-    aria-labelledby="deleteModalLabel{{ workshop.id }}" aria-hidden="true">
+<div class="modal fade" id="deleteWorkshopModal{{ workshop.id }}" tabindex="-1"
+    aria-labelledby="deleteWorkshopModalLabel{{ workshop.id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel{{ workshop.id }}">Delete product</h5>
+                <h5 class="modal-title" id="deleteWorkshopModalLabel{{ workshop.id }}">Delete workshop</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close message">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete <span class="text-uppercase">{{ workshop.name }}</span>?
+                <p>Are you sure you want to delete <span class="text-uppercase">{{ workshop.name }}</span> workshop?
                 </p>
                 <p><strong>This action cannot be undone.</strong></p>
             </div>
