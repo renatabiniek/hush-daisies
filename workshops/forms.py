@@ -24,6 +24,12 @@ class WorkshopForm(forms.ModelForm):
                 attrs={'type': 'time'}
                 ),
             }
+   
+    # Replace image field on the form with widget field
+    image = forms.ImageField(
+        label="Image", required=False,
+        widget=CustomClearableFileInput
+        )
 
     def __init__(self, *args, **kwargs):
         """
