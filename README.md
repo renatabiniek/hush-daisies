@@ -100,6 +100,9 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
    * As a site user I can intuitively navigate through the site so that I can view desired content.  
    * As a site user I can see notifications about any changes I have made so that I have a clear understanding of the status of the action.
    * As a site user I can access the website on both mobile and desktop so that I can view the content anywhere.  
+   * As a site user I can see in the site menu which page I'm currently on so that I know which part of the website I'm in.  
+   * As a site user I can see in the browser which page I'm currently on so that I know which page has been opened.  
+   * As a site user I can see a custom, theme-consistent 'Page not found' page when I try to access a page in error so that I how to return to the site.
 
   **EPIC | Account**  
 
@@ -142,6 +145,12 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
    * As a shopper I can place an order as a guest so that I can still use the site without having to create an account.  
    * As a shopper I can easily enter my payment details so that I can checkout without problems.  
    * As a shopper I can receive an email confirmation of my order so that I can keep it for my records.  
+   * As a shopper I can always see the total amount in my basket while browsing the site so that I can keep track of my spend.  
+   * As a shopper I can see a preview of my basket every time I make a change so that I can always see the up-to-date basket contents.  
+   * As a shopper I can proceed with my payment so that I can complete my purchase.  
+   * As a shopper I can receive a confirmation of my order so that I can I know the order went through correctly.  
+   * As the site owner I can ensure that an order is a created once payment is made even if the checkout process is interrupted so that there is no discrepancy in database.  
+   * As a registered user I can view my past orders on my profile page so that I can keep track of my past purchases.
 
   **EPIC | Workshops**  
 
