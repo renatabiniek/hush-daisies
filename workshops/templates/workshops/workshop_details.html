@@ -73,7 +73,7 @@
                         {{ testimonial.testimonial_body | linebreaks }}
                         <!-- Testimonial managements -->
                         {% if request.user.is_authenticated %}
-                        {% if request.user == testimonial.reviewer %}
+                        {% if request.user == testimonial.reviewer or request.user.is_superuser %}
                         <div class="mb-3">
                         <a class="small admin-link text-info pr-2" href="{% url 'edit_testimonial' testimonial.id %}">EDIT</a>
                         <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
