@@ -77,10 +77,12 @@
                         <div class="mb-3">
                         <a class="small admin-link text-info pr-2" href="{% url 'edit_testimonial' testimonial.id %}">EDIT</a>
                         <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
-                            data-target="#deleteModal{{ testimonial.id }}">DELETE</a>
+                            data-target="#deleteTestimonialModal{{ testimonial.id }}">DELETE</a>
                         </div>
                         {% endif %}
                         {% endif %}
+                        <!-- Delete modal -->
+                        {% include 'workshops/includes/delete_testimonial_modal.html' %}
                         {% endfor %}
                         {% endif %}
                     </div>

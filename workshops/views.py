@@ -127,6 +127,22 @@ def edit_testimonial(request, testimonial_id):
 
 
 @login_required
+def delete_testimonial(request, testimonial_id):
+    """View for testimonial author or superuser to delete their comment"""
+    testimonial = get_object_or_404(WorkshopTestimonial, pk=testimonial_id)
+    workshop = testimonial.workshop
+
+    if not request.user == testimonial.reviewer:
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only the author can do that!')
+            return redirect(reverse('show_workshops'))
+
+    testimonial.delete()
+    messages.success(request, f'Your comment was deleted!')
+    return redirect(reverse('workshop_details', args=[workshop.id]))
+
+
+@login_required
 def add_workshop(request):
     """
     View for superuser to add workshop in the frontend.

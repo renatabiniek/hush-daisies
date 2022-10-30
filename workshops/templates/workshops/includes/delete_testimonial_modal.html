@@ -1,24 +1,25 @@
-<!-- Delete workshop modal -->
-<div class="modal fade" id="deleteModal{{ workshop.id }}" tabindex="-1"
-    aria-labelledby="deleteModalLabel{{ workshop.id }}" aria-hidden="true">
+<!-- Delete testimonial modal -->
+<div class="modal fade" id="deleteTestimonialModal{{ testimonial.id }}" tabindex="-1"
+    aria-labelledby="deleteTestimonialModal{{ testimonial.id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel{{ workshop.id }}">Delete product</h5>
+                <h5 class="modal-title" id="deleteTestimonialModal{{ testimonial.id }}">Delete comment</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close message">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete <span class="text-uppercase">{{ workshop.name }}</span>?
+                <p>Are you sure you want to delete your comment on 
+                    <span class="text-uppercase">{{ workshop.name }} workshop</span>?
                 </p>
                 <p><strong>This action cannot be undone.</strong></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <form action="{% url 'delete_workshop' workshop.id %}" method="POST">
+                <form action="{% url 'delete_testimonial' testimonial.id %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit" value="{{ workshop.id }}" name="workshop_id"
+                    <button type="submit" value="{{ testimonial.id }}" name="testimonial_id"
                         class="btn btn-primary">Delete</button>
                 </form>
             </div>
