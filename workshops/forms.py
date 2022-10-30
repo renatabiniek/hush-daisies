@@ -1,5 +1,7 @@
 """Workshop forms"""
+import datetime
 from django import forms
+from django.core.exceptions import ValidationError
 from products.widgets import CustomClearableFileInput
 from .models import Workshop, Level
 
@@ -36,3 +38,12 @@ class WorkshopForm(forms.ModelForm):
         self.fields['level'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-teal'
+          
+    def clean_date(self):
+        """Ensure that date is not in the past"""
+        today = datetime.date.today()
+        date = self.cleaned_data['date']
+
+        if date < today:
+            raise forms.ValidationError("The date cannot be in the past.")
+        return date
