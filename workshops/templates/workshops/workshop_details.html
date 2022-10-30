@@ -77,12 +77,6 @@
                 </div>
                 <div class="col-md-4 card card-detail mt-4 mb-4">
                     <div class="card-body">
-                        <!-- Message appears once a comment is submitted -->
-                        {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            <p>Thank you! Your comment is awaiting approval</p>
-                        </div>
-                        {% else %}
                         <!-- Comment box only appears if user is logged in -->
                         {% if user.is_authenticated %}
                         <h5 class="section-title teal-text">Say something...</h5>
@@ -91,16 +85,17 @@
                             <!-- Token to protect the form from attackers -->
                             {% csrf_token %}
                             <!-- Rendering the form using the crispy filter for formatting -->
-                            {{ comment_form | crispy }}
+                            {{ form | crispy }}
                             <button type="submit" value="Submit" class="btn action-btn btn-sm">Add</button>
                         </form>
-                        {% endif %}
+                        {% else %}
+                        <p><em>Do you want to write a testimonial or add a comment?</em></p>
+                        <a href="" class="btn btn-sml action-btn">Sign in</a>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <!-- Back to all workshops link -->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-3 mb-5">

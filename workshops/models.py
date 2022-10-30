@@ -13,11 +13,11 @@ class Level(models.Model):
 
     level_name = models.CharField(max_length=20)
     friendly_name = models.CharField(max_length=20)
-   
+
     def __str__(self):
         """Return the level name"""
         return self.level_name
-   
+
     def get_friendly_name(self):
         """Return the level friendly name"""
         return self.friendly_name

@@ -3,7 +3,7 @@ import datetime
 from django import forms
 from django.core.exceptions import ValidationError
 from products.widgets import CustomClearableFileInput
-from .models import Workshop, Level
+from .models import Workshop, Level, WorkshopTestimonial
 
 
 class WorkshopForm(forms.ModelForm):
@@ -23,8 +23,8 @@ class WorkshopForm(forms.ModelForm):
                 format=('%H:%M'),
                 attrs={'type': 'time'}
                 ),
-            }
-   
+        }
+
     # Replace image field on the form with widget field
     image = forms.ImageField(
         label="Image", required=False,
@@ -44,7 +44,7 @@ class WorkshopForm(forms.ModelForm):
         self.fields['level'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-teal'
-          
+
     def clean_date(self):
         """Ensure that date is not in the past"""
         today = datetime.date.today()
@@ -53,3 +53,12 @@ class WorkshopForm(forms.ModelForm):
         if date < today:
             raise forms.ValidationError("The date cannot be in the past.")
         return date
+
+
+class TestimonialsForm(forms.ModelForm):
+    """Form to add new testimonial for a workshop"""
+    class Meta:
+        """Metadata for testimonials form"""
+        model = WorkshopTestimonial
+        fields = ('testimonial_body',)
+        labels = {'testimonial_body': 'Your comment', }

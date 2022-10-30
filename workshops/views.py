@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Level, Workshop
-from .forms import WorkshopForm
+from .forms import WorkshopForm, TestimonialsForm
 
 # Create your views here.
 
@@ -46,15 +46,39 @@ def show_workshops(request):
 
 
 def workshop_details(request, workshop_id):
-    """Show details of individual workshops"""
+    """
+    Show details of individual workshops.
+    If POST, handle form submission, otherwise display add testimnial form
+    """
 
     workshop = get_object_or_404(Workshop, pk=workshop_id)
     workshop_testimonials = workshop.workshop_testimonials.filter(
         is_approved=True).order_by('-date_added')
+    
+    if request.method == 'POST':
+        form = TestimonialsForm(request.POST)
+        if form.is_valid():
+            testimonial = form.save(commit=False)
+            testimonial.reviewer = request.user
+            testimonial.workshop = workshop
+            testimonial.save()
+            messages.success(
+                request, 
+                'Your comment has been submitted for review'
+                )
+            return redirect(reverse('workshop_details', args=[workshop.id]))
+        else:
+            messages.error(
+                request, 
+                'Comment not submitted, please check the form and try again.'
+                )
+    else:
+        form = TestimonialsForm()
 
     context = {
         'workshop': workshop,
         'workshop_testimonials': workshop_testimonials,
+        'form': form,
     }
 
     return render(request, 'workshops/workshop_details.html', context)
