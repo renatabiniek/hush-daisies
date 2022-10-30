@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-from .models import Level, Workshop
+from .models import Level, Workshop, WorkshopTestimonial
 from .forms import WorkshopForm, TestimonialsForm
 
 # Create your views here.
@@ -48,7 +48,7 @@ def show_workshops(request):
 def workshop_details(request, workshop_id):
     """
     Show details of individual workshops.
-    If POST, handle form submission, otherwise display add testimnial form
+    If POST, handle form submission, otherwise display add testimonial form
     """
 
     workshop = get_object_or_404(Workshop, pk=workshop_id)
@@ -69,7 +69,7 @@ def workshop_details(request, workshop_id):
             return redirect(reverse('workshop_details', args=[workshop.id]))
         else:
             messages.error(
-                request, 
+                request,
                 'Comment not submitted, please check the form and try again.'
                 )
     else:
@@ -82,6 +82,48 @@ def workshop_details(request, workshop_id):
     }
 
     return render(request, 'workshops/workshop_details.html', context)
+
+
+@login_required
+def edit_testimonial(request, testimonial_id):
+    """
+    View for logged in testimonial author (or superuser) to edit their comment.
+    If POST: new instance of the testimonial form matched with testimonial id.
+    Edited testimonial is marked as not approved after submission.
+    """
+    testimonial = get_object_or_404(WorkshopTestimonial, pk=testimonial_id)
+
+    if not request.user == testimonial.reviewer:
+        if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only the author can do that!')
+            return redirect(reverse('show_workshops'))
+
+    workshop = testimonial.workshop
+
+    if request.method == 'POST':
+        form = TestimonialsForm(request.POST, instance=testimonial)
+        if form.is_valid():
+            testimonial.is_approved = False
+            form.save()
+            messages.success(request, 'Updated comment was sent for review!')
+            return redirect(reverse('workshop_details', args=[workshop.id]))
+        else:
+            messages.error(
+                request,
+                'Update not successful. Please check the form \
+                for errors and try submitting again.'
+                )
+    else:
+        form = TestimonialsForm(instance=testimonial)
+
+    template = 'workshops/edit_testimonial.html'
+    context = {
+        'form': form,
+        'workshop': workshop,
+        'testimonial': testimonial,
+    }
+
+    return render(request, template, context)
 
 
 @login_required

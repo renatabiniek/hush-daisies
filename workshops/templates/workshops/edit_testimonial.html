@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+| Edit a comment
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <!-- Edit comment form heading -->
+        <div class="row">
+            <div class="col col-md-6 mt-sm-3 mt-md-5 mb-5">
+                <h1 class="page-title pb-1">Edit your comment</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Testimonial form, crispy form -->
+            <div class="col col-md-6">
+                <form method="POST" action="{% url 'edit_testimonial' testimonial.id %}">
+                    <!-- Token to protect the form from attackers -->
+                    {% csrf_token %}
+                    <!-- Rendering the form using the crispy filter for formatting -->
+                    {{ form | crispy }}
+                    <div class="text-right mb-5">
+                    <a class="btn btn-sm btn-inverted" href="{% url 'workshop_details' workshop.id %}">Cancel</a>
+                    <button class="btn btn-sm action-btn" type="submit">Update</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -71,6 +71,14 @@
                         {% for testimonial in workshop_testimonials %}
                         <p><strong>{{ testimonial.reviewer }}</strong> on <span>{{ testimonial.date_added }}</span> wrote:</p>
                         {{ testimonial.testimonial_body | linebreaks }}
+                        <!-- Testimonial managements -->
+                        {% if request.user.is_authenticated %}
+                        <div class="mb-3">
+                        <a class="small admin-link text-info pr-2" href="{% url 'edit_testimonial' testimonial.id %}">EDIT</a>
+                        <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
+                            data-target="#deleteModal{{ testimonial.id }}">DELETE</a>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                         {% endif %}
                     </div>
@@ -90,7 +98,8 @@
                         </form>
                         {% else %}
                         <p><em>Do you want to write a testimonial or add a comment?</em></p>
-                        <a href="" class="btn btn-sml action-btn">Sign in</a>
+                        <a href="{% url 'account_login' %}" class="btn btn-sml action-btn" role="button"
+                        aria-label="Click the button to go to login form.">Sign in</a>
                         {% endif %}
                     </div>
                 </div>

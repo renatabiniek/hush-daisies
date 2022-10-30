@@ -17,4 +17,5 @@ urlpatterns = [
         views.delete_workshop,
         name='delete_workshop'
         ),
+    path('edit_testimonial/<int:testimonial_id>/', views.edit_testimonial, name='edit_testimonial'),
 ]
