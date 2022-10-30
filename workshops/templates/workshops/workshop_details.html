@@ -15,13 +15,19 @@
     <div class="container-fluid px-5 mt-sm-5 mt-md-5 mb-5">
         <!-- Image and workshop details columns -->
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 my-5 text-center">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-5 text-center">
                 <!-- If there's a workshop image, display the image; otherwise display a placeholder -->
                 {% if workshop.image %}
                 <img class="img-fluid" src="{{ workshop.image.url }}" alt="{{ workshop.name }}">
                 {% else %}
                 <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ workshop.name }}">
                 {% endif %}
+                <!-- Testimonial count -->
+                <div class="col-12 text-right mt-4">
+                    {% with workshop_testimonials.count as total_testimonials %}
+                    <strong><i class="bi bi-chat teal-text" aria-hidden="true"></i> {{ total_testimonials }}</strong>
+                    {% endwith %}
+                </div>
             </div>
             <!-- Workshop description -->
             <div class="col-12 col-md-6 col-lg-4">
@@ -48,6 +54,53 @@
                 {% include 'workshops/includes/delete_workshop_modal.html' %}
             </div>
         </div>
+        <!-- Testimonials -->
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mb-2 mt-1">
+                <hr class="divider">
+            </div>
+        </div>
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-md-8 card card-detail">
+                    <h5 class="section-title teal-text font-weight-bold">Testimonials</h5>
+                    <div class="card-body">
+                        {% if not workshop_testimonials.all %}
+                        <p>No comments yet...</p>
+                        {% else %}
+                        {% for testimonial in workshop_testimonials %}
+                        <p><strong>{{ testimonial.reviewer }}</strong> on <span>{{ testimonial.date_added }}</span> wrote:</p>
+                        {{ testimonial.testimonial_body | linebreaks }}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-4 card card-detail mt-4 mb-4">
+                    <div class="card-body">
+                        <!-- Message appears once a comment is submitted -->
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert">
+                            <p>Thank you! Your comment is awaiting approval</p>
+                        </div>
+                        {% else %}
+                        <!-- Comment box only appears if user is logged in -->
+                        {% if user.is_authenticated %}
+                        <h5 class="section-title teal-text">Say something...</h5>
+                        <p>Posting as: <strong>{{ user.username }}</strong></p>
+                        <form method="POST">
+                            <!-- Token to protect the form from attackers -->
+                            {% csrf_token %}
+                            <!-- Rendering the form using the crispy filter for formatting -->
+                            {{ comment_form | crispy }}
+                            <button type="submit" value="Submit" class="btn action-btn btn-sm">Add</button>
+                        </form>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <!-- Back to all workshops link -->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-3 mb-5">

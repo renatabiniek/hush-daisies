@@ -14,3 +14,7 @@
     padding-right: 1rem;
     font-style: normal;
 }
+
+.card-detail {
+    border: none;
+}

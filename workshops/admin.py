@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Workshop, Level
+from .models import Workshop, Level, WorkshopTestimonial
 
 
 @admin.register(Level)
@@ -28,3 +28,19 @@ class WorkshopAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
 
     ordering = ('name',)
+
+
+@admin.register(WorkshopTestimonial)
+class WorkshopTestimonialAdmin(admin.ModelAdmin):
+    """Admin - display workshop testimonial model fields"""
+    list_display = (
+        'reviewer',
+        'workshop',
+        'date_added',
+        'is_approved'
+        )
+
+    list_filter = ('reviewer', 'workshop')
+    search_fields = ['reviewer', 'testimonial_body']
+
+    ordering = ('workshop',)

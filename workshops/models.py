@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -45,3 +46,23 @@ class Workshop(models.Model):
     def __str__(self):
         """Return the workshop name"""
         return self.name
+
+
+class WorkshopTestimonial(models.Model):
+    """Testimonials for workshops model"""
+    reviewer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='testimonials')
+    workshop = models.ForeignKey(
+        Workshop, on_delete=models.CASCADE,
+        related_name='workshop_testimonials'
+        )
+    testimonial_body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    is_approved = models.BooleanField(default=False)
+
+    class Meta:
+        """Order testimonials by date added in ascending order"""
+        ordering = ['date_added']
+
+    def __str__(self):
+        return f"{self.reviewer} wrote on {self.date_added}"

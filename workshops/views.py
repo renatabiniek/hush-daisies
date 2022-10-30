@@ -49,9 +49,12 @@ def workshop_details(request, workshop_id):
     """Show details of individual workshops"""
 
     workshop = get_object_or_404(Workshop, pk=workshop_id)
+    workshop_testimonials = workshop.workshop_testimonials.filter(
+        is_approved=True).order_by('-date_added')
 
     context = {
         'workshop': workshop,
+        'workshop_testimonials': workshop_testimonials,
     }
 
     return render(request, 'workshops/workshop_details.html', context)
