@@ -534,7 +534,11 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Success message not displaying in toat in checkout success**  
 
-  Once order has been placed I expected to see the toast message on the order confirmation page but it wasn't showing. It turned out I was overriding JS script from the base.html that has toast script in checkout_success.html. Adding {{ block.super }} to retain the original script resolved the issue.
+  Once order has been placed I expected to see the toast message on the order confirmation page but it wasn't showing. It turned out I was overriding JS script from the base.html that has toast script in checkout_success.html. Adding {{ block.super }} to retain the original script resolved the issue.  
+
+* **The 'image' attribute has no file associated with it**
+
+  This error was solved with adding if/else statement to check if an image exists, and display a placeholder if it doesn't.
 
 * **404 error displayed for profile page**  
   
@@ -553,13 +557,19 @@ I tested the program considering the user stories from the UX section as well.
 * Most of the images were sourced from [Unsplash](https://unsplash.com/):
   * [Hero image](https://unsplash.com/photos/OuWeHz4lPZg)
   * [Our studio image](https://unsplash.com/photos/p0ZvBVpW3KY)
-  * [Custom orders image](https://unsplash.com/photos/XPCdZXncj64)
+  * [Custom orders image](https://unsplash.com/photos/XPCdZXncj64)  
+* How to check the length of a query set in a template from [this Stackoverflow post](https://stackoverflow.com/questions/10695322/django-show-the-length-of-a-queryset-in-a-template)  
+* Learned more about Exception TypeError warning from [this Stackoverflow post](https://stackoverflow.com/questions/53148112/python-3-handling-error-typeerror-catching-classes-that-do-not-inherit-from-bas)  
+* Solved Bootstrap button outline issue thnks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)
+
 
 ### Acknowledgments
 
 Thank you to:
 
-* [NEEDS UPDATE!]
+* [NEEDS UPDATE!]  
+* Tutor support team at Code Institute for all their help
+* 
 
 ### Disclaimer
 
