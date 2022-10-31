@@ -71,16 +71,25 @@ def workshop_favourites(request, workshop_id):
     profile = get_object_or_404(UserProfile, user=request.user)
     workshop = get_object_or_404(Workshop, pk=workshop_id)
     print(workshop)
+    from_profile = True
 
     try:
         favourites_list = get_object_or_404(WorkshopFavourites, user=profile)
     except WorkshopFavourites.DoesNotExist():
         favourites_list = WorkshopFavourites(user=profile)
         favourites_list.save()
-    favourites_list.workshop.add(workshop)
-    favourites_list.save()
   
-    messages.success(request, 'Workshop added to favourites')
-    print(favourites_list)
+    if workshop in favourites_list.workshop.all():
+        favourites_list.workshop.remove(workshop)
+        status = "removed"
+        favourites_list.save()
+        print(favourites_list)
+    else:
+        favourites_list.workshop.add(workshop)
+        status = "added"
+        favourites_list.save()
+        print(favourites_list)
+
+    messages.success(request, f'Workshop "{status}" to favourites')
 
     return redirect(reverse('show_workshops'))
