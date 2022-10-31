@@ -37,15 +37,17 @@
                     <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts at {{ workshop.start_time }}</p>
                     <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
                     <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
-                    <div class="text-right">
-                        <form action="{% url 'workshop_favourites' workshop.id %}" methods="POST">
+                    <div class="d-flex justify-content-between">
+                        {% if request.user.is_authenticated %}
+                        <form action="{% url 'workshop_favourites' workshop.id %}" method="POST">
                             {% csrf_token %}
-                            <button type="submit" value="{{ workshop.id }}" name="workshop_id">
-                                <i class="bi bi-bookmark-heart float-left icn-save p-1"><span class="small font-weight-bold"> Add to favourites</span></i>
+                            <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
+                                <i class="bi bi-bookmark-heart float-left"><span class="small font-weight-bold"> Add to favourites</span></i>
                             </button>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
-                        <a href="#" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
+                        {% endif %}
+                        <div><a href="#" class="btn action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a></div>
                     </div>
                     <hr class="divider w-100">
                     <p>{{ workshop.description }}</p>
