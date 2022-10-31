@@ -42,7 +42,10 @@ def profile(request):
     orders = user_profile.orders.all().order_by('-date')
     # get favourites
     try:
-        favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
+        favourites_list = get_object_or_404(
+            WorkshopFavourites,
+            user=user_profile
+            )
         favourites = favourites_list.workshop.all()
     except Http404:
         favourites_list = None
@@ -55,6 +58,7 @@ def profile(request):
         'favourites': favourites,
         # used to hide basket contents in toast message on profile page
         'on_profile_page': True,
+        'from_profile': True,
         }
 
     return render(request, template, context)
@@ -84,6 +88,7 @@ def workshop_favourites(request, workshop_id):
 
     user_profile = get_object_or_404(UserProfile, user=request.user)
     workshop = get_object_or_404(Workshop, pk=workshop_id)
+    redirect_url = request.POST.get('redirect_url')
 
     try:
         favourites_list = get_object_or_404(
@@ -105,4 +110,4 @@ def workshop_favourites(request, workshop_id):
 
     messages.success(request, f'Workshop "{status}" to favourites')
 
-    return redirect(reverse('show_workshops'))
+    return redirect(redirect_url)
