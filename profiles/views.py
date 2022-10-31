@@ -21,6 +21,8 @@ def profile(request):
     Display workshops on the favourite list in the user profile.
     """
     user_profile = get_object_or_404(UserProfile, user=request.user)
+    favourites_list = None
+    favourites = None
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=user_profile)
@@ -39,8 +41,11 @@ def profile(request):
     # get user's orders
     orders = user_profile.orders.all().order_by('-date')
     # get favourites
-    favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
-    favourites = favourites_list.workshop.all()
+    try:
+        favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
+        favourites = favourites_list.workshop.all()
+    except Http404:
+        favourites_list = None
 
     template = 'profiles/profile.html'
     context = {
@@ -73,7 +78,7 @@ def past_order(request, order_number):
 def workshop_favourites(request, workshop_id):
     """
     Add or remove favourite workshops.
-    Get favourite list for the user, if exists. 
+    Get favourite list for the user, if exists.
     Create if it doesn't.
     """
 
@@ -92,6 +97,7 @@ def workshop_favourites(request, workshop_id):
         favourites_list.workshop.remove(workshop)
         status = 'removed'
         favourites_list.save()
+
     else:
         favourites_list.workshop.add(workshop)
         status = 'added'
