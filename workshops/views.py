@@ -2,8 +2,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 from django.db.models.functions import Lower
 from .models import Level, Workshop, WorkshopTestimonial
+from profiles.models import WorkshopFavourites, UserProfile
 from .forms import WorkshopForm, TestimonialsForm
 
 # Create your views here.
@@ -50,11 +52,18 @@ def workshop_details(request, workshop_id):
     Show details of individual workshops.
     If POST, handle form submission, otherwise display add testimonial form
     """
-
+    favourites_list = None
     workshop = get_object_or_404(Workshop, pk=workshop_id)
     workshop_testimonials = workshop.workshop_testimonials.filter(
         is_approved=True).order_by('-date_added')
     
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        try: 
+            favourites_list = get_object_or_404(WorkshopFavourites, user=profile)
+        except Http404:
+            favourites_list = None
+
     if request.method == 'POST':
         form = TestimonialsForm(request.POST)
         if form.is_valid():
@@ -79,6 +88,7 @@ def workshop_details(request, workshop_id):
         'workshop': workshop,
         'workshop_testimonials': workshop_testimonials,
         'form': form,
+        'favourites_list': favourites_list,
     }
 
     return render(request, 'workshops/workshop_details.html', context)

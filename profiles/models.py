@@ -6,6 +6,8 @@ from django.dispatch import receiver
 
 from django_countries.fields import CountryField
 
+from workshops.models import Workshop
+
 
 class UserProfile(models.Model):
     """
@@ -60,3 +62,18 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
     instance.userprofile.save()
+
+
+class WorkshopFavourites(models.Model):
+    """
+    Workshop favourites model. Allows a logged in user to save a workshop
+    to a list of favourites in their user profile.
+    """
+    user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    workshop = models.ManyToManyField(
+        Workshop, blank=True, related_name="workshop_favourites"
+        )
+    
+    def __str__(self):
+        """Return workshops added to favourites for the user"""
+        return self.user.user.username

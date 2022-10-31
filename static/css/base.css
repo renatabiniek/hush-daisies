@@ -325,11 +325,12 @@ input[name='q']::placeholder {
     height: 2px;
 }
 
-/* .bg-info {
-    background-color: #D1A9AF !important;
-} */
+/* free delivery countdown background */
+.bg-basket {
+    background-color: #D1A9AF;
+}
 
-/* wrapper to restrict basket preview from gettingtoo large */
+/* wrapper to restrict basket preview from getting too large */
 .basket-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
