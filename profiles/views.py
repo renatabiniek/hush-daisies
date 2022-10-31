@@ -37,6 +37,9 @@ def profile(request):
   
     # get user's orders
     orders = user_profile.orders.all().order_by('-date')
+    # get favourites
+    favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
+    favourites = favourites_list.workshop.all()
 
     template = 'profiles/profile.html'
     context = {
@@ -44,7 +47,9 @@ def profile(request):
         'orders': orders,
         # used to hide basket contents in toast message on profile page
         'on_profile_page': True,
-    }
+        'favourites_list': favourites_list,
+        'favourites': favourites,
+        }
 
     return render(request, template, context)
 
@@ -68,27 +73,23 @@ def workshop_favourites(request, workshop_id):
     """Add or remove favourite workshops.
     Get favourite list for the user, if exists. Create if it doesn't"""
 
-    profile = get_object_or_404(UserProfile, user=request.user)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
     workshop = get_object_or_404(Workshop, pk=workshop_id)
-    print(workshop)
-    from_profile = True
 
     try:
-        favourites_list = get_object_or_404(WorkshopFavourites, user=profile)
-    except WorkshopFavourites.DoesNotExist():
-        favourites_list = WorkshopFavourites(user=profile)
+        favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
+    except Http404:
+        favourites_list = WorkshopFavourites(user=user_profile)
         favourites_list.save()
   
     if workshop in favourites_list.workshop.all():
         favourites_list.workshop.remove(workshop)
         status = "removed"
         favourites_list.save()
-        print(favourites_list)
     else:
         favourites_list.workshop.add(workshop)
         status = "added"
         favourites_list.save()
-        print(favourites_list)
 
     messages.success(request, f'Workshop "{status}" to favourites')
 
