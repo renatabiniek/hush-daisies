@@ -58,6 +58,19 @@
                                 </td class="align-middle">
                                 <td class="small align-middle">{{ workshop.date|date:'d M Y' }}</td>
                                 <td class="small align-middle">{{ workshop.location }}</td>
+                                <td class="small align-middle">
+                                    <form action="{% url 'workshop_favourites' workshop.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
+                                            {% if workshop in favourites_list.workshop.all %}
+                                            <i class="bi bi-bookmark-heart-fill"></i>
+                                            {% else %}
+                                            <i class="bi bi-bookmark-heart"></i>
+                                            {% endif %}
+                                        </button>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>

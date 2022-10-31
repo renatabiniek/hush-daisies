@@ -24,4 +24,21 @@
     overflow-y: auto;
 }
 
+.btn-fav {
+    font-size: 1.2rem;
+    color: #2B5357;
+    font-weight: bolder;
+    margin-top: .2rem;
+    padding: 0;
+    font-style: normal;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-fav:hover,
+.btn-fav:active,
+.btn-fav:focus {
+    font-size: 1.3rem;
+    outline: none !important;
+}
 
