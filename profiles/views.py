@@ -18,6 +18,7 @@ def profile(request):
     UserProfile form using the post data, updating the user_profile.
     Replace form variable with the update user profile
     and return the same template.
+    Display workshops on the favourite list in the user profile.
     """
     user_profile = get_object_or_404(UserProfile, user=request.user)
 
@@ -45,10 +46,10 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        # used to hide basket contents in toast message on profile page
-        'on_profile_page': True,
         'favourites_list': favourites_list,
         'favourites': favourites,
+        # used to hide basket contents in toast message on profile page
+        'on_profile_page': True,
         }
 
     return render(request, template, context)
@@ -70,25 +71,30 @@ def past_order(request, order_number):
 
 @login_required
 def workshop_favourites(request, workshop_id):
-    """Add or remove favourite workshops.
-    Get favourite list for the user, if exists. Create if it doesn't"""
+    """
+    Add or remove favourite workshops.
+    Get favourite list for the user, if exists. 
+    Create if it doesn't.
+    """
 
     user_profile = get_object_or_404(UserProfile, user=request.user)
     workshop = get_object_or_404(Workshop, pk=workshop_id)
 
     try:
-        favourites_list = get_object_or_404(WorkshopFavourites, user=user_profile)
+        favourites_list = get_object_or_404(
+            WorkshopFavourites, user=user_profile
+        )
     except Http404:
         favourites_list = WorkshopFavourites(user=user_profile)
         favourites_list.save()
-  
+
     if workshop in favourites_list.workshop.all():
         favourites_list.workshop.remove(workshop)
-        status = "removed"
+        status = 'removed'
         favourites_list.save()
     else:
         favourites_list.workshop.add(workshop)
-        status = "added"
+        status = 'added'
         favourites_list.save()
 
     messages.success(request, f'Workshop "{status}" to favourites')

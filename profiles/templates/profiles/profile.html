@@ -22,12 +22,13 @@
             <div class="col-12 col-md-6">
                 <h2 class="summary-title text-uppercase">My Workshops</h2>
                 {% if favourites_list %}
-                <!-- Table with orders -->
-                <div class="past-orders table-responsive">
+                <!-- Table with favourite workshops -->
+                <div class="table-responsive">
                     <table class="table table-sm table-borderless">
                         <!-- Headings -->
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Workshop Name</th>
                                 <th>Date</th>
                                 <th>Location</th>
@@ -37,16 +38,23 @@
                         <tbody>
                         {% for workshop in favourites %}
                         <tr>
-                            <td>
+                            <td class="align-middle">
+                            <!-- If there's a workshop image, display the image; otherwise display a placeholder -->
+                            {% if workshop.image %}
+                            <img class="img-fluid" style="width: 5rem" src="{{ workshop.image.url }}" alt="{{ workshop.name }}">
+                            {% else %}
+                            <img class="img-fluid" style="width: 5rem" src="{{ MEDIA_URL }}noimage.png" alt="{{ workshop.name }}">
+                            {% endif %}
+                            </td>
+                            <td class="align-middle">
                                 <!-- Workshop name links to workshop detal -->
-                                <a href="#" 
-                                title="" class="small text-info">
+                                <a href="{% url 'workshop_details' workshop.id %}" 
+                                title="{{ workshop.name }}" class="small text-info">
                                 {{ workshop.name }}
                                 </a>
-                            </td>
-                            <td class="small">{{ workshop.date|date:'d M Y' }}</td>
-
-                            <td class="small">{{ workshop.location }}</td>
+                            </td class="align-middle">
+                            <td class="small align-middle">{{ workshop.date|date:'d M Y' }}</td>
+                            <td class="small align-middle">{{ workshop.location }}</td>
                         </tr>
                         {% endfor %}
                         </tbody>
