@@ -19,9 +19,9 @@
 
 .btn-fav:hover,
 .btn-fav:active,
-.btn-fav:hover:focus {
+.btn-fav:focus {
     font-size: 1.3rem;
-    border: none;
+    outline: none !important;
 }
 
 .card-detail {

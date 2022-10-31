@@ -34,20 +34,34 @@
                 <div class="mt-sm-3 mb-5 mt-md-5">
                     <h2 class="mb-3 product-title">{{ workshop.name }}</h2>
                     <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
-                    <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts at {{ workshop.start_time }}</p>
-                    <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
-                    <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
+                    <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts
+                        at {{ workshop.start_time }}</p>
+                    <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i>
+                        {{ workshop.level.friendly_name }}</p>
+                    <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i>
+                        {{ workshop.workshop_fee }}</p>
                     <div class="d-flex justify-content-between">
                         {% if request.user.is_authenticated %}
                         <form action="{% url 'workshop_favourites' workshop.id %}" method="POST">
                             {% csrf_token %}
                             <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
-                                <i class="bi bi-bookmark-heart float-left"><span class="small font-weight-bold"> Add to favourites</span></i>
+                                {% if workshop in favourites_list.workshop.all %}
+                                <i class="bi bi-bookmark-heart-fill float-left"><span class="small font-weight-bold">
+                                        Remove from favourites</span></i>
+                                {% else %}
+                                <i class="bi bi-bookmark-heart float-left"><span class="small font-weight-bold"> Add to
+                                        favourites</span></i>
+                                {% endif %}
                             </button>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
+                        {% else %}
+                        <span><a href="{% url 'account_login' %}" class="text-info" role="button"
+                                aria-label="Click the button to go to login form."><em>Sign in to save to
+                                    favourties</em></a></span>
                         {% endif %}
-                        <div><a href="#" class="btn action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a></div>
+                        <div><a href="#" class="btn action-btn" role="button"
+                                aria-label="Click the button to send an email to store owner">Save your spot</a></div>
                     </div>
                     <hr class="divider w-100">
                     <p>{{ workshop.description }}</p>
@@ -55,7 +69,7 @@
                     <h5 class="text-left section-title small mt-4">Manage workshop:</h5>
                     <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
                     <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
-                    data-target="#deleteWorkshopModal{{ workshop.id }}">DELETE</a>
+                        data-target="#deleteWorkshopModal{{ workshop.id }}">DELETE</a>
                     {% endif %}
                 </div>
                 <!-- Delete modal -->
