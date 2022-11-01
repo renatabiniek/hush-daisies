@@ -64,6 +64,7 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def past_order(request, order_number):
     """Re-use the checkout_success template to display past order detail"""
     order = get_object_or_404(Order, order_number=order_number)
