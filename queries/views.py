@@ -18,7 +18,11 @@ def send_query(request):
         form = CustomRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your message was sent!')
+            messages.success(
+                request,
+                'Your message was sent!' 
+                'We will get back to you within 48 hours.'
+                )
             return redirect(reverse('send_query'))
         else:
             messages.error(

@@ -17,6 +17,7 @@ def show_workshops(request):
     # Sorting
     sort = None
     direction = None
+    from_workshops: True
 
     if request.GET:
         if 'sort' in request.GET:
@@ -59,7 +60,7 @@ def workshop_details(request, workshop_id):
     
     if request.user.is_authenticated:
         profile = get_object_or_404(UserProfile, user=request.user)
-        try: 
+        try:
             favourites_list = get_object_or_404(WorkshopFavourites, user=profile)
         except Http404:
             favourites_list = None
@@ -72,7 +73,7 @@ def workshop_details(request, workshop_id):
             testimonial.workshop = workshop
             testimonial.save()
             messages.success(
-                request, 
+                request,
                 'Your comment has been submitted for review'
                 )
             return redirect(reverse('workshop_details', args=[workshop.id]))

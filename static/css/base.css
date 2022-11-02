@@ -53,6 +53,15 @@ a:focus {
 }
 
 /*------------------------------------ Buttons*/
+
+/* remove Bootstrap outline */
+.btn:hover,
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
 .callout-btn, 
 .action-btn,
 .btn-qty {

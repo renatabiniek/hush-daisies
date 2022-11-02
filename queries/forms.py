@@ -17,9 +17,13 @@ class CustomRequestForm(forms.ModelForm):
             'reference_link': 'If you are looking for a custom order, '
             'add a link to a visual that will help us understand better '
             'what you have in mind',
-            'request_body': 'Let us know why you are contacting us today. If you want to save your spot for a workshop, '
+            'request_body': 'Let us know why you are contacting us today.'
+            'If you want to save your spot for a workshop,'
             'please specify the name of the workshop and the date',
             }
+    field_order = ['request_type',
+                   'name', 'email', 'phone_number', 
+                   'request_body', 'reference_link']
 
     def __init__(self, *args, **kwargs):
         """
