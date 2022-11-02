@@ -7,9 +7,11 @@ class CustomRequest(models.Model):
     """Custom requests and queries model"""
     QUOTE = 'QUOTE'
     QUESTION = 'QUESTION'
+    RESERVATION = 'RESERVATION'
     QUERY_CHOICES = [
         (QUOTE, 'Get a quote for a custom order'),
         (QUESTION, 'Ask a question'),
+        (RESERVATION, 'Save your spot'),
     ]
     name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)

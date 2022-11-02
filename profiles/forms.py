@@ -9,7 +9,7 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         """
         Render all form fields except 'user'
-        as this shouldn remain the same
+        as this should remain the same
         """
         model = UserProfile
         exclude = ('user',)

@@ -86,7 +86,7 @@
                                         <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts at {{ workshop.start_time }}</p>
                                         <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
                                         <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
-                                        <a href="#" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
+                                        <a href="{% url 'send_query' %}" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Save your spot</a>
                                         {% if request.user.is_superuser %}
                                         <h5 class="text-left section-title small mt-3">Manage workshop:</h5>
                                         <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
