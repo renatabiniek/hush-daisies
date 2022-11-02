@@ -397,3 +397,40 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/*------------------------------------ Media queries*/
+
+/*on screens 425px or smaller, reduce the font size to keep logo and links on the same line, add margin to logo to create space between elements*/
+
+@media screen and (max-width: 425px) {
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: .5rem;
+    }
+
+    .main-nav-link {
+        font-size: 1.3rem;
+        padding: .5rem;
+    }
+
+    .hero-img h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-img p {
+        font-size: 1rem;
+    }
+
+    #custom-order-banner p {
+        font-size: .8rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        padding: 1.2rem 0 1rem 0;
+    }
+
+    .container {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+    }

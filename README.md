@@ -560,7 +560,8 @@ I tested the program considering the user stories from the UX section as well.
   * [Custom orders image](https://unsplash.com/photos/XPCdZXncj64)  
 * How to check the length of a query set in a template from [this Stackoverflow post](https://stackoverflow.com/questions/10695322/django-show-the-length-of-a-queryset-in-a-template)  
 * Learned more about Exception TypeError warning from [this Stackoverflow post](https://stackoverflow.com/questions/53148112/python-3-handling-error-typeerror-catching-classes-that-do-not-inherit-from-bas)  
-* Solved Bootstrap button outline issue thnks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)
+* Solved Bootstrap button outline issue thanks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)  
+* Learned how to reorder fields in a form thanks [this Stackoverflow post](https://stackoverflow.com/questions/350799/how-does-django-know-the-order-to-render-form-fields)
 
 
 ### Acknowledgments

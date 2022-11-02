@@ -22,9 +22,9 @@
                 <!-- Product categories  -->
                 <div class="row mb-5">
                     <div class="col text-center mt-3">
-                        <span class="badge category-badge px-2 text-capitalize"><a href="{% url 'products' %}">All florals</a></span>
+                        <span class="badge category-badge px-2 my-1 text-capitalize"><a href="{% url 'products' %}">All florals</a></span>
                         {% for cat in cats %}
-                        <span class="badge category-badge px-2 text-capitalize"><a href="{% url 'products' %}?category={{ cat.name }}">{{ cat.friendly_name }}</a></span>
+                        <span class="badge category-badge px-2 my-1 text-capitalize"><a href="{% url 'products' %}?category={{ cat.name }}">{{ cat.friendly_name }}</a></span>
                         {% endfor %}
                     </div>
                 </div>
