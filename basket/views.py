@@ -22,7 +22,10 @@ def add_to_basket(request, item_id):
     Get the product and add messages.
     """
 
-    product = get_object_or_404(Product, pk=item_id)
+    product = get_object_or_404(
+        Product.objects.filter(is_available=True), 
+        pk=item_id
+        )
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
@@ -46,7 +49,10 @@ def adjust_basket(request, item_id):
     Override session with new basket content.
     """
 
-    product = get_object_or_404(Product, pk=item_id)
+    product = get_object_or_404(
+        Product.objects.filter(is_available=True),
+        pk=item_id
+        )
     quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
     print(quantity)
