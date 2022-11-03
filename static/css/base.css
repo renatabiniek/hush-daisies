@@ -400,7 +400,7 @@ input[name='q']::placeholder {
 
 /*------------------------------------ Media queries*/
 
-/*on screens 425px or smaller, reduce the font size to keep logo and links on the same line, add margin to logo to create space between elements*/
+/*on screens 425px or smaller, reduce the font size, padding and margins*/
 
 @media screen and (max-width: 425px) {
     .logo {
