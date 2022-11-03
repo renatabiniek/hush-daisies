@@ -81,9 +81,18 @@ def show_all_products(request):
 
 
 def show_product_detail(request, product_id):
-    """Show details of individual products."""
+    """
+    Show details of individual products.
+    Defense: If product not marked as available, can't be viewed by non-admins
+    """
 
-    product = get_object_or_404(Product, pk=product_id)
+    if request.user.is_superuser:
+        product = get_object_or_404(Product, pk=product_id)
+    else:
+        product = get_object_or_404(
+            Product.objects.filter(is_available=True), 
+            pk=product_id
+            )
 
     context = {
         'product': product,
