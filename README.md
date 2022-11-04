@@ -47,19 +47,19 @@
 ## Introduction
 ---
 
-Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalogue includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready made designs or contact the studio owners with a custom request. In addition to their flower catalouge, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to their favourites. 
+Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalogue includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready-made designs or contact the studio owners with a custom request. In addition to their flower catalogue, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to favourites. 
 
 ## E-commerce Business Model  
 ---
 
-Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisify emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strengthening user's trust. The business owners are invested in maintainig good relationship with the customer, by allowign easy contact, accomodating special requests and organising in person workshops.  
+Hush Daisies website is based on the digital Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisfy emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strengthening user's trust. The business owners are invested in maintaining good relationship with the customer, by allowing easy contact, accommodating special requests and organising in person workshops.  
 
 ## User Experience
 ---
 ### User goals  
 
 * to purchase a unique dried flower arrangement
-* to order a custom made design for their home or special occasion
+* to order a custom-made design for their home or special occasion
 * to see a list of upcoming workshops so that they can register their interest to learn a new skill or take part in a social event
 * to create a user profile with saved delivery details, purchase history and list of favourite workshops
 
@@ -74,7 +74,7 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 
 * all flower lovers
 * people looking for alternative floral decorations for their home or a special occasion
-* couples looking for long lasting bouquets and decorations for their wedding day
+* couples looking for long-lasting bouquets and decorations for their wedding day
 * people driven by sustainability and care for environment
 * adults interested in learning dried flower arrangement skills
 * adults living locally looking to connect and socialise within a like-minded community
@@ -121,7 +121,7 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
   **EPIC | Admin**  
 
    * As a site admin I can add a product so that I can add new items to my store.
-   * As a site admin I can edit a product so that I can keep the products information up-to-date.  
+   * As a site admin I can edit a product so that I can keep the product information up-to-date.  
    * As a site admin I can delete a product so that I can remove items that are no longer for sale.  
    * As a site admin I can approve or block comments so that only appropriate comments are displayed.  
    * As a site admin I can add, edit and delete categories from the admin panel so that I can keep my content organised.  
@@ -487,7 +487,7 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Django version not showing in requirements.txt**
   
-  After an issue with my Gitpod workspace, Django v=3.2 dissapeared from the requirements.txt file. Re-installing correct version and freezing requirements again solved the issue.  
+  After an issue with my Gitpod workspace, Django v=3.2 disappeared from the requirements.txt file. Re-installing correct version and freezing requirements again solved the issue.  
 
 * **MEDIA_URL template tag not working**
   
@@ -512,7 +512,7 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Connecting Django to AWS**
 
-  While connecting Django to S3 Bucket, static folder wasn't created and I was getting an error about MediaStorage in the deployed app. 
+  While connecting Django to S3 Bucket, static folder wasn't created, and I was getting an error about MediaStorage in the deployed app. 
 
   **Worked:** There was a typo in my custom_storages file, I renamed the incorrect class to MediaStorage and re-deployed the project. The static folder was created correctly.  
 
@@ -522,7 +522,7 @@ I tested the program considering the user stories from the UX section as well.
 
   This bug was found after adding category labels to the products list page, as well as dynamic descriptions to the search results counter. While all the labels on the product page were returning correct results and description, when *All Florals* nav link was clicked in the main navigation menu, it returned an error. I realised that using get() on the current_categories was returning a query set of categories specified in the *All Florals* link in the navbar, and not a single category as other links, therefore, it was impossible to get the category name.
 
-  **Worked:** Adding extra conditions to the result count display for mulitple or no categories selected resolved this issue.
+  **Worked:** Adding extra conditions to the result count display for multiple or no categories selected resolved this issue.
 
 * **Product without category not showing on the product list when filtered**  
 
@@ -530,9 +530,9 @@ I tested the program considering the user stories from the UX section as well.
 
 * **AttributeError: 'Settings' object has no attribute 'FREE_DELIVERY_TRESHOLD'**
   
-  I was getting this error at the checkout stage after pressing the Secure Checkout button. I've double checked that I have the correct settings and it turned out I miss-spelled "threshold".
+  I was getting this error at the checkout stage after pressing the Secure Checkout button. I've double-checked that I have the correct settings and it turned out I miss-spelled "threshold".
 
-* **Success message not displaying in toat in checkout success**  
+* **Success message not displaying in toast in checkout success**  
 
   Once order has been placed I expected to see the toast message on the order confirmation page but it wasn't showing. It turned out I was overriding JS script from the base.html that has toast script in checkout_success.html. Adding {{ block.super }} to retain the original script resolved the issue.  
 
@@ -574,6 +574,6 @@ Thank you to:
 
 ### Disclaimer
 
-This website is ficiotnal and has been created for educational purposes only, as part of Code Institute’s Portfolio Project 5, E-commerce Application. The requirements are to build a Full-stack site based on business logic used to control a centrally-owned dataset.
+This website is fictional and has been created for educational purposes only, as part of Code Institute’s Portfolio Project 5, E-commerce Application. The requirements are to build a Full-stack site based on business logic used to control a centrally-owned dataset.
 
 [Back to top](#Table-of-Contents)
