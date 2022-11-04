@@ -140,7 +140,8 @@ def checkout(request):
                     'country': profile.default_country,
                     'postcode': profile.default_postcode,
                     'town_or_city': profile.default_town_or_city,
-                    'house_number_or_name': profile.default_house_number_or_name,
+                    'house_number_or_name':
+                    profile.default_house_number_or_name,
                     'street_address_1': profile.default_street_address_1,
                     'street_address_2': profile.default_street_address_2,
                     'county': profile.default_county,
@@ -205,7 +206,7 @@ def checkout_success(request, order_number):
     # delete basket from the session
     if 'basket' in request.session:
         del request.session['basket']
-   
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,

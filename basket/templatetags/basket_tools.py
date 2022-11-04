@@ -1,5 +1,5 @@
 """
-Custom template filter to 
+Custom template filter to
 calculate subtotal for basket.html
 """
 from django import template

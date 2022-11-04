@@ -24,7 +24,8 @@ def show_workshops(request):
             # Create the sortkey variable
             sortkey = request.GET['sort']
             sort = sortkey
-            # Allow case insensitive sorting by workshop name by adding temporary field on the Workshop model
+            # Allow case insensitive sorting by workshop name
+            # by adding temporary field on the Workshop model
             if sortkey == "name":
                 sortkey = 'lower_name'
                 workshops = workshops.annotate(lower_name=Lower('name'))
@@ -57,11 +58,14 @@ def workshop_details(request, workshop_id):
     workshop = get_object_or_404(Workshop, pk=workshop_id)
     workshop_testimonials = workshop.workshop_testimonials.filter(
         is_approved=True).order_by('-date_added')
-    
+
     if request.user.is_authenticated:
         profile = get_object_or_404(UserProfile, user=request.user)
         try:
-            favourites_list = get_object_or_404(WorkshopFavourites, user=profile)
+            favourites_list = get_object_or_404(
+                WorkshopFavourites,
+                user=profile
+                )
         except Http404:
             favourites_list = None
 
@@ -149,7 +153,7 @@ def delete_testimonial(request, testimonial_id):
             return redirect(reverse('show_workshops'))
 
     testimonial.delete()
-    messages.success(request, f'Your comment was deleted!')
+    messages.success(request, 'Your comment was deleted!')
     return redirect(reverse('workshop_details', args=[workshop.id]))
 
 

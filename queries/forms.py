@@ -6,7 +6,7 @@ from .models import CustomRequest
 
 class CustomRequestForm(forms.ModelForm):
     """
-    Form to capture queries, qoutes 
+    Form to capture queries, qoutes
     and requests to save a spot for a workshop
     """
     class Meta:
@@ -22,16 +22,15 @@ class CustomRequestForm(forms.ModelForm):
             'please specify the name of the workshop and the date',
             }
     field_order = ['request_type',
-                   'name', 'email', 'phone_number', 
+                   'name', 'email', 'phone_number',
                    'request_body', 'reference_link']
 
     def __init__(self, *args, **kwargs):
         """
-        Override init method to 
+        Override init method to
         set autofocus on first field.
         """
         super().__init__(*args, **kwargs)
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'border-teal'
-    

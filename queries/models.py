@@ -24,7 +24,7 @@ class CustomRequest(models.Model):
     reference_link = models.URLField(max_length=200, blank=True)
     request_body = models.TextField()
     request_date = models.DateTimeField(auto_now_add=True)
-  
+
     def __str__(self):
         """Return customer name"""
         return self.name

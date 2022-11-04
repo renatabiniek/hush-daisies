@@ -1,5 +1,5 @@
 """Views for Profiles app"""
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
@@ -37,7 +37,7 @@ def profile(request):
     else:
         # populate form with user's current profile info
         form = UserProfileForm(instance=user_profile)
-  
+
     # get user's orders
     orders = user_profile.orders.all().order_by('-date')
     # get favourites

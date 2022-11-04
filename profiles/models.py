@@ -47,7 +47,7 @@ class UserProfile(models.Model):
         null=True,
         blank=True
         )
-  
+
     def __str__(self):
         """Return username"""
         return self.user.username
@@ -73,7 +73,7 @@ class WorkshopFavourites(models.Model):
     workshop = models.ManyToManyField(
         Workshop, blank=True, related_name="workshop_favourites"
         )
-    
+
     def __str__(self):
         """Return workshops added to favourites for the user"""
         return self.user.user.username

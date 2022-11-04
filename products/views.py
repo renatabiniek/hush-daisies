@@ -44,7 +44,9 @@ def show_all_products(request):
                 messages.error(
                     request, "You didn't enter anything in the search field.")
                 return redirect(reverse('products'))
-            # if the query is not blank; returning results where the search term matched in either product name or description with case insensitive queries
+            # if the query is not blank; returning results where the search
+            # term matched in either product name or description
+            # with case insensitive queries
             matched_terms = Q(name__icontains=search_term) | Q(
                 description__icontains=search_term)
             products = products.filter(matched_terms)
@@ -53,7 +55,8 @@ def show_all_products(request):
             # Create the sortkey variable
             sortkey = request.GET['sort']
             sort = sortkey
-            # Allow case insensitive sorting by product name by adding temporary field on the Product model
+            # Allow case insensitive sorting by product name
+            # by adding temporary field on the Product model
             if sortkey == "name":
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
@@ -90,7 +93,7 @@ def show_product_detail(request, product_id):
         product = get_object_or_404(Product, pk=product_id)
     else:
         product = get_object_or_404(
-            Product.objects.filter(is_available=True), 
+            Product.objects.filter(is_available=True),
             pk=product_id
             )
 
@@ -119,7 +122,7 @@ def add_product(request):
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
-                request, 
+                request,
                 'Product not added. Please check the form \
                 for errors and try submitting again.'
                 )

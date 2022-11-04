@@ -8,7 +8,7 @@ from products.models import Product
 def basket_contents(request):
     """
     Context processor that returns context dictionary
-    and makes it available to all templates 
+    and makes it available to all templates
     in the whole application.
     """
 
@@ -34,7 +34,7 @@ def basket_contents(request):
     else:
         delivery = 0
         free_delivery_countdown = 0
-    
+
     grand_total = total + delivery
 
     context = {

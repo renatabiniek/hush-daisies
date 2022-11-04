@@ -20,7 +20,7 @@ def send_query(request):
             form.save()
             messages.success(
                 request,
-                'Your message was sent!' 
+                'Your message was sent!'
                 'We will get back to you within 48 hours.'
                 )
             return redirect(reverse('send_query'))

@@ -23,7 +23,7 @@ class StripeWebhookHandler:
         of the class is created.
         """
         self.request = request
-  
+
     def _send_confirmation_email(self, order):
         """
         Send email with order confirmation
@@ -76,7 +76,7 @@ class StripeWebhookHandler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-     
+
         # update profile info if save info was ticked
         profile = None
         username = intent.metadata.username
@@ -165,7 +165,7 @@ class StripeWebhookHandler:
                             f'ERROR: {error}', status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=(f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook'),
             status=200
         )
 
