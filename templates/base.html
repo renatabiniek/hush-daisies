@@ -56,9 +56,9 @@
     <header class="container-fluid nav-background">
        <!-- Logo -->
       <div class="row pt-2 pl-md-4">
-        <div class="col-12 col-lg-6 my-auto pt-2 text-left">
-          <a class="logo navbar-brand" href="{% url 'home' %}"><span><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> Hush
-            Daisies</span></a>
+        <div class="col-12 col-lg-6 my-auto text-left">
+          <a class="logo navbar-brand" href="{% url 'home' %}"><i class="logo-icon bi bi-flower1" aria-hidden="true"></i> Hush
+            Daisies</a>
         </div>
         <div class="col-12 col-lg-6 my-auto py-1 pr-4">
           <!-- Dropdown with options depending on the user status -->
@@ -68,7 +68,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!-- If user is authenticated display username -->
                 {% if request.user.is_authenticated %}
-                <span class="font-italic">{{ user.username }}</span>{% else %}Log In{% endif %}
+                <span class="font-italic d-none d-sm-block">{{ user.username }}</span>{% else %} Log In {% endif %}
                 <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i></a>
               <div class="dropdown-menu" aria-labelledby="account-options">
                 {% if request.user.is_authenticated %}

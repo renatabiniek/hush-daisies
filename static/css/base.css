@@ -403,6 +403,7 @@ input[name='q']::placeholder {
 /*on screens 425px or smaller, reduce the font size, padding and margins*/
 
 @media screen and (max-width: 425px) {
+
     .logo {
         font-size: 1.8rem;
         margin-bottom: .5rem;
