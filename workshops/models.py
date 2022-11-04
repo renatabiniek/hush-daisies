@@ -28,7 +28,7 @@ class Workshop(models.Model):
 
     class Meta:
         """order by date"""
-        ordering = ['-date']
+        ordering = ['date']
 
     name = models.CharField(max_length=50, unique=True)
     level = models.ForeignKey(

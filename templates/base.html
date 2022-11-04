@@ -68,7 +68,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!-- If user is authenticated display username -->
                 {% if request.user.is_authenticated %}
-                <span class="font-italic d-none d-sm-block">{{ user.username }}</span>{% else %} Log In {% endif %}
+                <span class="font-italic d-none d-sm-inline">{{ user.username }}</span>{% else %} Log In {% endif %}
                 <i class="bi bi-person-circle" role="img" aria-label="Username logged in" aria-hidden="true"></i></a>
               <div class="dropdown-menu" aria-labelledby="account-options">
                 {% if request.user.is_authenticated %}
