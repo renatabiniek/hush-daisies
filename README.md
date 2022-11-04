@@ -47,12 +47,12 @@
 ## Introduction
 ---
 
-Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalouge includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready made designs or contact the studio owners with a custom request. In addition to their flower catalouge, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to their favourites. 
+Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist studio based in north Co. Dublin selling dried flower arrangements. Their small catalogue includes home decor designs, seasonal wreaths and wedding bouquets. Customers can purchase ready made designs or contact the studio owners with a custom request. In addition to their flower catalouge, the studio owners offer local workshops where they teach bouquet and wreath making skills, as well as organise themed workshops to bring together local community. Customers can create own profile and keep track of their purchase history, as well as save selected workshops to their favourites. 
 
 ## E-commerce Business Model  
 ---
 
-Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisify emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strenghtneing user's trust. The business owners are invested in maintainig good relationship with the customer, by allowign easy contact, accomodating sepcial requests and organising in person workshops.  
+Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisify emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strengthening user's trust. The business owners are invested in maintainig good relationship with the customer, by allowign easy contact, accomodating special requests and organising in person workshops.  
 
 ## User Experience
 ---
@@ -61,14 +61,14 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 * to purchase a unique dried flower arrangement
 * to order a custom made design for their home or special occasion
 * to see a list of upcoming workshops so that they can register their interest to learn a new skill or take part in a social event
-* create a user profile with saved delivery details, purchase history and list of favourite workshops
+* to create a user profile with saved delivery details, purchase history and list of favourite workshops
 
 ### Site owner goals  
 
-* sell hand-made dried flower arrangements
-* create custom design based on special requests received from users
-* offer workshops to interested users to promote skills of dried flower arrangement
-* bring together local community with in-person themed workshops in north County Dublin
+* to sell hand-made dried flower arrangements
+* to create custom design based on special requests received from users
+* to offer workshops to interested users to promote skills of dried flower arrangement
+* to bring together local community with in-person themed workshops in north County Dublin
 
 ### Target audience
 
@@ -85,7 +85,7 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
 
   The development of this project was managed with the principles of Agile methodology in mind. 
   Planned features were defined and organised into the following [Epics](https://github.com/renatabiniek/hush-daisies/milestones) at the start of the project.  
-  Epics were then broken down into atomic [user stories](https://github.com/renatabiniek/hush-daisies/issues) and organised according to the MoSCoW prioritization approach. 
+  Epics were then broken down into small [user stories](https://github.com/renatabiniek/hush-daisies/issues) and organised according to the MoSCoW prioritization approach. 
   Around the recommended 60% of user stories are identified as the must-have features. Further user stories were added throughout the development. 
   Only limited number of user stories was worked on, completed and tested in each iteration.
 
@@ -220,7 +220,7 @@ Hush Daisies website is based on the digitial Business-to-consumer (B2C) sales m
   
 * Database Schema
 
-  A relational database was used for this project. The database consists of the following models: User (Django built-in model), UserProfileOrder, Product, Category, Order, OrderLineItem, Workshop, WorkshopTestimonials, WorkshopFavourites and Request. 
+  A relational database was used for this project. The database consists of the following models: User (Django built-in model), UserProfileOrder, Product, Category, Order, OrderLineItem, Workshop, Level, WorkshopTestimonials, WorkshopFavourites and CustomRequest. 
   Django AllAuth was used for user authentication. The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. EmailField, URLField).
 
   **Hush Daisies database schema:**  

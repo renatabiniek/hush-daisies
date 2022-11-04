@@ -26,8 +26,8 @@
                 <!-- Workshop intro  -->
                 <div class="row mb-5">
                     <div class="col text-center">
-                        <p class="mb-1">Hi <span class="text-highlight">{% if user.is_authenticated %}{{ user.username }}</span>{% else %}there{% endif %}!<br>
-                            Do you want to learn more about drying, preserving and arranging flowers?</p>
+                        <p class="mb-1">Hi {% if user.is_authenticated %}<span class="text-highlight">{{ user.username }}</span> {% else %}<span class="text-highlight">there</span>{% endif %}!</p>
+                        <p>Do you want to learn more about drying, preserving and arranging flowers?</p>
                         <p class="mb-1">How about making your own unique Christmas wreath that will last many years?</p>
                         <p class="mb-1">Join us at one of our workshops to master a new skill or simply hang out with
                             like-minded people.</p>
