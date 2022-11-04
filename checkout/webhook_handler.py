@@ -102,7 +102,7 @@ class StripeWebhookHandler:
         attempt = 1
         while attempt <= 5:
             try:
-                order = Order.object.get(
+                order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,

@@ -15,7 +15,7 @@ import stripe
 @csrf_exempt
 def webhook(request):
     """
-    Listen for webhooks from Stripe, 
+    Listen for webhooks from Stripe,
     webhook view will be executed to handle the event
     """
     # Setup
@@ -58,7 +58,4 @@ def webhook(request):
     # Call event handler and pass in the event
     response = event_handler(event)
     return response
-
-
-
-
+    
