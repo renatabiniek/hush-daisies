@@ -147,21 +147,6 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Space for page specific JavaScript to load at the end of the body -->
-    {% block postloadjs %}
-    <script type="text/javascript">
-      // Call the show option on all elements with 'toast' class
-      $('.toast').toast('show');
-    </script>
-    <!-- Back to top button -->
-    <script type="text/javascript">
-    $('#top-link').click(function (e) {
-      window.scrollTo(0,0);
-      })
-    </script>
-    
-    {% endblock %}
-
     <!-- Footer -->
     <footer class="page-footer mt-auto nav-background footer-text">
       <div class="container-fluid pt-5 justify-content">
@@ -181,7 +166,7 @@
             </ul>
           </div>
           <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Newsletter</h5>
-          <p class="m-0">Sign up for our monthly newsletter and be the first to hear about offers, new additions to our shop and new workshops!</p>
+          <p class="m-0">Sign up for our monthly newsletter and be the first to hear about seasonal offers,<br>new additions to our shop and workshops!</p>
           <!-- Begin Mailchimp Signup Form -->
           <div id="mc_embed_signup">
             <form
@@ -232,6 +217,20 @@
         </div>
       </div>
     </footer>
+
+    <!-- Space for page specific JavaScript to load at the end of the body -->
+    {% block postloadjs %}
+    <script type="text/javascript">
+      // Call the show option on all elements with 'toast' class
+      $('.toast').toast('show');
+    </script>
+    <!-- Back to top button -->
+    <script type="text/javascript">
+    $('#top-link').click(function (e) {
+      window.scrollTo(0,0);
+      })
+    </script>
+
     <!--JS for Mailchimp newsletter signup-->
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
           <script type='text/javascript'>
@@ -253,6 +252,7 @@
             }(jQuery));
             var $mcj = jQuery.noConflict(true);
           </script>
+          {% endblock %}
   </body>
 </html>
 
