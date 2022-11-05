@@ -86,6 +86,8 @@ A business Facebook page was created for Hush Daisies, including relevant busine
 
 Facebook might take down the page as part of their verification process but a screenshot can be found [here](docs/facebook-page.png).
 
+Additionally, a monthly newsletter will be used as a marketing strategy, to offer special prices, drive traffic to the site and create interest around workshops. Mailchimp newsletter form has been used to add sing up input in the footer of the page. Each email address entered is added to the mailing list on the Mailchimp dashboard and can be used for mailing campaigns.
+
 ## User Experience
 ---
 ### User goals  
