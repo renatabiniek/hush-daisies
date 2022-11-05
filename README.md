@@ -75,7 +75,7 @@ The site alse includes the following elements to improve SEO:
 * Links to trusted, relevant and high quality sites on the home page
 * Attribute `rel="noopener"` on links to external websites  
 * Use of `strong` tags to highlight the importance of a keyword in the content
-* sitemap.xml to help search enginges to crawl the site
+* sitemap.xml to help search enginges to crawl the site and speed up content discovery
 * robots.txt (listing urls that cannot be accessed by bots) to acknowledge that the site will be crawled by bots and therefore indicate that the site is of a high quality
 
 ### Web Marketing
@@ -352,7 +352,8 @@ Facebook might take down the page as part of their verification process but a sc
 * [Favicon.io](https://favicon.io/) - to create a favicon for the site
 * [Pixlr](https://pixlr.com/) - to edit and resize images
 * [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - to generate Privacy Policy  
-* [Terms and Conditions Generator](https://www.termsandconditionsgenerator.com/) - to generate Terms of Use
+* [Terms and Conditions Generator](https://www.termsandconditionsgenerator.com/) - to generate Terms of Use  
+* [XML Sitemaps](https://www.xml-sitemaps.com/) - to generate site map  
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - to inspect and debug the code through all stages of the development
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - to inspect the site for overflow 
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse) - to audit the site for performance, accessibility, SEO and best practices
