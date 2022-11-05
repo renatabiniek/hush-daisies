@@ -101,14 +101,14 @@ def workshop_favourites(request, workshop_id):
 
     if workshop in favourites_list.workshop.all():
         favourites_list.workshop.remove(workshop)
-        status = 'removed'
+        status = 'removed from'
         favourites_list.save()
 
     else:
         favourites_list.workshop.add(workshop)
-        status = 'added'
+        status = 'added to'
         favourites_list.save()
 
-    messages.success(request, f'Workshop "{status}" to favourites')
+    messages.success(request, f'Workshop {status} your favourites')
 
     return redirect(redirect_url)
