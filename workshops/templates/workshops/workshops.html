@@ -27,9 +27,9 @@
                 <div class="row mb-5">
                     <div class="col text-center">
                         <p class="mb-1">Hi {% if user.is_authenticated %}<span class="text-highlight">{{ user.username }}</span> {% else %}<span class="text-highlight">there</span>{% endif %}!</p>
-                        <p>Do you want to learn more about drying, preserving and arranging flowers?</p>
-                        <p class="mb-1">How about making your own unique Christmas wreath that will last many years?</p>
-                        <p class="mb-1">Join us at one of our workshops to master a new skill or simply hang out with
+                        <p class="mb-1">Do you want to learn more about <strong>drying, preserving and arranging flowers?</strong></p>
+                        <p class="mb-1">How about making your own unique <strong>Christmas wreath</strong> that will last many years?</p>
+                        <p class="mb-1">Join us at one of our <strong>DYI workshops</strong> to master a new skill or simply hang out with
                             like-minded people.</p>
                         <p class="mb-1">Browse the list of all workshops and <span><a href="{% url 'send_query' %}"
                             aria-label="Contact us via a contact form."><span class="contact-link text-highlight"> get in touch with us</span></a> if you want us to save

@@ -2,9 +2,11 @@
 
 1. [**Introduction**](#Introduction)
 
-2. [**E-commerce Business Model**](#E-commerce-business-model)
+2. [**E-commerce Business Model**](#E-commerce-business-model)  
 
-3. [**User Experience (UX)**](#User-Experience)
+3. [**SEO & Web Marketing**](#SEO-&-Web-Marketing)  
+
+4. [**User Experience (UX)**](#User-Experience)
     * [User goals](#User-goals)
     * [Site owner goals](#Site-owner-goals)
     * [Target audience](#Target-audience)
@@ -12,28 +14,28 @@
     * [Structure](#Structure)
     * [Design](#Design)
 
-4. [**Features**](#Features)
+5. [**Features**](#Features)
     * [Existing Features](#Existing-Features)
     * [Features to be implemented in the future](#Features-to-be-implemented-in-the-future)
 
-5. [**Technologies used**](#Technologies-used)
+6. [**Technologies used**](#Technologies-used)
 
-6. [**Deployment**](#Deployment)
+7. [**Deployment**](#Deployment)
     * [Deploying to Heroku](#Deploying-to-Heroku)
     * [Forking to GitHub Repository](#Forking-to-GitHub-Repository)
     * [Making a local clone](#Making-a-local-clone)
 
-7. [**Testing**](#Testing)
+8. [**Testing**](#Testing)
     * [Testing Approach](#Testing-Approach)
     * [User stories testing from the UX section](#User-stories-testing-from-the-UX-section)
     * [Validator Testing](#Validator-Testing)
     * [Issues and Bugs](#Issues-and-Bugs)
 
-8. [**Credits**](#Credits)
+9. [**Credits**](#Credits)
 
-9. [**Acknowledgments**](#Acknowledgments)
+10. [**Acknowledgments**](#Acknowledgments)
 
-10. [**Disclaimer**](#Disclaimer)
+11. [**Disclaimer**](#Disclaimer)
 
 <br>
 
@@ -53,6 +55,32 @@ Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist 
 ---
 
 Hush Daisies website is based on the digital Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisfy emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strengthening user's trust. The business owners are invested in maintaining good relationship with the customer, by allowing easy contact, accommodating special requests and organising in person workshops.  
+
+## SEO & Web Marketing  
+---  
+
+### Search Engine Optimization (SEO) 
+
+In order to ensure the website is found by search engines and ranks higher in search results, appropriate keywords have been researched and identified specifically for the Hush Daisies business type and purpose. I started with brainstorming possible keywords that could be used by potential customers in the search engines who are looking for a florist studio that crafts dried flower arrangemnts for home, gifts and special occasions. Not having access to a paid SEO planning platform, I utitilzed Google search engine to check their popularity, relevance and suggestions of other potential keywords. From my general list of all possible search terms, I narrowed it down to both short-tail and long-tail keywords that were most relevant to the site.
+
+The keywords were implemented as follows:
+
+* Using meta description and keywords in the head of the base.html
+* Organically in the high quality content throughout the site, including hero image call out text, Our Studio & Custom Orders section, intro on the Workshop page, as well as product and workshop names  
+* In the image file names and alt text
+
+The site alse includes the following elements to improve SEO:
+
+* Privacy Policy and Terms of Use to convey trustworthiness 
+* Links to trusted, relevant and high quality sites on the home page
+* Attribute rel="noopener" on links to external websites  
+* Use of <strong></strong> tags to highlight the importance of a keyword in the content
+* sitemap.xml to help search enginges to crawl the site
+* robots.txt (listing urls that cannot be accessed by bots) to acknowledge that the site will be crawled by bots and therefore indicate that the site is of a high quality
+
+### Web Marketing
+
+  ![Facebook page image](docs/facebook-page.png)
 
 ## User Experience
 ---
