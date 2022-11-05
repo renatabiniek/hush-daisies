@@ -318,7 +318,9 @@ Hush Daisies website is based on the digital Business-to-consumer (B2C) sales mo
 * [Coolors](https://coolors.co/ ) - to create cohesive colour scheme for the site
 * [Eye Dropper](https://eyedropper.org/) - to pick specific colours from images 
 * [Favicon.io](https://favicon.io/) - to create a favicon for the site
-* [NEEDS UPDATE!] - to edit and resize images
+* [Pixlr](https://pixlr.com/) - to edit and resize images
+* [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - to generate Privacy Policy  
+* [Terms and Conditions Generator](https://www.termsandconditionsgenerator.com/) - to generate Terms of Use
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - to inspect and debug the code through all stages of the development
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - to inspect the site for overflow 
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse) - to audit the site for performance, accessibility, SEO and best practices
