@@ -27,4 +27,5 @@ Delivery details:
 If you have any questions about your order, send us an email at {{ contact_email }}.
 
 Thank you again for supporting our small floral business,
-Hush Daisies xxx
+Hush Daisies 
+xxx

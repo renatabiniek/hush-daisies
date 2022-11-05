@@ -398,6 +398,42 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+
+/*------------------------------------ Mailchimp newsletter */
+
+#mc_embed_signup {
+  background: #2B5357;
+
+}
+
+.newsletter-btn {
+    background: #D1A9AF !important;
+    color: #1C1C1C !important;
+    font-weight: bolder !important;
+}
+
+.newsletter-btn:hover,
+.newsletter-btn:focus,
+.newsletter-btn:active {
+    background: #D1A9AF !important;
+    color: #1C1C1C !important;
+    font-weight: bolder !important;
+    font-size: larger !important;
+}
+
+.mce_inline_error {
+    background: white !important;
+    color: #1C1C1C !important;
+}
+
+#mce-success-response {
+    color: white !important;
+    padding: 0 !important;
+    font-size: .9rem;
+    font-weight: normal !important;
+}
+
+
 /*------------------------------------ Media queries*/
 
 /*on screens 425px or smaller, reduce the font size, padding and margins*/
@@ -434,5 +470,9 @@ input[name='q']::placeholder {
     .container {
         padding-left: 1.4rem;
         padding-right: 1.4rem;
+    }
+
+    #mce-success-response {
+        font-size: .6rem;
     }
 }
