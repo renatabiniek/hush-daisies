@@ -56,7 +56,7 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                         {% else %}
-                        <span><a href="{% url 'account_login' %}" class="text-info" role="button"
+                        <span><a href="{% url 'account_login' %}" class="text-info font-weight-bold" role="button"
                                 aria-label="Click the button to go to login form."><em>Sign in to save to
                                     favourties</em></a></span>
                         {% endif %}
