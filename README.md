@@ -73,14 +73,18 @@ The site alse includes the following elements to improve SEO:
 
 * Privacy Policy and Terms of Use to convey trustworthiness 
 * Links to trusted, relevant and high quality sites on the home page
-* Attribute rel="noopener" on links to external websites  
-* Use of <strong></strong> tags to highlight the importance of a keyword in the content
+* Attribute `rel="noopener"` on links to external websites  
+* Use of `strong` tags to highlight the importance of a keyword in the content
 * sitemap.xml to help search enginges to crawl the site
 * robots.txt (listing urls that cannot be accessed by bots) to acknowledge that the site will be crawled by bots and therefore indicate that the site is of a high quality
 
 ### Web Marketing
 
-  ![Facebook page image](docs/facebook-page.png)
+As a small, independent business with no budget for paid marketing, I opted in for social media marketing to generate traffic to the site and brand awareness organically. This is a free method of marketing, however, it will involve significant, long-term effort involving creating and posting social media content to gain user interest, loyality and gradually expand the audiance.  
+
+A business Facebook page was created for Hush Daisies, including relevant business information, shop action button and the link to the Hush Daisies site. First introductory post was created to encourage users to engage with the site owners and the website. The link to the FB page is included in the footer on every page of the Hush Daisies site.
+
+Facebook might take down the page as part of their verification process but a screenshot can be found [here](docs/facebook-page.png).
 
 ## User Experience
 ---
