@@ -111,10 +111,11 @@
 
 <script>
     // Update qty on click
+    /* jshint esversion: 6 */
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
     // Remove item on click
     $('.remove-icon').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
@@ -126,7 +127,7 @@
          .done(function() {
             location.reload();
         });
-    })
+    });
 </script>
 
 <!-- Back to top button -->
