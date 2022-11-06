@@ -114,5 +114,12 @@ select option[value=""] {
     color: #2B5357;
 }
 
+/*on screens 290px or smaller, reduce the font size*/
 
+@media screen and (max-width: 290px) {
+
+    .checkout-text {
+        font-size: .8rem;
+    }
+}
 

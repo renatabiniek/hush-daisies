@@ -88,7 +88,7 @@
           </li>
           <!-- Shopping bag icon -->
           <li class="list-inline-item">
-            <a class="nav-link main-nav-link" href="{% url 'view_basket' %}">
+            <a class="nav-link main-nav-link" href="{% url 'view_basket' %}" aria-label="View basket">
               <!--Outlined icon if no items in basket, filled icon if items in basket -->
               <div><i class="bi bi-basket{% if grand_total %}-fill dusty-pink-text {% endif %}" aria-hidden="true">
                   €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>
@@ -152,7 +152,8 @@
       <div class="container-fluid pt-4 justify-content">
         <div class="row text-center">
           <!-- Social links -->
-          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Follow us</h5>
+          <div class="col-12 col-md-4 pb-3">
+            <h5 class="footer-heading pb-3">Follow us</h5>
             <ul class="m-0 text-center list-inline">
               <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100087606756809" target="_blank" rel="noopener"
                   aria-label="Visit our Facebook page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-facebook"
@@ -192,7 +193,7 @@
                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn newsletter-btn">
                     <p class="brandingLogo"><a href="http://eepurl.com/ic0QOr"
                         title="Mailchimp - email marketing made easy and fun"><img
-                          src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" class="img-fluid"></a></p>
+                          src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" class="img-fluid" alt="Mailchimp brand"></a></p>
                   </div>
                 </div>
               </div>

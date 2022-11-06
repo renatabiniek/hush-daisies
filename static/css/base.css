@@ -112,6 +112,7 @@ a:focus {
  }
 
 /*------------------------------------ Home*/
+
 .hero-img {
     background-image: url(../site-images/background-image.jpg);
     height: 95vh;
@@ -212,7 +213,6 @@ a:focus {
     right: 20px;
     z-index: 999999999;
     background-color: #D1A9AF;
-
 }
 
 .top-icon {
@@ -232,19 +232,6 @@ a:focus {
 .text-highlight {
     color: #2B5357;
     font-weight: bolder;
-}
-
-.in-press {
-    color: #2B5357;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-}
-
-.in-press:hover,
-.in-press:active,
-.in-press:focus {
-    color: #2B5357;
-    font-size: 1.5rem;
 }
 
 .image-size {
@@ -462,7 +449,7 @@ input[name='q']::placeholder {
     .input-group {
         font-size: .5rem;
     }
-    
+
     .btn-qty,
     .qty_input {
         padding: .2rem;
@@ -483,7 +470,8 @@ input[name='q']::placeholder {
         padding: .3rem;
     }
 
-    .navbar-toggler {
+    .navbar-toggler,
+    .hero-img p {
         font-size: 1rem;
     }
 
@@ -495,23 +483,14 @@ input[name='q']::placeholder {
         font-size: 1.4rem;
     }
 
-    .hero-img p {
-        font-size: 1rem;
-    }
-
     .callout-btn {
-        padding:.2rem .4rem;
+        padding: .2rem .4rem;
         font-size: 1rem;
     }
 
     .section-title {
         font-size: 1.4rem;
         padding: 1.2rem 0 1rem 0;
-    }
-
-    .container {
-        padding-left: 1.4rem;
-        padding-right: 1.4rem;
     }
 
     #mce-success-response {
@@ -531,13 +510,12 @@ input[name='q']::placeholder {
     }
 
     .page-title,
-    .product-page-title,
-    .workshops-page-title {
+    .product-page-title {
         font-size: 2rem;
         margin-top: 1.5rem;
     }
 
-    .category-badge  {
+    .category-badge {
         padding: 0.5rem;
         font-size: 1rem;
     }
@@ -548,29 +526,21 @@ input[name='q']::placeholder {
         font-size: .8rem;
     }
 
+    .action-btn:hover,
+    .action-btn:focus,
+    .action-btn:active,
+    .btn-inverted:hover {
+        font-size: .9rem;
+    }
+
     .qty-section-title {
         margin-bottom: 0;
     }
-
-    .workshop-text {
-        font-size: .8rem;
-        padding: 0;
-    }
-
-    .workshop-text-login {
-        font-size: .7rem;
-    }
-
 
     .product-title-detail {
         font-size: 1.3rem;
         padding-top: 1rem;
     }
-
-    .testimonials {
-        padding-top: 0;
-    }
-
 }
 
 /*on screens 365px or smaller, reduce the font size and padding*/
@@ -584,14 +554,6 @@ input[name='q']::placeholder {
     .btn-qty {
         padding: .1rem;
         font-size: .6rem;
-    }
-
-    .icn-workshop {
-        padding-right: .4rem !important;
-    }
-
-    .workshop-text-fav {
-        font-size: .8rem;
     }
 }
 
@@ -613,8 +575,14 @@ input[name='q']::placeholder {
         font-size: .7rem;
     }
 
-    .checkout-text {
+    .action-btn:hover,
+    .action-btn:focus,
+    .action-btn:active,
+    .btn-inverted:hover {
         font-size: .8rem;
     }
 
+    .checkout-text {
+        font-size: .8rem;
+    }
 }

@@ -27,3 +27,38 @@
 .card-detail {
     border: none;
 }
+
+/*on screens 425px or smaller, reduce the font size, padding and margin*/
+@media screen and (max-width: 425px) {
+
+    .workshops-page-title {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .workshop-text {
+        font-size: .8rem;
+        padding: 0;
+    }
+
+    .workshop-text-login {
+        font-size: .7rem;
+    }
+
+    .testimonials {
+        padding-top: 0;
+    }
+}
+
+/*on screens 365px or smaller, reduce the font size and padding*/
+
+@media screen and (max-width: 365px) {
+
+    .icn-workshop {
+        padding-right: .4rem !important;
+    }
+
+    .workshop-text-fav {
+        font-size: .8rem;
+    }
+}

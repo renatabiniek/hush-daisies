@@ -499,9 +499,13 @@ I tested the program considering the user stories from the UX section as well.
 [NEEDS UPDATE!]
 
 
-* **W3C CSS Validator**
+* **W3C CSS Validator**  
 
-[NEEDS UPDATE!]
+No errors were found during CSS validation for any of the following css files:  
+base.css, profile.css, checkout.css, workshops.css
+
+ ![CSS Validation image](docs/testing/css-validation.png)
+
 
 * **JSHint**
 
@@ -514,7 +518,17 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Color contrast:**
 
-[NEEDS UPDATE!]
+The site was additionally tested with [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/). Initially, there were a few contrast issues found:  
+  * font color on the banner  
+  * font color coming from the Bootstrap text-info class on several pages  
+  * asterisk color from the Mailchimp newsletter sign-up form
+
+I've adjusted the colors and the final result on all pages is:
+
+*No automated color contrast issues found on the webpage tested* 
+
+ ![Color contrast image](docs/testing/color-contrast-test.png)
+
 
 * **Content:**
 
