@@ -38,7 +38,7 @@
                             <div class="input-group-prepend">
                                 <button
                                     class="decrement-qty btn btn-sm btn-qty rounded-0" data-item_id="{{ item.item_id }}"
-                                    id="decrement-qty_{{ item.item_id }}" aria-hidden="Decrease quantity">
+                                    id="decrement-qty_{{ item.item_id }}" aria-label="Decrease quantity">
                                     <i class="bi bi-dash" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -49,7 +49,7 @@
                             <div class="input-group-append">
                                 <button
                                     class="increment-qty btn btn-sm btn-qty rounded-0" data-item_id="{{ item.item_id }}"
-                                    id="increment-qty_{{ item.item_id }}" aria-hidden="Increase quantity"><i
+                                    id="increment-qty_{{ item.item_id }}" aria-label="Increase quantity"><i
                                         class="bi bi-plus" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -109,7 +109,7 @@
 {% include 'products/includes/qty_input_script.html' %}
 
 
-<script type="text/javascript">
+<script>
     // Update qty on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
@@ -130,7 +130,7 @@
 </script>
 
 <!-- Back to top button -->
-<script type="text/javascript">
+<script>
     $('#top-link').click(function (e) {
         window.scrollTo(0,0);
     })

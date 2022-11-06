@@ -87,7 +87,7 @@
                                 <h5 class="card-title product-title mb-2">{{ product.name }}</h5>
                                 {% if product.category %}
                                 <p class="category-link mb-0 text-left"><a href="{% url 'products' %}?category={{ product.category.name }}"><i class="bi bi-flower1"></i>
-                                        {{ product.category.friendly_name }}</p></a>
+                                        {{ product.category.friendly_name }}</a></p>
                                 {% endif %}
                             </div>
                             <!-- Card footer with price & admin product management links -->
@@ -135,14 +135,14 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- Back to top button -->
-<script type="text/javascript">
+<script>
     $('#top-link').click(function (e) {
         window.scrollTo(0, 0);
     })
 </script>
 <!-- Sorting within select dropdown box -->
 <!-- Credit: Code Institute, Boutique Ado walkthrough -->
-<script type="text/javascript">
+<script>
     $('#sorting-selector').change(function() {
         var selector = $(this);
         var currentUrl = new URL(window.location);

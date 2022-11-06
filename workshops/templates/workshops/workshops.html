@@ -31,8 +31,8 @@
                         <p class="mb-1">How about making your own unique <strong>Christmas wreath</strong> that will last many years?</p>
                         <p class="mb-1">Join us at one of our <strong>DYI workshops</strong> to master a new skill or simply hang out with
                             like-minded people.</p>
-                        <p class="mb-1">Browse the list of all workshops and <span><a href="{% url 'send_query' %}"
-                            aria-label="Contact us via a contact form."><span class="contact-link text-highlight"> get in touch with us</span></a> if you want us to save
+                        <p class="mb-1">Browse the list of all workshops and <a href="{% url 'send_query' %}"
+                            aria-label="Contact us via a contact form."><span class="contact-link text-highlight"> get in touch with us</a> if you want us to save
                             a spot for you.</p>
                         <p class="mb-1 mt-4">We'd love to meet you!</p>
                     </div>
@@ -114,13 +114,14 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Back to top button -->
 <div class="back-to-top">
     <a id="top-link" class="d-flex h-100" role="button"
-        aria-label="Click the button to go back to the top of the page."><i
-            class="bi bi-arrow-up-square top-icon px-2"></i></a>
+        aria-label="Click the button to go back to the top of the page.">
+        <i class="bi bi-arrow-up-square top-icon px-2"></i></a>
 </div>
 
 {% endblock %}
@@ -128,7 +129,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- Back to top button -->
-<script type="text/javascript">
+<script>
     $('#top-link').click(function (e) {
         window.scrollTo(0, 0);
     })
@@ -136,7 +137,7 @@
 
 <!-- Sorting within select dropdown box -->
 <!-- Credit: Code Institute, Boutique Ado walkthrough, modified -->
-<script type="text/javascript">
+<script>
     $('#workshop-sorting-selector').change(function() {
         var selector = $(this);
         var currentUrl = new URL(window.location);

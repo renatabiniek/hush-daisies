@@ -33,6 +33,7 @@
                                 <th>Workshop Name</th>
                                 <th>Date</th>
                                 <th>Location</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <!-- Table body, iterate through workshops -->
@@ -55,7 +56,7 @@
                                         class="small admin-link">
                                         {{ workshop.name }}
                                     </a>
-                                </td class="align-middle">
+                                </td>
                                 <td class="small align-middle">{{ workshop.date|date:'d M Y' }}</td>
                                 <td class="small align-middle">{{ workshop.location }}</td>
                                 <td class="small align-middle">
@@ -146,6 +147,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Back to top button -->
@@ -158,6 +160,6 @@
 {% block postloadjs %}
     {{ block.super }}
 <!-- Countryfield colour change -->
-<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+<script src="{% static 'profiles/js/countryfield.js' %}"></script>
 
 {% endblock %}

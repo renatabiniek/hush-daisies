@@ -222,20 +222,20 @@
 
     <!-- Space for page specific JavaScript to load at the end of the body -->
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
       // Call the show option on all elements with 'toast' class
       $('.toast').toast('show');
     </script>
     <!-- Back to top button -->
-    <script type="text/javascript">
+    <script>
     $('#top-link').click(function (e) {
       window.scrollTo(0,0);
       })
     </script>
 
     <!--JS for Mailchimp newsletter signup-->
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-          <script type='text/javascript'>
+    <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+          <script>
             (function ($) {
               window.fnames = new Array();
               window.ftypes = new Array();
