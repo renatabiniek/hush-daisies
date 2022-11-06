@@ -10,7 +10,7 @@
     <div class="container">
         <!-- Add workshop form heading -->
         <div class="row">
-            <div class="col col-md-6 mt-sm-3 mt-md-5 mb-5">
+            <div class="col col-md-6 mt-sm-3 mt-md-5 mb-sm-2 mb-md-5">
                 <h1 class="page-title pb-1">Workshop Management</h1>
             </div>
         </div>
@@ -28,8 +28,8 @@
                         {% endif %}
                     {% endfor %}
                 <div class="text-right mb-5">
-                    <a class="btn btn-sm btn-inverted" href="{% url 'show_workshops' %}">Back to Workshops</a>
-                    <button class="btn btn-sm action-btn" type="submit">Add Workshop</button>
+                    <button class="btn btn-sm action-btn mt-2" type="submit">Add Workshop</button>
+                    <a class="btn btn-sm btn-inverted mt-2" href="{% url 'show_workshops' %}">Back to Workshops</a>
                 </div>
                 </form>
             </div>

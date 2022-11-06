@@ -14,13 +14,13 @@
     <div class="container">
         <!-- Checkout heading -->
         <div class="row">
-            <div class="col mt-sm-3 mt-md-5 mb-5">
+            <div class="col mt-sm-3 mt-md-5 mb-md-5">
                 <h1 class="page-title pb-1">My Profile</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6">
-                <h2 class="summary-title text-uppercase">My Workshops</h2>
+            <div class="col-12 col-md-6 pt-2">
+                <h2 class="summary-title text-uppercase ">My Workshops</h2>
                 <!-- If items saved on the favourite list display table -->
                 {% if favourites|length != 0 %}
                 <!-- Table with favourite workshops -->
@@ -85,7 +85,7 @@
                 {% endif %}
             </div>
             <div class="col-12 col-md-6">
-                <div class="mb-5">
+                <div class="mb-5 pt-2">
                     <h2 class="summary-title text-uppercase">My Delivery Details</h2>
                     <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                         {% csrf_token %}

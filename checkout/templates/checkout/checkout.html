@@ -46,8 +46,8 @@
                         </a>
                     </div>
                     <div class="col-7">
-                        <p class="my-0 teal-text product-title">{{ item.product.name }}</p>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        <p class="my-0 teal-text">{{ item.product.name }}</p>
+                        <p class="mb-sm-1 my-md-0 small text-muted">Qty: {{ item.quantity }}</p>
                     </div>
                     <div class="col-3 text-right">
                         <p class="my-0 small">€{{ item.product.price | calculate_subtotal:item.quantity }}</p>
@@ -56,7 +56,7 @@
                 {% endfor %}
                 <hr class="divider">
                 <!-- Summary -->
-                <div class="row text-right">
+                <div class="row text-right checkout-text">
                     <div class="col-7 offset-2 font-weight-bold">
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>

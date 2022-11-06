@@ -77,10 +77,10 @@
                 {% endif %}
             </div>
             <div class="col-12 text-right">
-                <!-- Keep shopping button -->
-                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep shopping</a>
                 <!-- Secure checkout button -->
-                <a href="{% url 'checkout' %}" class="action-btn btn-sm btn rounded-3 py-2"><span class="text-uppercase">Secure checkout</span> <span><i class="bi bi-lock-fill" aria-hidden="true"></i></span></a>
+                <a href="{% url 'checkout' %}" class="action-btn btn-sm btn rounded-3 py-2 mt-2 mr-1"><span class="text-uppercase">Secure checkout</span> <span><i class="bi bi-lock-fill" aria-hidden="true"></i></span></a>
+                <!-- Keep shopping button -->
+                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mt-2">Keep shopping</a>
             </div>
         </div>
         {% else %}

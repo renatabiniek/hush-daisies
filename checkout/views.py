@@ -200,9 +200,10 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-    messages.success(request, f'Your order { order_number } has been \
-                   successfully processed. Order confirmation \
-                   will be sent to { order.email }.')
+    messages.success(
+        request,
+        f'Your order was received. '
+        f'Order confirmation will be sent to { order.email }.')
     # delete basket from the session
     if 'basket' in request.session:
         del request.session['basket']

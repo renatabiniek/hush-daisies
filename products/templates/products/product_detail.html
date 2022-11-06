@@ -11,7 +11,7 @@
     <div class="container-fluid px-5 mt-sm-5 mt-md-5 mb-5">
         <!-- Image and product details columns -->
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 my-5 text-center">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-5 mb-md-5 text-center">
                 <!-- If there's a product image, display the image; otherwise display a placeholder -->
                 {% if product.image %}
                 <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -22,7 +22,7 @@
             <!-- Product description -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="mt-sm-3 mb-5 mt-md-5">
-                    <h2 class="mb-3 product-title">{{ product.name }}</h2>
+                    <h2 class="mb-3 product-title-detail">{{ product.name }}</h2>
                     {% if product.category %}
                     <p class="category-link mb-3"><a href="{% url 'products' %}?category={{ product.category.name }}"><i
                                 class="bi bi-flower1" aria-hidden="true"></i>
@@ -36,7 +36,7 @@
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="section-title teal-text">Quantity:</p>
+                                <p class="section-title qty-section-title teal-text">Quantity:</p>
                                 <div class="form-group w-25">
                                     <div class="input-group">
                                         <!-- Button before the quantity box to decrease the qty -->
@@ -61,12 +61,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div class="col-12 mb-3 mt-4 mt-md-3">
                                 <!-- Keep shopping button -->
-                                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1">Keep
+                                <a href="{% url 'products' %}" class="btn-inverted btn-sm btn rounded-3 py-2 mr-1 mt-2">Keep
                                     shopping</a>
                                 <!-- Add to shopping basket button -->
-                                <input type="submit" class="action-btn btn-sm btn rounded-3 py-2" value="Add to basket">
+                                <input type="submit" class="action-btn btn-sm btn rounded-3 py-2 mt-2" value="Add to basket">
                             </div>
                             <!-- Hidden input to hold the current URL and redirect the user to the same page once they hit the Add to basket button -->
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">

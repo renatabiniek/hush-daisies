@@ -99,7 +99,7 @@
       </div>
       
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-dark nav-background pt-2 pb-4 pb-lg-3 w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark nav-background pt-2 pb-3 w-100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -109,7 +109,7 @@
       <!-- Banner -->
       <div id="custom-order-banner" class="row text-center py-1">
         <div class="col">
-            <p class="my-1">Looking for something even more special?<a href="{% url 'send_query' %}"
+            <p class="my-1">Looking for something special?<a href="{% url 'send_query' %}"
                     aria-label="Go to contact form to submit a special request."> <span class="contact-link">Get in touch</span> with with us!</a></p>
         </div>
     </div>
@@ -149,7 +149,7 @@
 
     <!-- Footer -->
     <footer class="page-footer mt-auto nav-background footer-text">
-      <div class="container-fluid pt-5 justify-content">
+      <div class="container-fluid pt-4 justify-content">
         <div class="row text-center">
           <!-- Social links -->
           <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Follow us</h5>
@@ -165,8 +165,8 @@
                     aria-hidden="true"></i></a></li>
             </ul>
           </div>
-          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Newsletter</h5>
-          <p class="m-0">Sign up for our monthly newsletter and be the first to hear about seasonal offers,<br>new additions to our shop and workshops!</p>
+          <div class="col-12 col-md-4"><h5 class="footer-heading pb-3">Newsletter</h5>
+          <p class="m-0">Sign up for our monthly newsletter and be the first to hear about seasonal offers,</p><p class="m-0">new additions to our shop and workshops!</p>
           <!-- Begin Mailchimp Signup Form -->
           <div id="mc_embed_signup">
             <form
@@ -174,12 +174,11 @@
               method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
               target="_blank" novalidate>
               <div id="mc_embed_signup_scroll">
-                <div class="indicates-required"><span class="asterisk">*</span>required</div>
+                <div class="indicates-required"><span class="asterisk text-danger">* </span>required</div>
                 <div class="mc-field-group">
-                  <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                  <label for="mce-EMAIL">Email Address <span class="asterisk text-danger">*</span>
                   </label>
                   <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                  <!-- <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span> -->
                 </div>
                 <div id="mce-responses" class="clear foot">
                   <div class="response" id="mce-error-response" style="display:none"></div>
@@ -212,8 +211,10 @@
         </div>
         <!-- Copyright -->
         <div class="row text-center py-3">
-          <div class="col"><span>&copy; <a href="{% url 'home' %}" class="footer-link"> Hush Daisies</a> 2022.
-            <span>Site created for educational purposes.</span></div>
+          <div class="col footer-text">
+            <span>&copy; <a href="{% url 'home' %}" class="footer-link footer-text"> Hush Daisies</a> 2022.
+            Site created for educational purposes.</span>
+          </div>
         </div>
       </div>
     </footer>

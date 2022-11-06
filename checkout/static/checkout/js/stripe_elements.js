@@ -22,7 +22,7 @@ var style = {
   base: {
       color: '#1C1C1C',
       fontFamily: '"Open Sans", sans-serif',
-      fontSize: '16px',
+      fontSize: '15px',
       letterSpacing: '2px',
       fontSmoothing: 'antialiased',
       '::placeholder': {

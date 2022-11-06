@@ -32,13 +32,13 @@
             <!-- Workshop description -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="mt-sm-3 mb-5 mt-md-5">
-                    <h2 class="mb-3 product-title">{{ workshop.name }}</h2>
-                    <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
-                    <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} starts
+                    <h2 class="mb-3 product-title-detail">{{ workshop.name }}</h2>
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }}
                         at {{ workshop.start_time }}</p>
-                    <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i>
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-flower1 icn-workshop"></i>
                         {{ workshop.level.friendly_name }}</p>
-                    <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i>
+                    <p class="text-left price-tag mt-0 workshop-text"><i class="bi bi-currency-euro icn-workshop"></i>
                         {{ workshop.workshop_fee }}</p>
                     <div class="d-flex justify-content-between">
                         {% if request.user.is_authenticated %}
@@ -46,25 +46,24 @@
                             {% csrf_token %}
                             <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
                                 {% if workshop in favourites_list.workshop.all %}
-                                <i class="bi bi-bookmark-heart-fill float-left"><span class="small font-weight-bold">
-                                        Remove from favourites</span></i>
+                                <i class="bi bi-bookmark-heart-fill float-left workshop-text-fav"><span class="small font-weight-bold">
+                                        Remove</span></i>
                                 {% else %}
-                                <i class="bi bi-bookmark-heart float-left"><span class="small font-weight-bold"> Add to
+                                <i class="bi bi-bookmark-heart float-left workshop-text-fav"><span class="small font-weight-bold"> Add to
                                         favourites</span></i>
                                 {% endif %}
                             </button>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                         {% else %}
-                        <span><a href="{% url 'account_login' %}" class="text-info font-weight-bold" role="button"
-                                aria-label="Click the button to go to login form."><em>Sign in to save to
-                                    favourties</em></a></span>
+                        <span><a href="{% url 'account_login' %}" class="text-info workshop-text-login font-weight-bold" role="button"
+                                aria-label="Click the button to go to login form."><em>Sign in to save</em></a></span>
                         {% endif %}
                         <div><a href="{% url 'send_query' %}" class="btn action-btn" role="button"
-                                aria-label="Click the button to send an email to store owner">Save your spot</a></div>
+                                aria-label="Click the button to send an email to store owner">Join us</a></div>
                     </div>
                     <hr class="divider w-100">
-                    <p>{{ workshop.description }}</p>
+                    <p class="workshop-text">{{ workshop.description }}</p>
                     {% if request.user.is_superuser %}
                     <h5 class="text-left section-title small mt-4">Manage workshop:</h5>
                     <a class="small admin-link text-info pr-2" href="{% url 'edit_workshop' workshop.id %}">EDIT</a>
@@ -87,7 +86,7 @@
                 <hr class="divider w-100">
                 <div class="col-md-8 card card-detail mt-3 pl-0 pr-1">
                     <h5 class="section-title teal-text font-weight-bold">Testimonials</h5>
-                    <div class="card-body pl-0">
+                    <div class="card-body pl-0 workshop-text">
                         {% if not workshop_testimonials.all %}
                         <p>No comments yet...</p>
                         {% else %}
@@ -111,11 +110,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 card card-detail mt-4 mb-4">
-                    <div class="card-body">
+                    <div class="card-body testimonials">
                         <!-- Comment box only appears if user is logged in -->
                         {% if user.is_authenticated %}
                         <h5 class="section-title teal-text">Say something...</h5>
-                        <p>Posting as: <strong>{{ user.username }}</strong></p>
+                        <p class="workshop-text">Posting as: <strong>{{ user.username }}</strong></p>
                         <form method="POST">
                             <!-- Token to protect the form from attackers -->
                             {% csrf_token %}
@@ -124,7 +123,7 @@
                             <button type="submit" value="Submit" class="btn action-btn btn-sm">Add</button>
                         </form>
                         {% else %}
-                        <p><em>Do you want to write a testimonial or add a comment?</em></p>
+                        <p class="workshop-text"><em>Do you want to write a testimonial or add a comment?</em></p>
                         <a href="{% url 'account_login' %}" class="btn btn-sml action-btn" role="button"
                         aria-label="Click the button to go to login form.">Sign in</a>
                         {% endif %}
