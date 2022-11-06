@@ -52,7 +52,7 @@
                                 <td class="align-middle">
                                     <!-- Workshop name links to workshop detal -->
                                     <a href="{% url 'workshop_details' workshop.id %}" title="{{ workshop.name }}"
-                                        class="small text-info">
+                                        class="small admin-link">
                                         {{ workshop.name }}
                                     </a>
                                 </td class="align-middle">
@@ -115,7 +115,7 @@
                                     <td>
                                         <!-- Order number links to previous order -->
                                         <a href="{% url 'past_order' order.order_number %}"
-                                            title="{{ order.order_number }}" class="small text-info">
+                                            title="{{ order.order_number }}" class="small admin-link">
                                             {{ order.order_number|truncatechars:6}}
                                         </a>
                                     </td>

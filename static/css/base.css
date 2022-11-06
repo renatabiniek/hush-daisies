@@ -164,6 +164,12 @@ a:focus {
     text-decoration: underline !important;
 }
 
+.admin-link:hover,
+.admin-link:active,
+.admin-link:focus {
+    font-weight: bold;
+}
+
 /*------------------------------------ Footer*/
 
 .page-footer {
@@ -444,6 +450,9 @@ input[name='q']::placeholder {
     font-weight: normal !important;
 }
 
+.asterisk {
+    color: white !important;
+}
 
 /*------------------------------------ Media queries*/
 
