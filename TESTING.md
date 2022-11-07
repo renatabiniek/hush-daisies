@@ -308,6 +308,13 @@ I tested the website considering the user stories from the UX section as well.
 **EPIC | View and Navigation**  
   
    * As a site user I can quickly learn what the site is about so that I can decide if it offers something I want.  
+
+     TEST RESULT: PASS
+
+     * Hush Daisies branding is prominent once the user enters the site - the Hush Daisies logo with a flower at the top of the page, the hero image with dried flowers close up and the tag line immediately set the tone. The purpose of the site and site owner's philosophy is also contained in the site's slogan.
+     * Link to Our Studio section is displayed in the navigation bar to take the user to the relevant section that introduces the store owners, tells their story and presents what the site offers.
+     * Further selling points follow just underneath the main image are consise and engaging, giving the user a clear idea about the site and the store offer.
+
    * As a site user I can intuitively navigate through the site so that I can view desired content.  
    * As a site user I can see notifications about any changes I have made so that I have a clear understanding of the status of the action.
    * As a site user I can access the website on both mobile and desktop so that I can view the content anywhere.  
