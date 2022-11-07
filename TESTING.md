@@ -642,9 +642,9 @@ I've adjusted the colors and the final result on all pages is:
 
   During HTMl validation, I got an error about duplicated IDs for delete testimonials modal. As the modal was within a for loop, it needed to have unique IDs set. This was solved by adding {{ loop.index }} and {{ testimonial.id }} to ensure each delete modal in the loop is getting assigned unique ID.
 
-* **Negative value allowed as price in product form**  
+* **Negative value allowed as price in product/workshop forms**  
 
-  During manual testing the flow, I found that the form allows the admin to enter or select a negative number as product price, which was both not a good user experience and risk of posting a product at incorrect price. I fixed this by overriding the ProductForm's init method and setting a min attribute on the price field.
+  During manual testing the flow, I found that the form allows the admin to enter or select a negative number as product and workshop price, which was both not a good user experience and risk of posting a product / workshop at incorrect price. I fixed this by overriding the ProductForm's and WorkshopForm's init method and setting a min attribute on the price field.
 
   ![Negative value validation image](docs/bugs/negative-value.png)
 

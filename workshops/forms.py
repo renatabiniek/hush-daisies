@@ -44,6 +44,7 @@ class WorkshopForm(forms.ModelForm):
         self.fields['level'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-teal'
+            self.fields['workshop_fee'].widget.attrs['min'] = 0.01
 
     def clean_date(self):
         """Ensure that date is not in the past"""
