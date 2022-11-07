@@ -73,7 +73,8 @@ The site alse includes the following elements to improve SEO:
 
 * Privacy Policy and Terms of Use to convey trustworthiness 
 * Links to trusted, relevant and high quality sites on the home page
-* Attribute `rel="noopener"` on links to external websites  
+* Attribute `rel="noopener"` on links to external websites and social media that are used to improve SEO
+* Attribute `rel="nofollow"` on link of the Mailchimp logo leading to a site that should be excluded from evaluating by search engines
 * Use of `strong` tags to highlight the importance of a keyword in the content
 * sitemap.xml to help search enginges to crawl the site and speed up content discovery
 * robots.txt (listing urls that cannot be accessed by bots) to acknowledge that the site will be crawled by bots and therefore indicate that the site is of a high quality
@@ -644,7 +645,8 @@ I've adjusted the colors and the final result on all pages is:
 * Learned more about Exception TypeError warning from [this Stackoverflow post](https://stackoverflow.com/questions/53148112/python-3-handling-error-typeerror-catching-classes-that-do-not-inherit-from-bas)  
 * Solved Bootstrap button outline issue thanks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)  
 * Learned how to reorder fields in a form thanks [this Stackoverflow post](https://stackoverflow.com/questions/350799/how-does-django-know-the-order-to-render-form-fields)  
-* Found advice on handling long URLs in [this Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) 
+* Found advice on handling long URLs in [this Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769)  
+* Insights on nofollow and noopener rel attrbutes were found [here](https://yoast.com/outbound-link-sponsored-nofollow-ugc-attributes/)
 
 
 ### Acknowledgments
