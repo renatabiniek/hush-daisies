@@ -405,44 +405,149 @@ The site was deployed to Heroku with the following steps:
 
   * DATABASE_URL (added automatically)
   * SECRET_KEY
-  * CLOUDINARY_URL
 
   9. Back in your code, update the ```settings.py``` file to import the env file and add the SECRET_KEY and DATABASE_URL file paths.
-  10. Also in the ```settings.py``` add the following:
+  10. Also in the ```settings.py``` update the DATABASES section so that it connects to Heroku Postgres database on the deployed site and to the development sqlite3 in the local environment:
 
-      Cloudinary to the INSTALLED_APPS list  
+```
+    if 'DATABASE_URL' in os.environ:
+      DATABASES = {
+              'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+          }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+```
+   
+  11. Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+  12. Create **Procfile** and add: ```web: gunicorn PROJ_NAME.wsgi```
+  13. Add and commit the changes and push to GitHub.
+  14. Go to Heroku and in Config vars, add `DISABLE_COLLECTSTATIC` with a value of `1`, for the initial deployment.
+  15. Navigate to the Deploy tab and scroll down to **Deployment Method**.
+  16. Select GitHub as deployment method.
+  17. Enter the name of the repository you want to connect to and click **Connect**.
+  18. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
+  19. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
 
-      STATICFILE_STORAGE  
-      STATICFILES_DIRS  
-      STATIC_ROOT  
-      MEDIA_URL  
-      DEFAULT_FILE_STORAGE  
-      TEMPLATES_DIR  
-      Update DIRS in TEMPLATES with TEMPLATES_DIR  
-      Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+  **Add AWS for hosting static and media files**
+
+  1. Sign up or log in to your AWS account.
+  2. From services, go to S3 and Buckets, and Create bucket. 
+  3. Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred.
+  4. Uncheck the 'Block all public access' checkbox, accept warning that the bucket will be made public, then click create bucket.
+  5. Click bucket name and go to Properties tab. Scroll down to 'Static website hosting' and click Edit. Select 'Host a static website', fill in default index.html and error.html and press Save.
+  6. Go to the Permissions tab and scroll down to 'Cross-origin resource sharing (CORS)' and paste the following:  
+
+      `[
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+      ]`  
+
+  7. Also on the Permissions tab, scroll to the 'Bucket policy' section and select 'Policy generator'. AWS policy generator page opens.
+  8. In Policy Type, select 'S3 Bucket Policy'. Then inside 'Principle' allow all principals by typing *.
+  9. In the Action dropdown, select 'Get Object'. And in Amazon Resources Name (ARN), paste in the ARN number from the other tab.
+  10. Click 'Add statement', then 'Generate Policy'. Copy the policy that's been generated and paste it into the bucket policy editor.
+  11. Before pressing save, add /* at the end of the resource key (this will allow access to all resources in the bucket). Then click Save.
+  12. Scroll down to Access control list (ACL) section, click edit and enable List for Everyone (public access) and accept the warning box. Click Save
+
+  **Identify and Access Management (IAM)**
+
+  1. After creating the bucket, create a user. From services, go to IAM and User groups, and Create group.
+  2. From the sidebar click 'Policies', then 'Create policy'.
+  3. Go to the JSON tab and click 'import managed policy'. Search for 'S3' and select 'AmazonS3FullAccess' and click import.
+  4. In the JSON box, update the "Resource" key using the ARN:
+           `"Resource": [
+                "arn:aws:s3:::bucket-name",
+                "arn:aws:s3:::bucket-name/*"
+            ]  
+          `
+  5. Click 'Next: Tags', 'Next: Review', give the policy a name and click 'Create policy'.
+  6. Attach the policy to the User Group by going to User Groups, choosing the group created earlier. In the Permissions tab click Add Permission and Attach policies. Find the policy just created and click Add Permission. 
+  7. From the sidebar go to the Users page and click 'Add users'.
+  8. Add user's name, check 'Access key - Programmatic Access', then click Next until Create user option.
+  9. Download the CSV file with user's access key and secret access key. 
+
+   **Connecting Django and AWS**  
+
+  1. Back in your workspace, install boto3 and django-storages, freeze requirements.txt and in settings.py add 'storages' to the INSTALLED_APPS.
+  2. In settings.py add the following:
+
+  ```
+      if 'USE_AWS' in os.environ:
+          AWS_STORAGE_BUCKET_NAME = 'bucket-name'
+          AWS_S3_REGION_NAME = 'your bucket region'
+          AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+          AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+          AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+          STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+          STATICFILES_LOCATION = 'static'
+          DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+          MEDIAFILES_LOCATION = 'media'
+
+          STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+          MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+```
+  3. In Heroku, in Config Vvars add AWS_ACCESS_KEY_ID with the value generated in the CSV file earlier. Then add the key AWS_SECRET_ACCESS_KEY with the value from the CSV file. Add the key USE_AWS, and set the value to True.
+  4. Remove the DISABLE_COLLECTSTAIC variable, since django should now collect static files automatically and upload them to S3.
+  5. Back in the workspace, in settings.py add the following line:
+     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+  6. Next, in the root directory of your project create a new file 'custom_storages.py' and add the following:  
   
-  11. Store static and media files in Cloudinary:
-  * Create 3 folders in the main directory; media, static and templates.
-  * Create **Procfile** and add: ```web: gunicorn PROJ_NAME.wsgi```
-  12. Add and commit the changes and push to GitHub.
-  12. Navigate to the Deploy tab and scroll down to **Deployment Method**.
-  15. Select GitHub as deployment method.
-  16. Enter the name of the repository you want to connect to and click **Connect**.
-  17. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
-  18. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
+      ```  
+      from django.conf import settings  
+      from storages.backends.s3boto3 import S3Boto3Storage
+      ```
+  7. Underneath the import add the following:  
+      ```  
+      class StaticStorage(S3Boto3Storage):
+          location = settings.STATICFILES_LOCATION
+
+      class MediaStorage(S3Boto3Storage):
+          location = settings.MEDIAFILES_LOCATION
+      ```  
+  8. Underneath the bucket config settings, define STATICFILES_LOCATION and MEDIAFILES_LOCATION:  
+      ```
+      STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+      STATICFILES_LOCATION = 'static'
+      DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+      MEDIAFILES_LOCATION = 'media'
+
+      # Override URLs for static and media files
+      STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+      MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+      ```
+
+  9. Add, commit and push the changes.
+  10. Back in S3, locate the bucket created earlier. Create a new folder called 'media' inside the bucket. Inside the media folder click 'Upload', 'Add files', and then select all images you're using for your site. 
+  11. Then under 'Permissions' select the option 'Grant public-read access' and click upload.
 
   **Final deployment to Heroku**
 
   1. Ensure all files are up to date in Gitpod.
   2. Ensure DEBUG is set to FALSE in settings.py.
-  3. Add "X_FRAME_OPTIONS= 'SAME ORIGIN'" to settings.py, to ensure that Summernote editor works in deployed project.
-  4. Add, commit and push deployment commit to GitHub.
-  5. In Heroku, go to Settings tab and click Reveal config vars. Remove DISABLE_COLLECTSTATIC variable.
-  6. Go to Deploy tab and scroll down to Deploy Branch. 
-  7. Run deployment and wait for confirmation that application has deployed.
+  3. Add, commit and push deployment commit to GitHub.
+  4. In Heroku, go to Settings tab and click Reveal config vars. Remove DISABLE_COLLECTSTATIC variable.
+  5. Go to Deploy tab and scroll down to Deploy Branch. 
+  6. Run deployment and wait for confirmation that application has deployed.
 
 
-  ### Forking to GitHub Repository [NEEDS UPDATE!]
+  ### Forking to GitHub Repository
 
   You can create a fork (copy) of the repository. This allows you to experiment with the code without affecting the original project.
 
@@ -471,7 +576,7 @@ You can also refer to this [GitHub documentation](https://docs.github.com/en/git
 ## Testing
 ---
 
-### Testing Approach [NEEDS UPDATE!]
+### Testing Approach
 
 The site was tested manually. 
 
@@ -483,7 +588,6 @@ The full details of tests results can be found in the [TESTING.md](TESTING.md) f
 
 ### Credits
 
-* [NEEDS UPDATE!]
 * Logos for the As seen in section taken from the official sites [One Fab Day](https://onefabday.com/) and [Ireland's Homes Interior and Living](https://www.ihil.net//)
 * Most of the images were sourced from [Unsplash](https://unsplash.com/):
   * [Hero image](https://unsplash.com/photos/OuWeHz4lPZg)
@@ -505,7 +609,7 @@ Thank you to:
 
 * [NEEDS UPDATE!]  
 * Tutor support team at Code Institute for all their help
-* 
+* Slack community
 
 ### Disclaimer
 
