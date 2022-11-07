@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.db.models.functions import Lower
-from .models import Level, Workshop, WorkshopTestimonial
+from .models import Workshop, WorkshopTestimonial
 from profiles.models import WorkshopFavourites, UserProfile
 from .forms import WorkshopForm, TestimonialsForm
 

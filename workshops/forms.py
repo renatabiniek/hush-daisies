@@ -51,7 +51,7 @@ class WorkshopForm(forms.ModelForm):
         date = self.cleaned_data['date']
 
         if date < today:
-            raise forms.ValidationError("The date cannot be in the past.")
+            raise ValidationError("The date cannot be in the past.")
         return date
 
 

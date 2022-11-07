@@ -114,7 +114,8 @@ SITE_ID = 1
 # Temporarily login emails to the console to confirm links
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# allauth settings: authentication with email or username, mandatory verification, min length of username and login urls
+# allauth settings: authentication with email or username,
+# mandatory verification, min length of username and login urls
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
