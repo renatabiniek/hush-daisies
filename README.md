@@ -613,7 +613,7 @@ I've adjusted the colors and the final result on all pages is:
 
 * **Delete modal within for loop**  
 
-  During HTMl validation, I got an error about duplicated IDs for delete testimonials modal. As the modal was within a for loop, it needed to have unique IDs set. This was solved by adding {{loop.index}} and {{testimonial.id}} to ensure each delet modal in the loop is getting assigned unique ID.
+  During HTMl validation, I got an error about duplicated IDs for delete testimonials modal. As the modal was within a for loop, it needed to have unique IDs set. This was solved by adding {{ loop.index }} and {{ testimonial.id }} to ensure each delete modal in the loop is getting assigned unique ID.
 
 ### Devices and browsers tested  
 

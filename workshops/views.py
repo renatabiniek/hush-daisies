@@ -44,6 +44,7 @@ def show_workshops(request):
     context = {
         'workshops': workshops,
         'current_sorting': current_sorting,
+        'on_profile_page': True,
     }
 
     return render(request, 'workshops/workshops.html', context)
@@ -236,6 +237,7 @@ def edit_workshop(request, workshop_id):
 @login_required
 def delete_workshop(request, workshop_id):
     """View for admin to delete a workshop"""
+    on_profile_page = True
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only the store owner can do that!')
         return redirect(reverse('show_workshops'))
