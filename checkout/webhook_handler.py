@@ -61,7 +61,7 @@ class StripeWebhookHandler:
         sent each time user completes payment process.
         Use payment intent to create an order
         in case the checkout form isn't submitted.
-        Check if order exists in the databes, return confirmation response
+        Check if order exists in the database, return confirmation response
         if it does, and create order - if doesn't exist yet.
         """
         intent = event.data.object
