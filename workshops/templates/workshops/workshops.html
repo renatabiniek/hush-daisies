@@ -82,10 +82,10 @@
                             <div class="card-footer border-0 pt-0 bg-white text-left">
                                 <div class="row">
                                     <div class="col px-0">
-                                        <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
-                                        <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }} at {{ workshop.start_time }}</p>
-                                        <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop"></i> {{ workshop.level.friendly_name }}</p>
-                                        <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop"></i> {{ workshop.workshop_fee }}</p>
+                                        <p class="text-left mt-0"><i class="bi bi-geo-alt-fill icn-workshop" aria-hidden="true"></i> {{ workshop.location }}</p>
+                                        <p class="text-left mt-0"><i class="bi bi-clock-fill icn-workshop" aria-hidden="true"></i> {{ workshop.date }} at {{ workshop.start_time }}</p>
+                                        <p class="text-left mt-0"><i class="bi bi-flower1 icn-workshop" aria-hidden="true"></i> {{ workshop.level.friendly_name }}</p>
+                                        <p class="text-left price-tag mt-0"><i class="bi bi-currency-euro icn-workshop" aria-hidden="true"></i> {{ workshop.workshop_fee }}</p>
                                         <a href="{% url 'send_query' %}" class="btn btn-sm action-btn" role="button" aria-label="Click the button to send an email to store owner">Join Us</a>
                                         {% if request.user.is_superuser %}
                                         <h5 class="text-left section-title small mt-3">Manage workshop:</h5>
@@ -121,7 +121,7 @@
 <div class="back-to-top">
     <a id="top-link" class="d-flex h-100" role="button"
         aria-label="Click the button to go back to the top of the page.">
-        <i class="bi bi-arrow-up-square top-icon px-2"></i></a>
+        <i class="bi bi-arrow-up-square top-icon px-2" aria-hidden="true"></i></a>
 </div>
 
 {% endblock %}

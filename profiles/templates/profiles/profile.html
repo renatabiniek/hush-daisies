@@ -64,9 +64,9 @@
                                         {% csrf_token %}
                                         <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
                                             {% if workshop in favourites_list.workshop.all %}
-                                            <i class="bi bi-bookmark-heart-fill"></i>
+                                            <i class="bi bi-bookmark-heart-fill" aria-hidden="true"></i>
                                             {% else %}
-                                            <i class="bi bi-bookmark-heart"></i>
+                                            <i class="bi bi-bookmark-heart" aria-hidden="true"></i>
                                             {% endif %}
                                         </button>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -152,7 +152,7 @@
 
 <!-- Back to top button -->
 <div class="back-to-top">
-    <a id="top-link" class=" d-flex h-100" role="button" aria-label="Click the button to go back to the top of the page."><i class="bi bi-arrow-up-square top-icon px-2"></i></a>
+    <a id="top-link" class=" d-flex h-100" role="button" aria-label="Click the button to go back to the top of the page."><i class="bi bi-arrow-up-square top-icon px-2" aria-hidden="true"></i></a>
 </div>
 
 {% endblock %}

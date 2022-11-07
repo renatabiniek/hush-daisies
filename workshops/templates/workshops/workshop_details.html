@@ -33,12 +33,12 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="mt-sm-3 mb-5 mt-md-5">
                     <h2 class="mb-3 product-title-detail">{{ workshop.name }}</h2>
-                    <p class="text-left mt-0 workshop-text"><i class="bi bi-geo-alt-fill icn-workshop"></i> {{ workshop.location }}</p>
-                    <p class="text-left mt-0 workshop-text"><i class="bi bi-clock-fill icn-workshop"></i> {{ workshop.date }}
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-geo-alt-fill icn-workshop" aria-hidden="true"></i> {{ workshop.location }}</p>
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-clock-fill icn-workshop" aria-hidden="true"></i> {{ workshop.date }}
                         at {{ workshop.start_time }}</p>
-                    <p class="text-left mt-0 workshop-text"><i class="bi bi-flower1 icn-workshop"></i>
+                    <p class="text-left mt-0 workshop-text"><i class="bi bi-flower1 icn-workshop" aria-hidden="true"></i>
                         {{ workshop.level.friendly_name }}</p>
-                    <p class="text-left price-tag mt-0 workshop-text"><i class="bi bi-currency-euro icn-workshop"></i>
+                    <p class="text-left price-tag mt-0 workshop-text"><i class="bi bi-currency-euro icn-workshop" aria-hidden="true"></i>
                         {{ workshop.workshop_fee }}</p>
                     <div class="d-flex justify-content-between">
                         {% if request.user.is_authenticated %}
@@ -46,10 +46,10 @@
                             {% csrf_token %}
                             <button type="submit" value="{{ workshop.id }}" name="workshop_id" class="btn-fav">
                                 {% if workshop in favourites_list.workshop.all %}
-                                <i class="bi bi-bookmark-heart-fill float-left workshop-text-fav"><span class="small font-weight-bold">
+                                <i class="bi bi-bookmark-heart-fill float-left workshop-text-fav" aria-hidden="true"><span class="small font-weight-bold">
                                         Remove</span></i>
                                 {% else %}
-                                <i class="bi bi-bookmark-heart float-left workshop-text-fav"><span class="small font-weight-bold"> Add to
+                                <i class="bi bi-bookmark-heart float-left workshop-text-fav" aria-hidden="true"><span class="small font-weight-bold"> Add to
                                         favourites</span></i>
                                 {% endif %}
                             </button>
