@@ -362,7 +362,7 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 * [Am I Responsive](http://ami.responsivedesign.is/) - to produce a preview of the site on different devices
 * [W3C HTML Validator](https://validator.w3.org/) - to validate HTML code
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - to validate CSS code
-* [PEP8 Online Validation Service](http://pep8online.com/) - to validate the code
+* [Pycodestyle validator](https://pypi.org/project/pycodestyle/) - to validate the Python code
 * [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - to test the contrast and readability of colours used 
 * [Heroku](https://heroku.com/) - for presenting the deployed project
 * [Heroku Postgres](https://www.heroku.com/postgres) - the database for the deployed project
@@ -489,7 +489,16 @@ I tested the program considering the user stories from the UX section as well.
 
 ### Validator Testing
 
-* **PEP8 online**
+* **PEP8**  
+
+Due to the ongoing issue with the pep8online.com website being currently down, Python code was validated with pycodestyle validator directly in the Gitpod Workspace.
+Majority of errors came from Django standard files and these errors have been ignored.
+Remaining errors were fixed, mainly mainly line too long (86 > 79 characters), unused import in test.py (as no automated testing was undertaken in this project),
+
+ * 'checkout.signals' imported but unused in checkout apps.py
+ *  local variable 'e' is assigned to but never used in webhooks.py
+ *  redefinition of unused 'handler404' in main urls.py
+ *  line too long (87 > 79 characters) in /products/widgets.py remained unfixed as per the recommendation of this [Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) as it's a template URL and it could break it
 
 [NEEDS UPDATE!]
 
@@ -602,9 +611,25 @@ I've adjusted the colors and the final result on all pages is:
   ![Toast checkout image](docs/bugs/toast-checkout-success.png)
 
 
-### Devices and browsers tested
+### Devices and browsers tested  
 
-[NEEDS UPDATE!]
+  The site has been tested on various browsers on desktop and mobile:
+  
+  Google Chrome
+  FireFox
+  Microsoft Edge
+  Safari
+  
+  The following devices were used:
+  
+  HP EliteBook laptop 820 G4
+  Google Pixelbook Go Chromebook
+  Google Pixel 4a phone
+  Samsung Galaxy A80 phone
+  iPad 5th generation
+  Macbook Pro
+  
+  Various screen sizes were tested via the Google Chrome DevTools simulator.
 
 
 ### Credits
@@ -618,7 +643,8 @@ I've adjusted the colors and the final result on all pages is:
 * How to check the length of a query set in a template from [this Stackoverflow post](https://stackoverflow.com/questions/10695322/django-show-the-length-of-a-queryset-in-a-template)  
 * Learned more about Exception TypeError warning from [this Stackoverflow post](https://stackoverflow.com/questions/53148112/python-3-handling-error-typeerror-catching-classes-that-do-not-inherit-from-bas)  
 * Solved Bootstrap button outline issue thanks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)  
-* Learned how to reorder fields in a form thanks [this Stackoverflow post](https://stackoverflow.com/questions/350799/how-does-django-know-the-order-to-render-form-fields)
+* Learned how to reorder fields in a form thanks [this Stackoverflow post](https://stackoverflow.com/questions/350799/how-does-django-know-the-order-to-render-form-fields)  
+* Found advice on handling long URLs in [this Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) 
 
 
 ### Acknowledgments
