@@ -494,7 +494,8 @@ The full details of tests results can be found in the [TESTING.md](TESTING.md) f
 * Solved Bootstrap button outline issue thanks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)  
 * Learned how to reorder fields in a form thanks [this Stackoverflow post](https://stackoverflow.com/questions/350799/how-does-django-know-the-order-to-render-form-fields)  
 * Found advice on handling long URLs in [this Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769)  
-* Insights on nofollow and noopener rel attrbutes were found [here](https://yoast.com/outbound-link-sponsored-nofollow-ugc-attributes/)
+* Insights on nofollow and noopener rel attrbutes were found [here](https://yoast.com/outbound-link-sponsored-nofollow-ugc-attributes/)  
+* Found advice on *table row exceeding the column count established by the first row* html validation error in [this Stackoverflow post](https://stackoverflow.com/questions/7132223/a-table-row-was-2-columns-wide-and-exceeded-the-column-count-established-by-the)
 
 
 ### Acknowledgments

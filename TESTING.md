@@ -53,6 +53,100 @@ Remaining errors were fixed, mainly mainly line too long (86 > 79 characters), u
 
 [NEEDS UPDATE!]
 
+During the initial HTML validation, a number of errors relating to unclosed `<span>`, `<p>` and `<div>` elements has been identified and resolved. 
+The following were also identified:
+
+ * Duplicate ID on delete modal for testimonials for loop - this has been resolved by using {{ loop.index }} and {{testimonial_id}} to create a unique id for each modal in the loop  
+ * Table row exceeding the column count established by the first row - this was caused by me adding an extra column to the table during developmenet but no updating the table's first row. Updating the number of columns in the table fixed this.  
+ * Duplicate ID id_image on Add / Edit Product and Workshops pages - this error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+
+Validation was repeated after fixing the errors for each file, and no errors or warnings were found. 
+Here are the final results for each page:
+
+ **Home**  
+ 
+ ![HTML Home validation image](docs/testing/home.png)
+ 
+ **Products**  
+
+ ![HTML Products validation image](docs/testing/products.png)
+
+ **Product detail**  
+
+ ![HTML Product details validation image](docs/testing/product-details.png)
+
+ **Edit product**  
+
+   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+
+ ![HTML Edit product validation image](docs/testing/edit-product.png)
+
+ **Add product**  
+
+   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+
+ ![HTML Add product validation image](docs/testing/add-product.png)
+
+ **404 Error**  
+
+ ![HTML 404 validation image](docs/testing/404.png)
+
+ **Login**  
+
+ ![HTML Login validation image](docs/testing/sign-in.png)
+
+ **Logout**  
+
+ ![HTML Logout validation image](docs/testing/sign-out.png)
+
+ **Signup**  
+
+ ![HTML Signup validation image](docs/testing/sign-up.png)
+
+ **Basket**  
+
+ ![HTML Basket validation image](docs/testing/basket.png)
+
+ **Checkout**  
+
+ ![HTML Checkout validation image](docs/testing/checkout.png)
+
+ **Checkout success**  
+
+ ![HTML Checkout success validation image](docs/testing/checkout_success.png)
+
+ **Profile**  
+
+ ![HTML Profile validation image](docs/testing/my-profile.png)
+
+ **Custom request**  
+
+ ![HTML Contact us validation image](docs/testing/contact-us.png)
+
+ **Workshops**  
+
+ ![HTML Workshops validation image](docs/testing/workshops.png)
+
+ **Workshop details**  
+
+ ![HTML Workshop details validation image](docs/testing/workshop-details.png)
+
+ **Edit workshop**  
+
+   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+
+ ![HTML Edit workshop validation image](docs/testing/edit-workshop.png)
+
+ **Add workshop**  
+   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+
+ ![HTML Add workshop validation image](docs/testing/add-workshop.png)
+
+ **Edit testimonial**  
+
+ ![HTML Edit testimonial validation image](docs/testing/edit-comment.png)
+
+
 
 * **W3C CSS Validator**  
 
