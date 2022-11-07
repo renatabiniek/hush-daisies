@@ -94,6 +94,7 @@ def workshop_details(request, workshop_id):
         'workshop_testimonials': workshop_testimonials,
         'form': form,
         'favourites_list': favourites_list,
+        'on_profile_page': True,
     }
 
     return render(request, 'workshops/workshop_details.html', context)
