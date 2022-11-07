@@ -38,20 +38,20 @@ I tested the program considering the user stories from the UX section as well.
 * **PEP8**  
 
 Due to the ongoing issue with the pep8online.com website being currently down, Python code was validated with pycodestyle validator directly in the Gitpod Workspace.
-Majority of errors came from Django standard files and these errors have been ignored.
-Remaining errors were fixed, mainly mainly line too long (86 > 79 characters), unused import in test.py (as no automated testing was undertaken in this project),
+Majority of errors came from Django standard files and these have been ignored.
+Remaining errors were fixed, mainly *line too long (86 > 79 characters)* and *unused import* in test.py (as no automated testing was undertaken in this project).
 
- * 'checkout.signals' imported but unused in checkout apps.py
- *  local variable 'e' is assigned to but never used in webhooks.py
- *  redefinition of unused 'handler404' in main urls.py
- *  line too long (87 > 79 characters) in /products/widgets.py remained unfixed as per the recommendation of this [Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) as it's a template URL and it could break it
+The following warnings have not been addressed either:
 
-[NEEDS UPDATE!]
+ * 'checkout.signals' imported but unused in checkout apps.py - the import is being used
+ *  local variable 'e' is assigned to but never used in webhooks.py - the variable is being used
+ *  redefinition of unused 'handler404' in main urls.py - the handler is being used
+ *  line too long (87 > 79 characters) in /products/widgets.py remained unfixed as per the recommendation of this [Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) as it's a template URL and it could break it  
+ 
 
+ ![PEP8 validation image](docs/testing/pycodestyle.png)
 
 * **W3C HTML Validator**
-
-[NEEDS UPDATE!]
 
 During the initial HTML validation, a number of errors relating to unclosed `<span>`, `<p>` and `<div>` elements has been identified and resolved. 
 The following were also identified:
@@ -59,6 +59,7 @@ The following were also identified:
  * Duplicate ID on delete modal for testimonials for loop - this has been resolved by using {{ loop.index }} and {{testimonial_id}} to create a unique id for each modal in the loop  
  * Table row exceeding the column count established by the first row - this was caused by me adding an extra column to the table during developmenet but no updating the table's first row. Updating the number of columns in the table fixed this.  
  * Duplicate ID id_image on Add / Edit Product and Workshops pages - this error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
+ * Following the warning that type `type="text/javascript"` is not necessary for `<script>` tags, I removed the type.
 
 Validation was repeated after fixing the errors for each file, and no errors or warnings were found. 
 Here are the final results for each page:
@@ -147,7 +148,6 @@ Here are the final results for each page:
  ![HTML Edit testimonial validation image](docs/testing/edit-comment.png)
 
 
-
 * **W3C CSS Validator**  
 
 No errors were found during CSS validation for any of the following css files:  
@@ -158,12 +158,47 @@ base.css, profile.css, checkout.css, workshops.css
 
 * **JSHint**
 
-[NEEDS UPDATE!]
+JavaScript code was run it through the JSHint validator as well.  
+A couple of Missing semicolon errors were corrected. Warning *'template literal syntax' is only available in ES6 (use 'esversion: 6')* was displayed and fixed by adding 
+`/* jshint esversion: 6 */` to the top of the script. There are no errors left.  
+
+
+**Update quantity on click**  
+
+![JSHint Update quantity Validation image](docs/testing/qty-on-click.png)
+
+**stripe_elements.js**  
+
+![JSHint Stripe elements Validation image](docs/testing/stripe-elements.png)
+
+**Back to top button**  
+
+![JSHint Back to top Validation image](docs/testing/back-to-top.png)
+
+**Show file name once chosen for file input field on form**  
+
+![JSHint Show file name Validation image](docs/testing/show-file-name.png)
+
+**Sorting within select dropdown box**  
+
+![JSHint Sorting selector Validation image](docs/testing/sorting-selector.png)
+
+**countryfield.js**  
+
+![JSHint Countryfield Validation image](docs/testing/countryfield.png)  
+
+**qty_input_script.html**  
+
+![JSHint Qty input Validation image](docs/testing/qty-input.png)
+
 
 * **Lighthouse**
 
 [NEEDS UPDATE!]
 
+Desktop Lighthouse report from Google Chrome DevTools has been run to review performance, SEO, the best practices and accessibility of the site.
+
+![Lighthouse image](docs/testing/lighthouse-desktop.png)
 
 * **Color contrast:**
 
