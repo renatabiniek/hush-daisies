@@ -1,10 +1,10 @@
 <!-- Delete testimonial modal -->
-<div class="modal fade" id="deleteTestimonialModal{{ testimonial.id }}" tabindex="-1"
-    aria-labelledby="deleteTestimonialModal{{ testimonial.id }}" aria-hidden="true">
+<div class="modal fade" id="deleteTestimonialModal{{ loop.index }}{{ testimonial.id }}" tabindex="-1"
+    aria-labelledby="deleteTestimonialModal{{ loop.index }}{{ testimonial.id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteTestimonialModal{{ testimonial.id }}">Delete comment</h5>
+                <h5 class="modal-title">Delete comment</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close message">
                     <span aria-hidden="true">&times;</span>
                 </button>

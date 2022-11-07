@@ -76,11 +76,6 @@
             </div>
         </div>
         <!-- Testimonials -->
-        <!-- <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mb-2 mt-1">
-                <hr class="divider">
-            </div>
-        </div> -->
         <div class="container mt-3 pl-0">
             <div class="row">
                 <hr class="divider w-100">
@@ -91,18 +86,20 @@
                         <p>No comments yet...</p>
                         {% else %}
                         {% for testimonial in workshop_testimonials %}
-                        <p><strong>{{ testimonial.reviewer }}</strong> on <span>{{ testimonial.date_added }}</span> wrote:</p>
-                        {{ testimonial.testimonial_body | linebreaks }}
-                        <!-- Testimonial managements -->
-                        {% if request.user.is_authenticated %}
-                        {% if request.user == testimonial.reviewer or request.user.is_superuser %}
-                        <div class="mb-3">
-                            <a class="small admin-link text-info pr-2" href="{% url 'edit_testimonial' testimonial.id %}">EDIT</a>
-                            <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
-                            data-target="#deleteTestimonialModal{{ testimonial.id }}">DELETE</a>
+                        <div>
+                            <p><strong>{{ testimonial.reviewer }}</strong> on <span>{{ testimonial.date_added }}</span> wrote:</p>
+                            {{ testimonial.testimonial_body | linebreaks }}
+                            <!-- Testimonial managements -->
+                            {% if request.user.is_authenticated %}
+                            {% if request.user == testimonial.reviewer or request.user.is_superuser %}
+                            <div class="mb-3">
+                                <a class="small admin-link text-info pr-2" href="{% url 'edit_testimonial' testimonial.id %}">EDIT</a>
+                                <a class="small admin-link text-danger pl-2" role="button" data-toggle="modal"
+                                data-target="#deleteTestimonialModal{{ loop.index }}{{ testimonial.id }}">DELETE</a>
+                            </div>
+                            {% endif %}
+                            {% endif %}
                         </div>
-                        {% endif %}
-                        {% endif %}
                         <!-- Delete modal -->
                         {% include 'workshops/includes/delete_testimonial_modal.html' %}
                         {% endfor %}
