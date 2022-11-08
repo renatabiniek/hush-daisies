@@ -659,18 +659,18 @@ I've adjusted the colors and the final result on all pages is:
 
   The site has been tested on various browsers on desktop and mobile:
   
-  Google Chrome
-  FireFox
-  Microsoft Edge
+  Google Chrome  
+  FireFox  
+  Microsoft Edge  
   Safari
   
   The following devices were used:
   
-  HP EliteBook laptop 820 G4
-  Google Pixelbook Go Chromebook
-  Google Pixel 4a phone
-  Samsung Galaxy A80 phone
-  iPad 5th generation
+  HP EliteBook laptop 820 G4  
+  Google Pixelbook Go Chromebook  
+  Google Pixel 4a phone  
+  Samsung Galaxy A80 phone  
+  iPad 5th generation  
   Macbook Pro
   
   Various screen sizes were tested via the Google Chrome DevTools simulator.

@@ -343,7 +343,7 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 ### Frameworks, Libraries, Programmes and Tools 
  
 * [Django web framework](https://www.djangoproject.com/) - used to build the project
-* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - for responsiveness, layout, modals, and general frontend style
+* [Bootstrap v4.4.1](https://getbootstrap.com/docs/4.4/getting-started/download/) - for responsiveness, layout, modals, and general frontend style
 * [AWS](https://aws.amazon.com/) - to host media and static files 
 * [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for user registration and authentication
 * [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - to display and run the command line terminal in the browser
@@ -353,8 +353,12 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 * [Coolors](https://coolors.co/ ) - to create cohesive colour scheme for the site
 * [Eye Dropper](https://eyedropper.org/) - to pick specific colours from images 
 * [Favicon.io](https://favicon.io/) - to create a favicon for the site
-* [Pixlr](https://pixlr.com/) - to edit and resize images
+* [Pixlr](https://pixlr.com/) - to edit and resize images  
+* [TempMail](https://temp-mail.org/en/) - for generating temporary emails to test registration flow
+* [Stripe](https://stripe.com/ie) - for handling payments
 * [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - to generate Privacy Policy  
+* [Mailchimp](https://mailchimp.com/en-gb/) - for newsletter signup form
+* [Facebook](https://www.facebook.com/) - to create Hush Daisies business site
 * [Terms and Conditions Generator](https://www.termsandconditionsgenerator.com/) - to generate Terms of Use  
 * [XML Sitemaps](https://www.xml-sitemaps.com/) - to generate site map  
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - to inspect and debug the code through all stages of the development
@@ -377,7 +381,7 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 ---
 ### Deploying to Heroku
 
-[Deployed program on Heroku](https://hush-daisies.herokuapp.com/)
+[Deployed site on Heroku](https://hush-daisies.herokuapp.com/)
 
 The project was developed in GitPod, committed to Git and pushed to GitHub. 
 The site was deployed to Heroku with the following steps:
