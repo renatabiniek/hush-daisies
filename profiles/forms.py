@@ -12,7 +12,7 @@ class UserProfileForm(forms.ModelForm):
         as this should remain the same
         """
         model = UserProfile
-        exclude = ('user',)
+        exclude = ('user', 'default_house_number_or_name',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -22,7 +22,6 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'default_phone_number': 'Phone Number',
-            'default_house_number_or_name': 'House Number or Name',
             'default_street_address_1': 'Street Address 1',
             'default_street_address_2': 'Street Address 2',
             'default_town_or_city': 'Town or City',

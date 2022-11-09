@@ -34,7 +34,6 @@ class OrderAdmin(admin.ModelAdmin):
         'full_name',
         'email',
         'phone_number',
-        'house_number_or_name',
         'street_address_1',
         'street_address_2',
         'town_or_city',
