@@ -27,9 +27,7 @@
 
 8. [**Testing**](#Testing)
     * [Testing Approach](#Testing-Approach)
-    * [User stories testing from the UX section](#User-stories-testing-from-the-UX-section)
-    * [Validator Testing](#Validator-Testing)
-    * [Issues and Bugs](#Issues-and-Bugs)
+    * [Testing Documentation](#Testing-Documentation)
 
 9. [**Credits**](#Credits)
 
@@ -281,52 +279,290 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 
 * **Imagery**
 
-  [NEEDS UPDATE!]
-
+  Images, including the homepage image, have been sourced from Unsplash. They were chosen to represent the brand (hero image of dried flowers and photo of store owners holding daisies), as well as illustrate the products and workshops.  
 
 ## Features
 ---
 
 [NEEDS UPDATE!]
+
+The site has a clean, minimalistic design to ensure the best possible user experience for the target audience. The site is responsive on smaller screens so that it can be used on the go. Screenshots of existing and tested features can be found in the [TESTING.md](TESTING.md) file in the User Stories testing section.
  
 
 ### Existing Features
 
-* Navigation  [NEEDS UPDATE!]
+* NAVIGATION & HEADER  
 
-  * 
-  * 
+  * **Navbar**
+  * Conventional horizontally aligned navigation bar is present on all the pages for a consistently easy and intuitive navigation.
+  * Navigation bar is always placed at the top of the page and includes a logo and website name on the left, main menu link in the middle bottom, and account and basket icons on the right.
+  * The site logo is clickable and allows the user to return to the top of the homepage from any location on the site.
+  * The Shop menu item is a dropdown menu showing product categories.
+  * Each subitem in the Shop menu takes the user to the correctly filtered products page.
+  * The relevant menu item is highlighted (underlined) to help users understand what page they are on.
+  * Navigation links collapse to a hamburger menu on smaller screens.
+  * **User profile and shopping basket**
+    * the icons are visible on all pages  
+    * they change depending on the status as follows: 
+      * user profile when logged in: username is displayed on the left of the profile icon, drop down menu changes to display My Profile and Log Out options (for non-admins) and Product Management, Workshop Management, My Profile, Log Out for admins.
+      * user profile when not logged in: Log In and Sign up options are displayed.
+      * basket when empty: is white and displays 0.00
+      * basket with items: is pink, bolder and displays the running total of all items in the basket
+    * clicking the basket item takes the user to the shopping basket page
+  * **Banner**
+    * A banner inviting users to contact store owners with special request is displayed underneath the navbar  
 
-* Footer  [NEEDS UPDATE!]
+* FOOTER  
 
-  *  
+  * Footer is placed at the bottom of every page.  
+  * It contains social links, newsletter sign up form, terms of use, privacy policy and copyright info.
+  * The links open in a new tab.
   
-* Home Page  [NEEDS UPDATE!]
+* HOME PAGE
 
-  *  
-  * [NEEDS UPDATE!]
+  * Default page displayed when users access the website.  
+  * **Hero image** - illustrates the brand, contains the store's tagline and Shop now call to action button that takes the user to the products page.  
+  * Underneath the hero image, a summary section is displayed with selling points of the site, decorated with illustrative icons.
+  * **Our Studio** section can be accessed either from the navigation menu or by scrolling down the home page. It includes meaningful background information about the store owners, store owner's image, an overview of what the site is about and what's on offer. It includes links to other pages on the site as well as an external link to Irish News to draw the attention to a mention about the stores. (This is fictional, added for the purposes of demonstrating SEO strategy).
+  * **Custom Orders** section can be accessed either from the navigation menu or by scrolling down the home page. It encourages the visitors to get in touch with any special requests or questions, call to action Get in touch is displayed underneath the message. Decorative image is added to complement the text.
+  * **As Seen In** section includes logos and links to 2 relevant, high-quality sites (SEO strategy) that open in a new tab.
   
-* Sign Up
+* SIGN UP
 
-  * [NEEDS UPDATE!]
-
+  * Sign up page can be accesse from the drop-down menu under the profile icon in the navbar.
+  * It's used to create a new account.
+  * Authentication link will be emailed to the address the user provided to confirm the signup.
   
-* Log In  
+* LOG IN  
 
-  * [NEEDS UPDATE!]
+  * Users can access this page from the drop-down menu under the profile icon in the navbar, from the Sign Up page or from the Workshop details page.
+  * The login page is used to log in users with an existing account.
+  * A Forgot Password link is present and allows users to reset their password.
+
+* LOG OUT
+
+  * The logout page is used to log out users who are signed in.
+
+* PRODUCTS 
+
+  * This page shows **all products marked as available** for sale by the admin, organised as series of cards.
+  * Products are displayed as cards in rows of 4
+  * For logged in admins, all products are shown.
+  * The page can be accessed via:  
+    * Shop (All florals menu item) from the navbar at the top  
+    * Back to all products links, Keep shopping and Add something buttons on other pages.
+  * Each product card shows the product overview info, including image, product name, category and price.
+  * **Category badges** are displayed at the top of the page and when clicked show correctly filtered results. All Florals show all products.
+  * Category name underneath individual product image also takes the user to the correct category results.
+  * **Search box** returns searched terms entered by the user. The product page is search by title and description. The number of search results, and confirmation of the search term is displayed at the top of the page.
+  * **Sorting** dropdown box allows the user to re-order the results accordingly to the chosen option.
+  * Clicked product image redirect to the individual product details page.
+  * If no products are made available for sale by admin, text message is shown.
+  * If admin is logged in, Edit and Delete links are also displayed underneath each product card to allow quick product management.
+  * Edit link takes the admin to Edit product page.
+  * Delete link opens a modal with a message to confirm the deletion or cancel the action.
+  * Delete button removes the product from the list and toast message confirming the deletion is shown.
+  * Non-admin users cannot access edit or delete options for products - an error message will show up in a toast.
+
+* PRODUCT DETAILS
+
+  * This page shows **full details** of the relevant product, including image, name, category, price and description.
+  * Category name when clicked redirect to the correct category filtered results.
+  * There is a **quantity selector** button (-/+) that allows the user to select required quantity to add to the basket.
+  * A maximum of allowed products is 20 per product. A message shows up if more than 20 is entered.
+  * **Keep shopping button** and back to all products link redirect to the products page.
+  * **Add to basket button** can be used to add the item to the basket. 
+  * If adminis logged in, **Edit and Delete** links are displayed underneath each product description to allow quick product management.
+  * These links work in the same way as on the main product page.
+
+* SHOPPING BASKET
   
-* Log Out  
+  * This page allows the user to view, edit and delete items in their shopping bag before the checkout.
+  * Each product added to the basket is displayed as one line, with relevant details.
+  * There is a **quantity selector** available to allow adjusting quantity of each item in the basket. 
+  * **Update link** underneath updates the quantity in the basket. 
+  * The subtotal changes accordingly and **toast** message with updated basket preview appears with each update. 
+  * A **basket summary** including totals and delivery, as well as a message about free delivery threshold when applicable appears underneath the basket items.
+  * **Bin icon** is diplayed next to each item in the basket and can be clicked to delete the selected item. A toast message appears to confirm.
+  * If there are no items in the basket, a message and **Add something button** appear. Once clicked, the button leads to the all products page.
+  * **Keep shopping button** redirects to the products page  
+  * **Secure checkout button** redirects to the checkout page  
 
-  * [NEEDS UPDATE!]
+* CHECKOUT  
+
+  * This page allows the user to see the preview of the order, and enter their delivery information and payment details.
+  * On the left, the form includes **Your Details, Delivery Details and Payment Details** sections.
+  * The form is shown pre-populated if the logged in user had saved their details to the profile.
+  * **Save delivery information box** when ticked saves the info to the profile.
+  * If the user is not logged in, a link to create an account or login will be present.
+  * **Stripe input** for payment details including card number, expiry date and CVC is visible and validates the card details entered by the user.
+  * The site can be tested by using the card number 4242 4242 4242 4242 with the expiry date 04/24 and the CVC code 242.
+  * A warning message informing the user of the total amount to be charged is displayed in red underneath the checkout button.
+  * The **order summary** is displayed on the right with individual order lines as well as order totals.  
+  * Total number of items in the basket is displayed at the top.
+  * **Return to basket button** brings the user back to their basket page.
+  * **Secure checkout button** confirms the payment intent, triggers payment processing and order creation. 
+  * An overlay with **spinning icon** is displayed while the order is being processed to let the user know the process is running.
+  * Once order has been processed successfully, success toast message and a thank you page are displayed.
+
+* CHECKOUT SUCCESS 
   
-* [NEEDS UPDATE!] 
+  * This page is displayed once the checkout has been completed successfully.
+  * Basket icon changes back to white, and the running total is cleared.
+  * It includes a message to confirm the order number, email where confirmation was sent as well as the order summary.
+  * **Keep shopping button** redirect to products page.
+
+* WORKSHOPS  
   
-  * 
+  * This page presents all currently planned workshops. 
+  * It includes an intro with a welcome message from the store owners, providing background information about the workshops.
+  * The intro includes the username if the site visitor is logged in and a **Get in touch link** that opens the contact form.
+  * There's a **sorting dropdown** available with several sorting options to allow the user to re-order the results accordingly and find the most suitable workshops.
+  * The total number of currently planned workshops is shown at the top of the page, on the right-hand side.
+  * The workshops are displayed as cards in rows of 2, with relevant details and images displayed for each workshop.
+  * Decorative icons are used for different infromation type.
+  * If no workshops are planned by admin, a text message is shown.
+  * **Join us button** is displayed underneath each card and opens the contact form that can be used to save a spot for a selected workshop.
 
+  * **For admins:**  
+    * If admin is logged in, Edit and Delete links are displayed underneath each workshop card.  
+    * Edit link takes the admin to Edit workshop page.  
+    * Delete link opens a modal with a message to confirm the deletion or cancel the action.  
+    * Delete button removes the workshop from the list and a toast message confirming the deletion is shown.
 
-### Features to be implemented in the future
+  * Non-admin users cannot access edit or delete options for workshops - an error message will show up in a toast. 
+  * When image or workshop name are clicked, the user is redirected to workshop details page.
 
-* [NEEDS UPDATE!]
+* WORKSHOP DETAILS, FAVOURTIES & TESTIMONIALS
+
+  * This page includes two sections: workshop details and testimonials.
+  * Full details of the selected workshop are displayed.
+  * Join us button opens the contact form that allows the user to save their spot for a selected workshop.
+  * Back to all workshops link is displayed at the bottom of the page and it redirects the user back to the main workshop page.
+
+  * **For admins:**  
+    * If admin is logged in, Edit and Delete links are displayed underneath the workshop details.  
+    * Edit link takes the superuser to Edit workshop page. 
+    * Delete link opens a modal with a message to confirm the deletion or cancel the action.  
+    * Delete button removes the workshop from the list and toast message confirming the deletion is shown
+    * Non-admin users cannot access edit or delete options for workshops - an error message will show up in a toast
+
+  * **Add to favourites:**  
+    * If user is logged in, there is a bookmark icon Add to favourties / Remove displayed.  
+    * By clicking it the user can save or remove saved workshop from their user's profile. This allows the user to keep track of any events they might be interested in.  
+    * If user is not logged in, a Sign in link is displayed instead. Once clicked, it opens sign in page.
+
+  * **Testimonials:**
+    * There is a testimonial count with an icon displayed underneath the image. It shows the total number of comments for the particular workshop.  
+    * Underneath the workshop detials section, testimonial section is visible. 
+    * If there are no comments, a message is displayed, otherwise comments are shown in descending order, including the name of the author and the date. 
+    * If user is logged in, Edit and Delete links are displayed underneath the comments they wrote.  
+    * Edit link opens Edit your comment page.
+    * Delete link opens a modal with a message to confirm the deletion or cancel the action.
+    * Delete button removes the comment from the list and toast message confirming the deletion is shown.
+    * There are no links to Edit or Delete a comment that hadn't been written by the logged in user.
+    * Your comment box is visible to logged in users with Add button underneath and their username displayed above the comment box. 
+    * The comment form cannot be submitted empty.
+    * Once a comment is written and Add button clicked, a toast message is displayed and comment is submitted to the admin panel for review and approval. 
+    * Only once approved, the new testimonial is displayed in the list of comments for the relevant workshop.
+    * If user is not logged in, a Sign in link is displayed instead. Once clicked, it opens sign in page.
+      
+* PROFILE  
+
+  * This page displays the users profile, with the list of their saved workshops, delivery details and a section with past orders.
+  * The profile page is only available to logged in users. 
+
+  * **Saved workshops:**
+    * This section includes a small image, workshop name, date and a location for each saved workshop.
+    * The workshop name is a link and it takes the users to the workshop detail page for the relevant workshop.  
+    * There's a bookmark icon next to each saved workshop. When clicked, the workshop is removed from the list of favourites.
+
+  * **My delivery details:** 
+    * The form is empty or pre-populated if the user decided to tick the save my info box during the checkout.  
+    * With the Update button the user can updated their saved details on the profile page.
+    * The information provided here is used to autofill the delivery address during checkout.
+
+  * **My order history:**
+    * This section shows a list of past orders, in descending order, with an overview of the details.
+    * The order number is truncated and when clicked it takes the user to the order confirmation page with full order details displayed.
+    * A scroll bar appears when the number of order lines exceeds the container.
+
+* PRODUCT MANAGEMENT  
+
+  * These pages can only be accessed by an admin, otherwise an error toast message is displayed (or a Sign In page if user isn't logged in).
+
+    * **Add a new product page:**
+      * This page can be accessed from the dropdown menu under the profile icon in the navbar.
+      * The form includes all relevant fields to create a new product. 
+      * The form cannot be submitted empty and the mandatory fields are validated. 
+      * Image files can be uploaded with the Select image button. If no image is chosen, a default placeholder image is used.
+      * *Is the product for sale* check box sets the correct status of the product that determines if the product will be shown to non-admin users. 
+      * Back to products button redirect to all products page.  
+      * Add product button adds the product to the database and publishes it on the products list.
+   * **Edit product page:**
+      * This page can be accessed via the Edit link underneath the product card on the products and product details pages.
+      * The fields are pre-populated with the data originally entered by the logged in user for the specific product.
+      * All information can be amended, including the image which can be replaced with the Select image button.
+      * Update product button updates the product and the new version is displayed in the product list.
+
+* WORKSHOP MANAGEMENT  
+
+  * These pages can only be accessed by an admin, otherwise an error toast message is displayed (or a Sign In page if user isn't logged in).
+
+    * **Add a new workshop page:**
+      * This page can be accessed from the dropdown menu under the profile icon in the navbar.
+      * The form includes all relevant fields to create a new workshop. 
+      * The form cannot be submitted empty and the mandatory fields are validated. 
+      * Image files can be uploaded with the Select image button. If no image is chosen, a default placeholder image is used. 
+      * Back to workshops button redirect to all workshops page  
+      * Add workshop button adds the workshop to the workshop list
+   * **Edit workshop page:**
+     * This page can be accessed via the Edit link underneath the workshop card on the workshops and workshop details pages.
+     * The fields are pre-populated with the data originally entered by the logged in user for the specific workshop.
+     * All information can be amended, including the image which can be replaced with the Select image button.
+     * Update button updates the workshop and the new version is displayed in the workshop list.
+
+* BACK TO TOP
+
+  * The button appears on all pages (of significant length), on both mobile and desktop.
+  * Once clicked it brings the user to the top of the page, improving the user experience.
+  
+* 404 ERROR PAGE 
+  
+  * This is a customized page that matches the site colour palette and theme.
+  * It's displayed only when error occurs or invalid links are being accessed.  
+  * User is presented with the error message that includes a link to return to the home page or the shop page.  
+
+* TOASTS 
+  
+  * Toast messages appear in the top right-hand corner of the screen and inform the user of actions they have performed, as well as display errors and warnings.
+  * They're displayed for:
+    * sign in/sign out
+    * adding a product to the basket
+    * editing the contents of the basket
+    * placing an order
+    * saving and removing workshop to/from favourties
+    * adding/editing/deleting comments, products, workshops
+    * updating personal details on the profile page
+  * They change colour depending on message type (success, error, warning, alert).
+  * When the are items in the basket, a preview of the basket is shown within the toast container, including a checkout button.
+  
+
+### Features to be implemented in the future  
+
+Due to time constraints, I was unable to implement all planned features. In the future, I'd like to add the following:
+
+* SKU number getting generated automatically - my plan was to have this implemented hence the SKU field in the Product model is set to non-editable, and is not getting displayed in the product add/edit forms.   
+
+* Bookmarks on the main workshops page - I'd like to add an option to save to favourites also from the main workshops page
+
+* Rating - adding ratings to individual products would help customers to make more informed decisions about their purchase and strengthen their trust towards the store and the products
+
+* Viewing and managing customer queries outside of admin panel - I'd like to add an 'inbox' section on the published site from where a logged in superuser could view and reply to queries received via the contact us form.
+
+* FAQ section - a collection of frequently asked questions about the process, available options or product care would ensure the best customer care
+
+* Blog section - a blog would allow the site owner to publish posts about the process of collecting, drying and arranging the flowers, and help keep the users engaged and coming back to the site
 
 ## Technologies used
 ---
@@ -587,6 +823,8 @@ The site was tested manually.
 I tested the site regularly during the development process, and was trying to resolve any issues found at that stage before moving to the next feature. I was also checking any new additions and changes on several devices available in my household.
 
 In the final stage of the project, I have tested the site thoroughly with automatic validators and manually on different devices and in several browsers, taking into account user stories from the UX section.  
+
+### Testing Documentation
 
 The full details of tests results can be found in the [TESTING.md](TESTING.md) file.  
 

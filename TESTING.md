@@ -97,6 +97,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * image or placeholder image are displayed 
   * category name when clicked redirect to the correct category filtered results
   * quantity selector button (-/+) work correctly, incrementing or decrementing the quantity
+  * a validation message shows up if more than 20 items is submitted
   * Keep shopping button and back to all products link redirect to the products page
   * Add to basket button adds the item to the basket
   * toast message with basket preview and checkout button is displayed  
@@ -119,7 +120,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * bin icon deletes the selected item line from the basket and a toast message appears to confirm 
   * if there are no items in the basket, a message appears and Add something button that leads to the products page
   * Keep shopping button redirects to the products page  
-  * Secure checkout button redirect to the checkout page
+  * Secure checkout button redirects to the checkout page
 
   **Checkout page**  
 
@@ -127,7 +128,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
 
   * order summary is displayed with individual order lines as well as order totals  
   * a form for personal and delivery details is displayed, and pre-populated if logged in user saved their details to the profile
-  * save delivery box when ticked saves the info to the profile  
+  * save delivery information box when ticked saves the info to the profile  
   * stripe input for payment details is visible and validates the card details entered by the user  
   * Return to basket button brings the user back to their basket page
   * Secure checkout button triggers payment processing and order creation  
@@ -157,7 +158,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * if superuser is logged in, Edit and Delete links are displayed underneath each workshop card  
   * Edit link takes the superuser to Edit workshop page
   * Delete link opens a modal with a message to confirm the deletion or cancel
-  * Delete button removes the workshop from the list and toast message confirming the deletion is shown
+  * Delete button removes the workshop from the list and a toast message confirming the deletion is shown
   * non-admin users cannot access edit or delete options for workshops - an error message will show up in a toast
    
 
@@ -170,7 +171,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * once clicked it saves or removes saved workshop from the user's profile  
   * toast message is displayed to confirm the action of adding or removing a workshop from favourites
   * if user is not logged in, a Sign in link is displayed instead. Once clicked, it opens sign in page
-  * number of total comments is calculated and displayed correctly underneath the image
+  * total number of comments is calculated and displayed correctly underneath the image
   * Join us button opens the contact form  
   * testimonial section is visible underneath the workshop detail section
   * if there are no comments, a message is displayed, otherwise comments are shown in descending order  
@@ -203,7 +204,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * order number is truncated and when clicked it takes the user to the order confirmation page with full order details displayed
   * when accessed from the profile page, the button Back to my profile is displayed on the order confirmation page which takes the user back to their profile
 
- **Product Management page**  
+ **Product Management**  
 
   TEST RESULT: PASS 
 
@@ -227,7 +228,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
     * once submitted, admin is redirected to the product details page
     * toast message is displayed to confirm the action
 
- **Workshop Management page**  
+ **Workshop Management**  
  
   TEST RESULT: PASS 
 
@@ -1028,7 +1029,7 @@ I've adjusted the colors and the final result on all pages is:
 
 * **Content:**
 
-[NEEDS UPDATE!]
+Content is legible on all screen sizes. It has been proof-read for logical and grammatical errors, and spell-checked with Online-Spellcheck.
 
 ### Issues and Bugs
 
@@ -1106,6 +1107,8 @@ I've adjusted the colors and the final result on all pages is:
   During manual testing the flow, I found that the form allows the admin to enter or select a negative number as product and workshop price, which was both not a good user experience and risk of posting a product / workshop at incorrect price. I fixed this by overriding the ProductForm's and WorkshopForm's init method and setting a min attribute on the price field.
 
   ![Negative value validation image](docs/bugs/negative-value.png)
+
+* **KNOWN ISSUES** 
 
 ### Devices and browsers tested  
 
