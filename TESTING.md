@@ -316,7 +316,7 @@ I tested the website considering the user stories from the UX section as well.
 
        ![Site view image](docs/testing/site-view.png) 
 
-     * Further selling points follow just underneath the main image are consice and engaging, giving the user a clear idea about the site and the store offer.  
+     * Further selling points follow just underneath the main image are concise and engaging, giving the user a clear idea about the site and the store offer.  
        
        ![Selling points image](docs/testing/selling-points.png)  
 
@@ -749,7 +749,7 @@ I tested the website considering the user stories from the UX section as well.
        
        ![Testimonials image](docs/testing/testimonials-section.png)
 
-     * If there's no testimonials, a message is displayed. 
+     * If there are no testimonials, a message is displayed. 
      * If user isn't logged in, there's a message prompting them to do so to post testimonials.
        
        ![Testimonials login image](docs/testing/testimonials-login.png)

@@ -59,7 +59,7 @@ Hush Daisies website is based on the digital Business-to-consumer (B2C) sales mo
 
 ### Search Engine Optimization (SEO) 
 
-In order to ensure the website is found by search engines and ranks higher in search results, appropriate keywords have been researched and identified specifically for the Hush Daisies business type and purpose. I started with brainstorming possible keywords that could be used by potential customers in the search engines who are looking for a florist studio that crafts dried flower arrangemnts for home, gifts and special occasions. Not having access to a paid SEO planning platform, I utitilzed Google search engine to check their popularity, relevance and suggestions of other potential keywords. From my general list of all possible search terms, I narrowed it down to both short-tail and long-tail keywords that were most relevant to the site.
+In order to ensure the website is found by search engines and ranks higher in search results, appropriate keywords have been researched and identified specifically for the Hush Daisies business type and purpose. I started with brainstorming possible keywords that could be used by potential customers in the search engines who are looking for a florist studio that crafts dried flower arrangements for home, gifts and special occasions. Not having access to a paid SEO planning platform, I utilized Google search engine to check their popularity, relevance and suggestions of other potential keywords. From my general list of all possible search terms, I narrowed it down to both short-tail and long-tail keywords that were most relevant to the site.
 
 The keywords were implemented as follows:
 
@@ -67,19 +67,19 @@ The keywords were implemented as follows:
 * Organically in the high quality content throughout the site, including hero image call out text, Our Studio & Custom Orders section, intro on the Workshop page, as well as product and workshop names  
 * In the image file names and alt text
 
-The site alse includes the following elements to improve SEO:
+The site also includes the following elements to improve SEO:
 
 * Privacy Policy and Terms of Use to convey trustworthiness 
 * Links to trusted, relevant and high quality sites on the home page
 * Attribute `rel="noopener"` on links to external websites and social media that are used to improve SEO
 * Attribute `rel="nofollow"` on link of the Mailchimp logo leading to a site that should be excluded from evaluating by search engines
 * Use of `strong` tags to highlight the importance of a keyword in the content
-* sitemap.xml to help search enginges to crawl the site and speed up content discovery
+* sitemap.xml to help search engines to crawl the site and speed up content discovery
 * robots.txt (listing urls that cannot be accessed by bots) to acknowledge that the site will be crawled by bots and therefore indicate that the site is of a high quality
 
 ### Web Marketing
 
-As a small, independent business with no budget for paid marketing, I opted in for social media marketing to generate traffic to the site and brand awareness organically. This is a free method of marketing, however, it will involve significant, long-term effort involving creating and posting social media content to gain user interest, loyality and gradually expand the audiance.  
+As a small, independent business with no budget for paid marketing, I opted in for social media marketing to generate traffic to the site and brand awareness organically. This is a free method of marketing, however, it will involve significant, long-term effort involving creating and posting social media content to gain user interest, loyalty and gradually expand the audience.  
 
 A business Facebook page was created for Hush Daisies, including relevant business information, shop action button and the link to the Hush Daisies site. First introductory post was created to encourage users to engage with the site owners and the website. The link to the FB page is included in the footer on every page of the Hush Daisies site.
 
@@ -284,8 +284,6 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
 ## Features
 ---
 
-[NEEDS UPDATE!]
-
 The site has a clean, minimalistic design to ensure the best possible user experience for the target audience. The site is responsive on smaller screens so that it can be used on the go. Screenshots of existing and tested features can be found in the [TESTING.md](TESTING.md) file in the User Stories testing section.
  
 
@@ -329,9 +327,9 @@ The site has a clean, minimalistic design to ensure the best possible user exper
   
 * SIGN UP
 
-  * Sign up page can be accesse from the drop-down menu under the profile icon in the navbar.
+  * Sign up page can be accessed from the drop-down menu under the profile icon in the navbar.
   * It's used to create a new account.
-  * Authentication link will be emailed to the address the user provided to confirm the signup.
+  * Authentication link will be emailed to the address the user provided to confirm the sign up.
   
 * LOG IN  
 
@@ -372,7 +370,7 @@ The site has a clean, minimalistic design to ensure the best possible user exper
   * A maximum of allowed products is 20 per product. A message shows up if more than 20 is entered.
   * **Keep shopping button** and back to all products link redirect to the products page.
   * **Add to basket button** can be used to add the item to the basket. 
-  * If adminis logged in, **Edit and Delete** links are displayed underneath each product description to allow quick product management.
+  * If admin is logged in, **Edit and Delete** links are displayed underneath each product description to allow quick product management.
   * These links work in the same way as on the main product page.
 
 * SHOPPING BASKET
@@ -383,7 +381,7 @@ The site has a clean, minimalistic design to ensure the best possible user exper
   * **Update link** underneath updates the quantity in the basket. 
   * The subtotal changes accordingly and **toast** message with updated basket preview appears with each update. 
   * A **basket summary** including totals and delivery, as well as a message about free delivery threshold when applicable appears underneath the basket items.
-  * **Bin icon** is diplayed next to each item in the basket and can be clicked to delete the selected item. A toast message appears to confirm.
+  * **Bin icon** is displayed next to each item in the basket and can be clicked to delete the selected item. A toast message appears to confirm.
   * If there are no items in the basket, a message and **Add something button** appear. Once clicked, the button leads to the all products page.
   * **Keep shopping button** redirects to the products page  
   * **Secure checkout button** redirects to the checkout page  
@@ -420,7 +418,7 @@ The site has a clean, minimalistic design to ensure the best possible user exper
   * There's a **sorting dropdown** available with several sorting options to allow the user to re-order the results accordingly and find the most suitable workshops.
   * The total number of currently planned workshops is shown at the top of the page, on the right-hand side.
   * The workshops are displayed as cards in rows of 2, with relevant details and images displayed for each workshop.
-  * Decorative icons are used for different infromation type.
+  * Decorative icons are used for different information type.
   * If no workshops are planned by admin, a text message is shown.
   * **Join us button** is displayed underneath each card and opens the contact form that can be used to save a spot for a selected workshop.
 
@@ -454,7 +452,7 @@ The site has a clean, minimalistic design to ensure the best possible user exper
 
   * **Testimonials:**
     * There is a testimonial count with an icon displayed underneath the image. It shows the total number of comments for the particular workshop.  
-    * Underneath the workshop detials section, testimonial section is visible. 
+    * Underneath the workshop details section, testimonial section is visible. 
     * If there are no comments, a message is displayed, otherwise comments are shown in descending order, including the name of the author and the date. 
     * If user is logged in, Edit and Delete links are displayed underneath the comments they wrote.  
     * Edit link opens Edit your comment page.
@@ -613,7 +611,7 @@ Due to time constraints, I was unable to implement all planned features. In the 
 * [Online-Spellcheck](https://www.online-spellcheck.com/) - to spellcheck the README
 
 
-## Deployment [NEEDS UPDATE!]
+## Deployment
 ---
 ### Deploying to Heroku
 
@@ -638,7 +636,7 @@ The site was deployed to Heroku with the following steps:
   3. Select a *unique* name for your application and choose your region (Europe in my case).
   4. Click **Create App**.
   5. Attach the Postgres database: 
-  * In the **Resources** tab, under Add-ons, type in **Postgres** and select the **Heroku Postgres** option.
+     * In the **Resources** tab, under Add-ons, type in **Postgres** and select the **Heroku Postgres** option.
   6. Navigate to the **Settings** tab (must be done before deploying code)
   7. Go to section **Config Vars**, click button **Reveal Config Vars** and press **Add** button.
   8. Add the below variables to the list: 
@@ -849,8 +847,9 @@ The full details of tests results can be found in the [TESTING.md](TESTING.md) f
 
 Thank you to:
 
-* [NEEDS UPDATE!]  
+* My mentors Guido Cecilio and Daisy Mc Girr for their help and advice 
 * Tutor support team at Code Institute for all their help
+* Naoise Gaffney for his insightful webinar on *Planning and Preparing your MS4 or PP5 - eCommerce Project*
 * Slack community
 
 ### Disclaimer
