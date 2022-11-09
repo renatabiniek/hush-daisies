@@ -114,7 +114,7 @@ a:focus {
 /*------------------------------------ Home*/
 
 .hero-img {
-    background-image: url(../site-images/background-image.jpg);
+    background-image: url(../site-images/background-image-desktop.webp);
     height: 95vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -459,6 +459,10 @@ input[name='q']::placeholder {
 
 /*on screens 425px or smaller, reduce the font size, padding and margin*/
 @media screen and (max-width: 425px) {
+
+    .hero-img {
+        background-image: url(../site-images/background-image-mobile.webp);
+    }
 
     .logo {
         font-size: 1.8rem;

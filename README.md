@@ -4,7 +4,7 @@
 
 2. [**E-commerce Business Model**](#E-commerce-business-model)  
 
-3. [**SEO & Web Marketing**](#SEO-&-Web-Marketing)  
+3. [**SEO & Web Marketing**](#SEO-and-Web-Marketing)  
 
 4. [**User Experience (UX)**](#User-Experience)
     * [User goals](#User-goals)
@@ -54,7 +54,7 @@ Hush Daisies is a B2C e-commerce website for an independent LGBTQ owned florist 
 
 Hush Daisies website is based on the digital Business-to-consumer (B2C) sales model, where the products are sold to customers who are individuals or households. The clear site design and attractive content satisfy emotional triggers of the site visitors, and the easy payment process makes it more likely for them to make impulse buys. The brand identity is emphasized allowing for a more personal connection to the business and strengthening user's trust. The business owners are invested in maintaining good relationship with the customer, by allowing easy contact, accommodating special requests and organising in person workshops.  
 
-## SEO & Web Marketing  
+## SEO and Web Marketing  
 ---  
 
 ### Search Engine Optimization (SEO) 
@@ -828,6 +828,7 @@ The full details of tests results can be found in the [TESTING.md](TESTING.md) f
 
 ### Credits
 
+* Code Institute's Boutique Ado walkthrough project was used as a starting point, modified and build on during the developement
 * Logos for the As seen in section taken from the official sites [One Fab Day](https://onefabday.com/) and [Ireland's Homes Interior and Living](https://www.ihil.net//)
 * Most of the images were sourced from [Unsplash](https://unsplash.com/):
   * [Hero image](https://unsplash.com/photos/OuWeHz4lPZg)

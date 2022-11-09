@@ -254,14 +254,14 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   **Log In page**
 
   TEST RESULT: PASS
-
-  * form is displayed and legible
-  * form cannot be submitted empty
-  * form cannot be submitted with incorrect details
-  * Sign In button works and logs the user in, redirecting to Home page
-  * link to the Sign up page redirects to the Sign up page  
-  * Home button cancels signing in process and redirects to Home page
-  * Forgot password link redirects to Password reset page
+ 
+   * form is displayed and legible
+   * form cannot be submitted empty
+   * form cannot be submitted with incorrect details
+   * Sign In button works and logs the user in, redirecting to Home page
+   * link to the Sign up page redirects to the Sign up page  
+   * Home button cancels signing in process and redirects to Home page
+   * Forgot password link redirects to Password reset page
 
   **Password reset page**  
   
