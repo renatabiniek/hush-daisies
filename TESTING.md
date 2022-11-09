@@ -310,87 +310,539 @@ I tested the website considering the user stories from the UX section as well.
    * As a site user I can quickly learn what the site is about so that I can decide if it offers something I want.  
 
      TEST RESULT: PASS
+     
+     * Hush Daisies branding is prominent once the user enters the site - the Hush Daisies logo with a flower at the top of the page, the hero image with dried flowers close up and the tag line immediately set the tone. The purpose of the site and site owner's philosophy is also contained in the site's slogan.  
 
-     * Hush Daisies branding is prominent once the user enters the site - the Hush Daisies logo with a flower at the top of the page, the hero image with dried flowers close up and the tag line immediately set the tone. The purpose of the site and site owner's philosophy is also contained in the site's slogan.
-     * Link to Our Studio section is displayed in the navigation bar to take the user to the relevant section that introduces the store owners, tells their story and presents what the site offers.
-     * Further selling points follow just underneath the main image are consise and engaging, giving the user a clear idea about the site and the store offer.
+       ![Site view image](docs/testing/site-view.png) 
 
-   * As a site user I can intuitively navigate through the site so that I can view desired content.  
-   * As a site user I can see notifications about any changes I have made so that I have a clear understanding of the status of the action.
-   * As a site user I can access the website on both mobile and desktop so that I can view the content anywhere.  
-   * As a site user I can see in the site menu which page I'm currently on so that I know which part of the website I'm in.  
+     * Further selling points follow just underneath the main image are consice and engaging, giving the user a clear idea about the site and the store offer.  
+       
+       ![Selling points image](docs/testing/selling-points.png)  
+
+     * Link to Our Studio section is displayed in the navigation bar to take the user to the relevant section that introduces the store owners, tells their story and presents what the site offers.  
+       
+       ![Our studio image](docs/testing/our-studio.png)  
+
+   * As a site user I can intuitively navigate through the site so that I can view desired content **AND**
+   * As a site user I can see in the site menu which page I'm currently on so that I know which part of the website I'm in 
+     
+     TEST RESULT: PASS
+
+     * Navigation menu is fixed at the top of the page, and appears on all pages, allowing the user to get to the relevant pages of the site easily. Logo is prominent and links to the home page. On mobile the full menu is also accessible but it collapses into a hamburger menu.  
+     * Links to important sections and pages are contained in the navbar.
+     * There's a dropdown menu under the Shop menu item listing individual product categories.
+     * Call to action buttons and navigation links are placed strategically throughout the site, to allow the user to jump to the logical section at the point of their journey.  
+     
+       ![Shop now image](docs/testing/shop-now.png) 
+       ![Keep shopping image](docs/testing/keep-shopping.png) 
+       ![Back to all products image](docs/testing/back-to-all.png) 
+       ![Join us image](docs/testing/join-us.png) 
+
+
+     * Current page is underlined in the site menu.
+
+       ![Navigation image](docs/testing/nav-menu.png)  
+     
+     * Footer with social accounts, and other relevant info is visible at the bottom of all pages.  
+
+       ![Footer image](docs/testing/footer.png) 
+
+   * As a site user I can see notifications about any changes I have made so that I have a clear understanding of the status of the action. 
+     
+     TEST RESULT: PASS
+
+     * User actions (add, edit, delete, update, save, remove) are confirmed with toast messages in the top right corner of the site, with relevant message heading and content.  
+
+       ![Toasts image](docs/testing/toasts.png) 
+
+   * As a site user I can access the website on both mobile and desktop so that I can view the content anywhere.
+
+     TEST RESULT: PASS
+
+     * The site is fully responsive on verious screen sizes.  
+
+       ![Responsive site image](docs/responsive-site.png) 
+ 
    * As a site user I can see in the browser which page I'm currently on so that I know which page has been opened.  
+     
+     TEST RESULT: PASS  
+
+     * The page title updates in the browser tab depending on the page the user is on.
+       
+       ![Browser tab image](docs/testing/browser-tab.png) 
+
    * As a site user I can see a custom, theme-consistent 'Page not found' page when I try to access a page in error so that I how to return to the site.
+     
+     TEST RESULT: PASS  
+
+     * Customised 404 error page matching the site theme appears when user tries to access a page that doesn't exist or is restricted.
+       
+       ![404 page image](docs/testing/404-page.png) 
 
   **EPIC | Account**  
 
    * As an interested site user I can sign up for an account so that I can get access to additional site functionalities.  
+
+     TEST RESULT: PASS
+
+     * Sign up link is placed under the account icon in the navbar at the top of the page, and a clean minimalistic form is displayed when clicked.  
+       
+       ![Login menu image](docs/testing/login-menu.png) 
+
+     * The fields are clearly labeled and placeholder text helps to guide the user through the process.  
+     * Validation is present to avoid incorrectly formatted data and non-matchig or non-valid passwords, to ensure smooth sign in experience for the user:  
+       
+       ![Sign up image](docs/testing/signup-form.png) 
+
    * As a registered site user I can receive a confirmation email after creating an account so that I know the registration was successful.  
-   * As a registered site user I can easily log in and out so that I can access my account.  
-   * As a registered user I can see my username displayed on the page after I log in so that I know the login status.  
+     
+     TEST RESULT: PASS
+     
+     * After signing up for a new account, a message is displayed to the new user prompting them to verify their email address.
+     * Verification email with a link is received at the email address provided by the user. When link is clicked, a new page is displayed with a button to verify the email address.
+     * Sign in page is displayed once the button is clicked. 
+      
+       ![Sign up success image](docs/testing/signup-success.png) 
+       ![Confirmation email image](docs/testing/confirmation-email.png) 
+       ![Email image](docs/testing/email.png) 
+       ![Email verified image](docs/testing/email-verified.png) 
+
+   * As a registered site user I can easily log in and out so that I can access my account.  **AND**
+   * As a registered user I can see my username displayed on the page after I log in so that I know the login status. **AND**
    * As a registered site user I can reset my password so that I can recover my account access.  
-  
+
+     TEST RESULT: PASS  
+     
+     * Log In and Log Out links are placed is placed under the account icon in the navbar at the top of the page.
+     * A clean minimalistic form is displayed when Log In is clicked, and confirmation screen is displayed when Sign Out is clicked.
+     * The fields are clearly labeled and placeholder text helps to guide the user through the process. Same validation is present as for the Sign Up form.
+     * Once log in successful, success message is displayed and username appears beside the account icon.
+     * Forgot password link is displayed on the login page. Once clicked, Reset Password page opens with email input field and Reset password button.
+     * Once reset password is clicked, a message is displayed that email with reset password link has been sent.  
+    
+       ![Log in form image](docs/testing/login-form.png)  
+
+       ![Login success image](docs/testing/signup-success.png)  
+
+       ![Forgot password image](docs/testing/reset-my-password.png)  
+
+       ![Password reset email image](docs/testing/password-reset-email.png) 
+
+
   **EPIC | User profile**  
   
    * As a registered site user I can access my profile page so that I can view my previous orders and keep track of my purchases.  
    * As a registered site user I can access my profile page so that I can view and edit my list of saved workshops.  
    * As a registered site user I can save my default delivery details so that I can save time during checkout.  
 
+     TEST RESULT: PASS  
+
+     * Once user is logged in, Me Profile option appears on the dropdown list under the account icon. Once clicked, the user can access their profile page.  
+       
+       ![My Profile menu image](docs/testing/my-profile-menu.png)  
+
+     * The page includes delivery details form, order history and list of saved workshops.
+     * The form can be populated and updated as needed, and if save info box had been ticked during the checkout, the form will be prepopulated with the saved details.
+     * There is a button to update profile information. 
+     * Once updated, a success message is displayed.
+
+       ![My Profile page image](docs/testing/my-profile-page.png) 
+
+
   **EPIC | Admin**  
 
-   * As a site admin I can add a product so that I can add new items to my store.
-   * As a site admin I can edit a product so that I can keep the product information up-to-date.  
+   * As a site admin I can add a product so that I can add new items to my store. **AND**
+   * As a site admin I can edit a product so that I can keep the product information up-to-date.  **AND**
    * As a site admin I can delete a product so that I can remove items that are no longer for sale.  
+     
+     TEST RESULT: PASS
+     
+     * Admin can add, edit and delete products in the admin panel or via Product management on the live site.
+     * When logged in as admin, admin panel is accessible by typing /admin at the end of the app URL.
+     * In the admin panel, existing products are displayed with the relevant fields in the list view.
+     * Using Add product button, admin has access to Add product form and can create new products.
+
+       ![Admin products page image](docs/testing/admin-products.png) 
+
+     * When admin is logged in, option to manage products shows up in their profile menu.  
+       
+       ![Admin menu image](docs/testing/admin-menu.png)  
+
+     * Form to add products is displayed on a separate page, once superuser clicks Product Management option on the profile icon. The form includes product name, image, description, price, category, product availability checkbox.  
+     * Once product form is submitted and status set as available, the product shows up in the product list in the shop with the correct info as per form.  
+
+       ![Admin add product form image](docs/testing/product-management.png)  
+
+     * Edit and Delete link are displayed underneath the product card on all products and product details pages. 
+
+       ![Product management options image](docs/testing/product-management-options.png) 
+
+       ![Product management details image](docs/testing/product-management-details.png)  
+
+     * Once Edit link is clicked, Edit product form with pre-populated product details is shown and an Update button. Once updated, a success message is shown and product updated.  
+
+       ![Admin edit product image](docs/testing/admin-edit-product.png)  
+
+     * When Delete link is clicked a warning modal is displayed with Cancel and Delete buttons. Deleted product is removed from the database and message displayed.
+       
+       ![Admin delete product image](docs/testing/delete-product.png)  
+
    * As a site admin I can approve or block comments so that only appropriate comments are displayed.  
+
+     TEST RESULT: PASS  
+     
+     * In the Workshop testimonials section in the admin panel, the admin can view, approve or delete comments, to ensure appropriate content.   
+     
+       ![Admin approve comments image](docs/testing/approve-comments.png) 
+     
    * As a site admin I can add, edit and delete categories from the admin panel so that I can keep my content organised.  
+
+     TEST RESULT: PASS  
+
+     * Admin can create (Add category button), edit (Click selected category) and delete (Select and choose Delete action) categories in the Categorys section of the admin panel.  
+
+       ![Admin categories image](docs/testing/admin-categories.png)
+       
    * As a site admin I can add, edit and delete workshop information so that the content is up-to-date. 
+   
+     TEST RESULT: PASS  
+
+     * Using Add workshop button, admin has access to Add workshop form and can create new workshops.
+
+       ![Admin workshops image](docs/testing/admin-workshops.png) 
+
+     * When admin is logged in, option to manage workshops also shows up in their profile menu.  
+
+     * Form to add a workshop is displayed on a separate page, once superuser clicks Workshop Management option on the profile icon. The form includes workshop name, level, date, time, workshop length, fee, location, description and option to select image.
+     * Once workshop form is submitted, the workshop shows up on the workshop list with the correct info as per form.  
+
+       ![Admin add workshop form image](docs/testing/add-workshop-form.png)  
+
+     * Edit and Delete link are displayed underneath the workshop card on all workshops and workshop details pages, same as with products.  
+     
+       ![Workshop management options image](docs/testing/workshop-management-options.png) 
+
+     * Once Edit link is clicked, Edit workshop form with pre-populated workshop details is shown and an Update button. Once updated, a success message is shown and workshop updated.  
+       
+       ![Workshop edit image](docs/testing/workshop-management-edit.png)  
+
+     * When Delete link is clicked a warning modal is displayed with Cancel and Delete buttons. Deleted workshop is removed from the database and message displayed.  
+       
+       ![Workshop delete image](docs/testing/admin-delete-workshop.png)  
+
    * As a site admin I can receive and view details of requests submitted by my site's users so that  I can provide them with information they're looking for.  
+   
+     TEST RESULT: PASS  
+
+     * Admin can view all contact form submissions in the Custom Requests section of the admin panel.  
+
+       ![Admin custom requests image](docs/testing/admin-custom-requests.png)
    
   **EPIC | Products**  
 
-   * As a shopper I can view a list of products so that I can select some to purchase.  
-   * As a shopper I can click a product on the list so that I can view further information about the item before purchasing.  
-   * As a shopper I can easily identify different product categories so that I can narrow down my search for relevant products.  
-   * As a shopper I can sort the list of products so that I can easily identify find the most relevant products for me.  
-   * As a shopper I can search through the list of products by name or description so that I can easily find the most relevant products for me.  
+   * As a shopper I can view a list of products so that I can select some to purchase. **AND**
+   * As a shopper I can easily identify different product categories so that I can narrow down my search for relevant products. **AND**
+   * As a shopper I can sort the list of products so that I can easily identify find the most relevant products for me. **AND**  
+   * As a shopper I can search through the list of products by name or description so that I can easily find the most relevant products for me.  **AND**  
    * As a shopper I can see what I’ve searched for and the number of results so that I can quickly see whether the product is available.  
+
+     TEST RESULT: PASS  
+
+     * All products are listed as cards in rows of 4 on the Shop page.  
+     * Overview of the product (name, category, image, price) is visible.  
+     * Only active products are visible to non-admin users.  
+     * Category options are visible on the product list page.  
+
+       ![All products image](docs/testing/all-products.png)  
+
+     * When category selected, only items linked to the category are displayed.   
+     * There's a back to all link on the filtered results page (All florals button).
+
+       ![Category filter image](docs/testing/category-filter.png)  
+
+     * There's a selector box with sorting options visible on the product list page.  
+     * Sorting options by name and price, as well as reset sorting option, are available.  
+     * Once option selected, products are sorted as per the sorting option.
+       
+       ![Sorting image](docs/testing/product-sorting.png)  
+     
+     * There's a search box at the top of the product list page.  
+     * The user can type a search term in the box, and the search runs on product name or description.  
+     * Relevant results are displayed with the results count.
+
+      ![Product search image](docs/testing/product-search.png) 
+
+   * As a shopper I can click a product on the list so that I can view further information about the item before purchasing.  
+     
+     TEST RESULT: PASS  
+
+     * Clicking the individual product image on the main product list opens a new page with product details.  
+     * There's a link allowing the user to return to the full list of products.  
+     * The details include all necessary information (image, category, price, description).  
+     * There's option to select quantity and add to basket button  
+
+       ![Non-admin product detail image](docs/testing/nonadmin-product-detail.png)
+
 
   **EPIC | Orders and payments**  
   
-   * As a shopper I can add products to my shopping bag so that I can store the items until I'm ready to purchase.  
-   * As a shopper I can adjust quantity of each item in my shopping bag so that I can make changes before checkout.  
-   * As a shopper I can view my shopping bag so that I can check view the products and total cost of the order before checkout.  
-   * As a shopper I can place an order as a guest so that I can still use the site without having to create an account.  
-   * As a shopper I can easily enter my payment details so that I can checkout without problems.  
+   * As a shopper I can add products to my shopping bag so that I can store the items until I'm ready to purchase. **AND**
+   * As a shopper I can adjust quantity of each item in my shopping bag so that I can make changes before checkout. **AND**  
+   * As a shopper I can view my shopping bag so that I can check view the products and total cost of the order before checkout. **AND**  
+   * As a shopper I can always see the total amount in my basket while browsing the site so that I can keep track of my spend.  **AND**  
+   * As a shopper I can see a preview of my basket every time I make a change so that I can always see the up-to-date basket contents. **AND**
+   * As a shopper I can place an order as a guest so that I can still use the site without having to create an account.   
+
+     TEST RESULT: PASS   
+
+     * Add to basket button is visible on the product detail page. User can click the button to add an item to the basket.
+     * User can click on the basket icon and open the basket page.  
+     * If there are items in the basket, relevant details are displayed (incl. image, product name, price, quantity, subtotal and delete icon.
+     * Summary of the order, with the delivery cost and grand total is visible.  
+
+      ![Shopping basket image](docs/testing/shopping-basket.png)  
+
+     * Quantity selector is visible in the basket and with + button, the user can increase the quantity of an item in the basket, and decrease it with - button.
+     * With the Update link, the qty gets updated. 
+     * The user can remove any item by clicking the bin icon, or entering 0 and clicking Update.
+     * The total in the header and order summary update accordingly.
+     * The subtotal for each item in the basket updates accordingly.  
+     * A small preview of the basket is displayed with the confirmation message when user makes changes to the basket content.
+      
+      ![Updated basket image](docs/testing/updated-basket.png)  
+    
+     * If there are no items in the basket, message and Add something button are displayed. 
+
+      ![Removed from basket image](docs/testing/removed-from-basket.png) 
+  
+     * Remaining spend needed for free delivery is calculated and displayed. 
+      
+      ![Remaining spend image](docs/testing/remaining-spend.png)
+
+     * User who is not logged in can browse, add to basket and checkout. Prompt to login or create a new account is shown on the checkout page.  
+
+
+   * As a shopper I can easily enter my payment details so that I can checkout without problems. **AND**
+   * As a shopper I can proceed with my payment so that I can complete my purchase. **AND**  
+   * As a shopper I can receive a confirmation of my order so that I can I know the order went through correctly.
+     
+     TEST RESULT: PASS  
+     
+     * The shopper can click Secure Checkout button on the basket page and see a checkout form.
+   
+       ![Checkout page image](docs/testing/checkout-form.png)
+       
+     * Separate section is displayed for the user to enter payment details.  
+       
+       ![Payment info image](docs/testing/payment-input.png)  
+
+     * Once payment details are entered on the checkout page user can click Secure Checkout button and submit the details.
+     * Error message shows up if the card details are incorrect. 
+
+       ![Incorrect card details image](docs/testing/incorrect-payment-details.png) 
+      
+     * Processing overlay is shown to the user.  
+       
+       ![Processing image](docs/testing/overlay-spinner.png) 
+
+     * Confirmation status is shown to the user.  
+       
+       ![Checkout success image](docs/testing/checkout-success.png) 
+       
+     * Order summary is displayed after checkout successful.  
+       
+       ![Confirmation page image](docs/testing/confirmation-page.png) 
+
+
    * As a shopper I can receive an email confirmation of my order so that I can keep it for my records.  
-   * As a shopper I can always see the total amount in my basket while browsing the site so that I can keep track of my spend.  
-   * As a shopper I can see a preview of my basket every time I make a change so that I can always see the up-to-date basket contents.  
-   * As a shopper I can proceed with my payment so that I can complete my purchase.  
-   * As a shopper I can receive a confirmation of my order so that I can I know the order went through correctly.  
-   * As the site owner I can ensure that an order is a created once payment is made even if the checkout process is interrupted so that there is no discrepancy in database.  
-   * As a registered user I can view my past orders on my profile page so that I can keep track of my past purchases.
+     
+     TEST RESULT: PASS
+     
+     * Email confirmation is sent to a user who placed an order.  
+     * Email subject includes business name and order number.  
+     * Email body includes order summary: number, totals, order items date, delivery info.
+
+       ![Email order confirmation image](docs/testing/emailed-order-confirmation.png) 
+      
+   * As the site owner I can ensure that an order is a created once payment is made even if the checkout process is interrupted so that there is no discrepancy in database. 
+    
+     TEST RESULT: PASS
+    
+     * Stripe webhooks are used to sent messages between site and Stripe to handle payment.  
+
+       ![Webhooks image](docs/testing/webhooks.png) 
+
+   * As a registered user I can view my past orders on my profile page so that I can keep track of my past purchases.  
+     
+     TEST RESULT: PASS  
+     
+     * Once logged in the user can see order history in their profile.
+     * Past orders are listed with their details, most recent first.  
+
+       ![Order history image](docs/testing/order-history.png)  
+
+     * A message is displayed if there is no order history available.  
+    
+       ![No order history image](docs/testing/no-order-history.png) 
 
   **EPIC | Workshops**  
 
-   * As a site user I can view list of upcoming workshop organised by the store owner so that I can decide if they are of interest to me.  
+   * As a site user I can view list of upcoming workshop organised by the store owner so that I can decide if they are of interest to me. **AND**
    * As a site user I can find the date, description, cost and reviews for each workshop so that I can make an informed decision about attending.  
+     
+     TEST RESULT: PASS  
+
+     * User can access list of upcoming workshops from the Workshop link in navbar or Our Studio section on home page.
+     * The page displays welcome message from the store owners.  
+       
+       ![Workshop intro image](docs/testing/workshops-intro.png) 
+
+     * List of workshop is displayed, with image, name, location, level and fee.  
+     * Underneath a Join us button is visible. Once clicked, the user can register their interest by filling out a contact form.  
+       
+       ![Workshops page image](docs/testing/workshops-page.png) 
+
+     * Sorting box is available for the user to sort the workshop list. 
+       
+       ![Sort workshops image](docs/testing/sort-workshops.png) 
+
+     * Clicking the individual workshop image or title on the main workshop list opens a new page with details.  
+     * The details include all necessary information (Image, level, location, price, description).  
+     * There's a link allowing the user to return to the full list of workshops.  
+     * There is a button allowing the user to contact the store owners to save their spot in the workshop.  
+
+       ![Workshop details page image](docs/testing/workshop-detail-page.png) 
+
    * As a registered site user I can save workshops I'm interested in in my user profile so that I can come back to them later.  
-   * As a registered site user I can add my review of a workshop I attended so that I can share my opinion with the business and other users.  
+     
+     TEST RESULT: PASS  
+
+     * Logged in user can see a bookmark icon and save to favourites button on workshop details card.
+     * Once clicked, the workshop is saved to the list of favourites on user's profile.
+       
+       ![Add to favourites image](docs/testing/add-to-favourites.png) 
+
+     * Button text changes to Remove from favourites. Once clicked, the workshop is removed from the favourties in the profile.
+
+       ![Removed from favourites image](docs/testing/remove-from-favourties.png)  
+
+     * Messages are displayed confirming the action.
+       
+       ![Added to favourites image](docs/testing/added-to-favourites.png)
+       ![Remove from favourites image](docs/testing/removed-from-favourties.png)
+
+     * For guests users, Sign in to save to favourites link is displayed. 
+   
+       ![Sign in to save image](docs/testing/sign-in-to-save.png)
+       
+
+   * As a registered site user I can add my review of a workshop I attended so that I can share my opinion with the business and other users. **AND**
    * As a registered site user I can edit and remove my review of a workshop I attended so that I can update or remove information.  
+     
+     TEST RESULT: PASS  
+
+     * Number of testimonials is displayed with a comment icon on the workshop details page.
+     * Section with testimonials is displayed underneath the workshop details section.
+     * Individual testimonials, including reviewer name and date are shown with most recent at the top.
+     * Edit and Delete link show up by a comment a logged in user had posted.
+       
+       ![Testimonials image](docs/testing/testimonials-section.png)
+
+     * If there's no testimonials, a message is displayed. 
+     * If user isn't logged in, there's a message prompting them to do so to post testimonials.
+       
+       ![Testimonials login image](docs/testing/testimonials-login.png)
+
+     * If user is logged in, a comment box is displayed with a button to add a new testimonial that when submitted, needs to be approved.
+       
+       ![Comment box image](docs/testing/comment-box.png)
+
+     * When Edit link is clicked, the link opens the workshop testimonial form with details pre-populated and a button to update it. 
+     * When updates are submitted, a message is displayed and the testimonial is sent to admin panel for approval. 
+     * Once approved, it appears in the testimonial section. 
+
+       ![Edit comment image](docs/testing/edit-comment-form.png)  
+       ![Approval needed image](docs/testing/comment-approval-needed.png)
+       ![Comment approved image](docs/testing/comment-approved.png)
+
+     * When Delete link is clicked, a modal shows up with Delete and Cancel buttons. 
+     * Cancel button takes the user back to the workshop details page, Delete button deletes the testimonial. 
+     * Once deleted, a message is displayed and the testimonial disappears from the testimonials section.  
+
+       ![Comment delete modal image](docs/testing/delete-comment-modal.png)
+       ![Comment deleted image](docs/testing/comment-deleted.png)
+
+     * User cannot edit or delete testimonials posted by another user.  
+
+       ![Comment edit non-author image](docs/testing/comment-edit-nonauthor.png)
 
   **EPIC | Marketing & SEO**  
   
    * As a site user I can sign up for a newsletter so that I can receive news and promo offers from the store owner.  
+
+     TEST RESULT: PASS  
+     
+     * Newsletter sign up form is displayed in the footer on each page.  
+     * The form includes input field for email address and a sign up button.  
+       
+       ![Newsletter form image](docs/testing/newsletter.png)
+
+     * Once form is submitted, the email address is added to the mailing list on Mailchimp dashboard.
+      
+       ![Newsletter audience image](docs/testing/newsletter-audience.png)
+
+
    * As the site owner I have a Facebook Business page created and linked on my site so that users can follow and interact with my store easily, and generate more business.  
+     
+     TEST RESULT: PASS  
+
+     * Facebook page has been created.  
+
+       ![FB page image](docs/facebook-page.png)
+
+
    * As the site owner I have relevant SEO keywords implemented on my site and site's metadata so that the site ranks higher in search results for these keywords and generates more traffic.  
-   * As the site owner I have sitemap.txt and robots.txt files created for the site so that **my site's ranking in search engine results is higher.  
+
+     TEST RESULT: PASS 
+
+     * Relevant keywords are organically included in the site content.
+     * The head of the base.html has meta block with relevant keywords.
+     * Image alt tags contain keywords.
+
+   * As the site owner I have sitemap.txt and robots.txt files created for the site so that my site's ranking in search engine results is higher. 
+     
+     TEST RESULT: PASS
+
+     * sitemap.txt and robots.txt file are present in the root directory 
 
   **EPIC | Contact**  
 
    * As a site user I can find Hush Daisies' social accounts so that I can stay up to date with their news.  
-   * As a site user I can contact the business so that I can ask a question or submit a special request.  
    
+     * Icons with links to social media accounts are visible in the footer.
+     * Each link opens in new tab.
 
+       ![Follow us image](docs/testing/follow-us.png)
+
+   * As a site user I can contact the business so that I can ask a question or submit a special request.  
+
+     * Contact links are available on the home page in the banner, Our Studio and Custom Orders sections.
+     * On workshop page and workshop details page the form can be accessed via the Join us buttons.
+     * Once clicked a contact form opens for the user to fill out.
+     * The form includes: name, email, phone number, body fields and URL field for any web reference.
+     * There is a submit button that when clicked submits the form and query to admin panel.
+       
+       ![Contact us image](docs/testing/contact-us-form.png)
+
+     * The form includes request type drop down where the user can specify the reason for contacting the store owner: custom order quote, general question or booking a spot at a workshop.  
+       
+       ![Request type image](docs/testing/request-type.png)
+
+     * A success or error message is displayed upon submission.  
+       
+       ![Message sent image](docs/testing/request-sent.png)
+
+     * Back Home button allows the user to go back to the home page without submitting the form.  
   
 
 ### Validator Testing
