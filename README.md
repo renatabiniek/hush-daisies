@@ -840,6 +840,7 @@ The full details of tests results can be found in the [TESTING.md](TESTING.md) f
   * [Hero image](https://unsplash.com/photos/OuWeHz4lPZg)
   * [Our studio image](https://unsplash.com/photos/p0ZvBVpW3KY)
   * [Custom orders image](https://unsplash.com/photos/XPCdZXncj64)  
+* Product descriptions for some of the products were used from [The Flowersmith Studio](https://www.theflowersmithstudio.ie/) and [Flore Creations](https://florecreations.com/) websites and modified
 * How to check the length of a query set in a template from [this Stackoverflow post](https://stackoverflow.com/questions/10695322/django-show-the-length-of-a-queryset-in-a-template)  
 * Learned more about Exception TypeError warning from [this Stackoverflow post](https://stackoverflow.com/questions/53148112/python-3-handling-error-typeerror-catching-classes-that-do-not-inherit-from-bas)  
 * Solved Bootstrap button outline issue thanks to [this Stackoverflow post](https://stackoverflow.com/questions/23333231/bootstrap-button-shows-blue-outline-when-clicked)  
