@@ -872,7 +872,6 @@ The following were also identified:
 
  * Duplicate ID on delete modal for testimonials for loop - this has been resolved by using {{ loop.index }} and {{testimonial_id}} to create a unique id for each modal in the loop  
  * Table row exceeding the column count established by the first row - this was caused by me adding an extra column to the table during development but no updating the table's first row. Updating the number of columns in the table fixed this.  
- * Duplicate ID id_image on Add / Edit Product and Workshops pages - this error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
  * Following the warning that type `type="text/javascript"` is not necessary for `<script>` tags, I removed the type.
 
 Validation was repeated after fixing the errors for each file, and no errors or warnings were found. 
