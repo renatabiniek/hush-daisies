@@ -879,27 +879,23 @@ Here are the final results for each page:
 
  **Home**  
  
- ![HTML Home validation image](docs/testing/home.png)
+ ![HTML Home validation image](docs/testing/home-html.png)
  
  **Products**  
 
- ![HTML Products validation image](docs/testing/products.png)
+ ![HTML Products validation image](docs/testing/products-html.png)
 
  **Product detail**  
 
- ![HTML Product details validation image](docs/testing/product-details.png)
+ ![HTML Product details validation image](docs/testing/product-details-html.png)
 
  **Edit product**  
 
-   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
-
- ![HTML Edit product validation image](docs/testing/edit-product.png)
+ ![HTML Edit product validation image](docs/testing/edit-product-html.png)
 
  **Add product**  
 
-   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
-
- ![HTML Add product validation image](docs/testing/add-product.png)
+ ![HTML Add product validation image](docs/testing/add-product-html.png)
 
  **404 Error**  
 
@@ -907,58 +903,55 @@ Here are the final results for each page:
 
  **Login**  
 
- ![HTML Login validation image](docs/testing/sign-in.png)
+ ![HTML Login validation image](docs/testing/sign-in-html.png)
 
  **Logout**  
 
- ![HTML Logout validation image](docs/testing/sign-out.png)
+ ![HTML Logout validation image](docs/testing/sign-out-html.png)
 
  **Signup**  
 
- ![HTML Signup validation image](docs/testing/sign-up.png)
+ ![HTML Signup validation image](docs/testing/sign-up-html.png)
 
  **Basket**  
 
- ![HTML Basket validation image](docs/testing/basket.png)
+ ![HTML Basket validation image](docs/testing/basket-html.png)
 
  **Checkout**  
 
- ![HTML Checkout validation image](docs/testing/checkout.png)
+ ![HTML Checkout validation image](docs/testing/checkout-html.png)
 
  **Checkout success**  
 
- ![HTML Checkout success validation image](docs/testing/checkout_success.png)
+ ![HTML Checkout success validation image](docs/testing/checkout-success-html.png)
 
  **Profile**  
 
- ![HTML Profile validation image](docs/testing/my-profile.png)
+ ![HTML Profile validation image](docs/testing/my-profile-html.png)
 
  **Custom request**  
 
- ![HTML Contact us validation image](docs/testing/contact-us.png)
+ ![HTML Contact us validation image](docs/testing/contact-us-html.png)
 
  **Workshops**  
 
- ![HTML Workshops validation image](docs/testing/workshops.png)
+ ![HTML Workshops validation image](docs/testing/workshops-html.png)
 
  **Workshop details**  
 
- ![HTML Workshop details validation image](docs/testing/workshop-details.png)
+ ![HTML Workshop details validation image](docs/testing/workshop-details-html.png)
 
  **Edit workshop**  
 
-   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
-
- ![HTML Edit workshop validation image](docs/testing/edit-workshop.png)
+ ![HTML Edit workshop validation image](docs/testing/edit-workshop-html.png)
 
  **Add workshop**  
-   This error is caused by the image upload widget and I haven't fixed it as changing the code breaks the field.
 
- ![HTML Add workshop validation image](docs/testing/add-workshop.png)
+ ![HTML Add workshop validation image](docs/testing/add-workshop-html.png)
 
  **Edit testimonial**  
 
- ![HTML Edit testimonial validation image](docs/testing/edit-comment.png)
+ ![HTML Edit testimonial validation image](docs/testing/edit-comment-html.png)
 
 
 * **W3C CSS Validator**  
@@ -1007,11 +1000,13 @@ A couple of Missing semicolon errors were corrected. Warning *'template literal 
 
 * **Lighthouse**
 
-[NEEDS UPDATE!]
+When running the site through Lighthouse checks I found that the site was scoring very high in desktop view, but very low performance-wise on mobile. I replaced the hero image's format with a smaller web-friendly webp format, and also prepared a mobile version of the home page image with a mobile optimized ratio aspect to be used on smaller screens instead. With the use of media queries, the larger hero image gets now replaced on small screens with the mobile version.  
+This has improved the Lighthouse scores as follows:
+
 
 Desktop Lighthouse report from Google Chrome DevTools has been run to review performance, SEO, the best practices and accessibility of the site.
 
-![Lighthouse image](docs/testing/lighthouse-desktop.png)
+![Lighthouse image](docs/testing/lighthouse-desktop-improved.png)
 
 * **Color contrast:**
 
@@ -1109,6 +1104,10 @@ Content is legible on all screen sizes. It has been proof-read for logical and g
   ![Negative value validation image](docs/bugs/negative-value.png)
 
 * **KNOWN ISSUES** 
+
+  * Currently lines that had been left blank in the checkout form, appear as blank spaces in the adress section of the order confirmation email. It's a small esthetic issue that time didn't allow to resolve for this version of the project. It doesn't affect the functionality of the site.
+
+  ![Blank spaces image](docs/bugs/blank-space.png)
 
 ### Devices and browsers tested  
 

@@ -256,6 +256,12 @@ Additionally, a monthly newsletter will be used as a marketing strategy, to offe
   A relational database was used for this project. The database consists of the following models: User (Django built-in model), UserProfileOrder, Product, Category, Order, OrderLineItem, Workshop, Level, WorkshopTestimonials, WorkshopFavourites and CustomRequest. 
   Django AllAuth was used for user authentication. The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. EmailField, URLField).
 
+  **Change in the schema:**
+
+  In my Order and UserProfile I had used house_number_or_name column. Only deep into the developement process, I realised that it would not be accepted as a standard key by Stripe's prebuilt payment page with Checkout and would require setting up additional custom field. Due to time constrains this wasn't not possible for this project, so I removed the field from profile and checkout forms where it was being rendered to avoid user confusion and receiving incorrect delivery information. 
+
+  In the Product model, I had SKU column set as a non-editable field, but again, due to the very limited timeframe, the feature to generate SKU automatically hasn't been implemented in this project. I decided not to amend the models at this point but these 2 keys are not being used at the moment. 
+
   **Hush Daisies database schema:**  
 
   ![Database diagram image](docs/database/database-schema.png)
