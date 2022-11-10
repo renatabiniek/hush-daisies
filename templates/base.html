@@ -56,7 +56,7 @@
   </head>
   <body>
     <header class="container-fluid nav-background">
-       <!-- Logo -->
+      <!-- Logo -->
       <div class="row pt-2 pl-md-4">
         <div class="col-12 col-lg-6 my-auto text-left">
           <a class="logo navbar-brand" href="{% url 'home' %}">
@@ -85,19 +85,19 @@
                 <a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a>
                 {% endif %}
               </div>
-          </li>
-          <!-- Shopping bag icon -->
-          <li class="list-inline-item">
-            <a class="nav-link main-nav-link" href="{% url 'view_basket' %}" aria-label="View basket">
-              <!--Outlined icon if no items in basket, filled icon if items in basket -->
-              <div><i class="bi bi-basket{% if grand_total %}-fill dusty-pink-text {% endif %}" aria-hidden="true">
-                  €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>
-            </a>
-          </li>
-        </ul>
+            </li>
+            <!-- Shopping bag icon -->
+            <li class="list-inline-item">
+              <a class="nav-link main-nav-link" href="{% url 'view_basket' %}" aria-label="View basket">
+                <!--Outlined icon if no items in basket, filled icon if items in basket -->
+                <div><i class="bi bi-basket{% if grand_total %}-fill dusty-pink-text {% endif %}" aria-hidden="true">
+                    €{% if grand_total %}{{ grand_total|floatformat:2 }}{% else %}0.00{% endif %}</i></div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      
+
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark nav-background pt-2 pb-3 w-100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
@@ -109,10 +109,11 @@
       <!-- Banner -->
       <div id="custom-order-banner" class="row text-center py-1">
         <div class="col">
-            <p class="my-1">Looking for something special?<a href="{% url 'send_query' %}"
-                    aria-label="Go to contact form to submit a special request."> <span class="contact-link">Get in touch</span> with with us!</a></p>
+          <p class="my-1">Looking for something special?<a href="{% url 'send_query' %}"
+              aria-label="Go to contact form to submit a special request."> <span class="contact-link">Get in
+                touch</span> with with us!</a></p>
         </div>
-    </div>
+      </div>
     </header>
 
     <!-- Display of messages for user actions -->
@@ -155,58 +156,66 @@
           <div class="col-12 col-md-4 pb-3">
             <h5 class="footer-heading pb-3">Follow us</h5>
             <ul class="m-0 text-center list-inline">
-              <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100087606756809" target="_blank" rel="noopener"
-                  aria-label="Visit our Facebook page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-facebook"
-                    aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100087606756809"
+                  target="_blank" rel="noopener" aria-label="Visit our Facebook page. Link opens in new tab"
+                  class="footer-link"><i class="footer-icon bi bi-facebook" aria-hidden="true"></i></a></li>
               <li class="list-inline-item"><a href="https://twitter.com" target="_blank" rel="noopener"
-                  aria-label="Visit our Twitter page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-twitter"
-                    aria-hidden="true"></i></a></li>
+                  aria-label="Visit our Twitter page. Link opens in new tab" class="footer-link"><i
+                    class="footer-icon bi bi-twitter" aria-hidden="true"></i></a></li>
               <li class="list-inline-item"><a href="https://instagram.com" target="_blank" rel="noopener"
-                  aria-label="Visit our Instagram page. Link opens in new tab" class="footer-link"><i class="footer-icon bi bi-instagram"
-                    aria-hidden="true"></i></a></li>
+                  aria-label="Visit our Instagram page. Link opens in new tab" class="footer-link"><i
+                    class="footer-icon bi bi-instagram" aria-hidden="true"></i></a></li>
             </ul>
           </div>
-          <div class="col-12 col-md-4"><h5 class="footer-heading pb-3">Newsletter</h5>
-          <p class="m-0">Sign up for our monthly newsletter and be the first to hear about seasonal offers,</p><p class="m-0">new additions to our shop and workshops!</p>
-          <!-- Begin Mailchimp Signup Form -->
-          <div id="mc_embed_signup">
-            <form
-              action="https://herokuapp.us12.list-manage.com/subscribe/post?u=c76765d3b52f6bb7f8e623ab0&amp;id=5d558e1105&amp;f_id=00d6b8e0f0"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-              target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
-                <div class="indicates-required"><span class="asterisk">* </span>required</div>
-                <div class="mc-field-group">
-                  <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
-                  </label>
-                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                </div>
-                <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                    name="b_c76765d3b52f6bb7f8e623ab0_5d558e1105" tabindex="-1" value=""></div>
-                <div class="optionalParent">
-                  <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn newsletter-btn">
-                    <p class="brandingLogo"><a href="http://eepurl.com/ic0QOr"
-                        title="Mailchimp - email marketing made easy and fun" target="_blank" rel="nofollow"><img
-                          src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" class="img-fluid" alt="Mailchimp brand"></a></p>
+          <div class="col-12 col-md-4">
+            <h5 class="footer-heading pb-3">Newsletter</h5>
+            <p class="m-0">Sign up for our monthly newsletter and be the first to hear about seasonal offers,</p>
+            <p class="m-0">new additions to our shop and workshops!</p>
+            <!-- Begin Mailchimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form
+                action="https://herokuapp.us12.list-manage.com/subscribe/post?u=c76765d3b52f6bb7f8e623ab0&amp;id=5d558e1105&amp;f_id=00d6b8e0f0"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="indicates-required"><span class="asterisk">* </span>required</div>
+                  <div class="mc-field-group">
+                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                    </label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                  </div>
+                  <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                      name="b_c76765d3b52f6bb7f8e623ab0_5d558e1105" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                    <div class="clear foot">
+                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                        class="button btn newsletter-btn">
+                      <p class="brandingLogo"><a href="http://eepurl.com/ic0QOr"
+                          title="Mailchimp - email marketing made easy and fun" target="_blank" rel="nofollow"><img
+                            src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
+                            class="img-fluid" alt="Mailchimp brand"></a></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
           </div>
-          <!--End mc_embed_signup-->
-          </div>
-          <div class="col-12 col-md-4 pb-3"><h5 class="footer-heading pb-3">Links</h5>
+          <div class="col-12 col-md-4 pb-3">
+            <h5 class="footer-heading pb-3">Links</h5>
             <ul class="m-0 text-center list-unstyled">
-              <li class="pb-2"><a href="https://www.termsandconditionsgenerator.com/live.php?token=L2OQkug7aUoqXa6RI0xjJwxsgLUPK0kD" target="_blank" rel="noopener"
-                  aria-label="Read our Terms and Conditions. Link opens in new tab" class="footer-link">Terms and Conditions</a></li>
-              <li><a href="https://www.privacypolicygenerator.info/live.php?token=bmahUCviom202b0mHKeMtn2DKcknhkxn" target="_blank" rel="noopener"
-                  aria-label="Read our Privacy Policy. Link opens in new tab" class="footer-link">Privacy Policy</a></li>
+              <li class="pb-2"><a
+                  href="https://www.termsandconditionsgenerator.com/live.php?token=L2OQkug7aUoqXa6RI0xjJwxsgLUPK0kD"
+                  target="_blank" rel="noopener" aria-label="Read our Terms and Conditions. Link opens in new tab"
+                  class="footer-link">Terms and Conditions</a></li>
+              <li><a href="https://www.privacypolicygenerator.info/live.php?token=bmahUCviom202b0mHKeMtn2DKcknhkxn"
+                  target="_blank" rel="noopener" aria-label="Read our Privacy Policy. Link opens in new tab"
+                  class="footer-link">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -214,7 +223,7 @@
         <div class="row text-center py-3">
           <div class="col footer-text">
             <span>&copy; <a href="{% url 'home' %}" class="footer-link footer-text"> Hush Daisies</a> 2022.
-            Site created for educational purposes.</span>
+              Site created for educational purposes.</span>
           </div>
         </div>
       </div>

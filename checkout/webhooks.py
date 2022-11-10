@@ -8,7 +8,7 @@ from checkout.webhook_handler import StripeWebhookHandler
 
 import stripe
 
-"""Credit: Code Institute, Boutique Ado walkthrough"""
+# Credit: Code Institute, Boutique Ado walkthrough
 
 
 @require_POST

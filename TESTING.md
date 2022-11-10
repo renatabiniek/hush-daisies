@@ -859,10 +859,11 @@ The following warnings have not been addressed either:
  * 'checkout.signals' imported but unused in checkout apps.py - the import is being used
  *  local variable 'e' is assigned to but never used in webhooks.py - the variable is being used
  *  redefinition of unused 'handler404' in main urls.py - the handler is being used
+ *  local variable 'on_profile_page' is assigned to but never used - the variable is being used
  *  line too long (87 > 79 characters) in /products/widgets.py remained unfixed as per the recommendation of this [Stackoverflow post](https://stackoverflow.com/questions/10739843/how-should-i-format-a-long-url-in-a-python-comment-and-still-be-pep8-compliant/25034769) as it's a template URL and it could break it  
 
 
- ![PEP8 validation image](docs/testing/pycodestyle.png)
+ ![PEP8 validation image](docs/testing/pycodestyle-final.png)
 
 * **W3C HTML Validator**
 
@@ -1000,13 +1001,18 @@ A couple of Missing semicolon errors were corrected. Warning *'template literal 
 
 * **Lighthouse**
 
-When running the site through Lighthouse checks I found that the site was scoring very high in desktop view, but very low performance-wise on mobile. I replaced the hero image's format with a smaller web-friendly webp format, and also prepared a mobile version of the home page image with a mobile optimized ratio aspect to be used on smaller screens instead. With the use of media queries, the larger hero image gets now replaced on small screens with the mobile version.  
+Desktop Lighthouse report from Google Chrome DevTools has been run to review performance, SEO, the best practices and accessibility of the site.
+During the checks I found that the site was scoring high in desktop view, but very low performance-wise on mobile. To help remedy this, replaced the hero image's format with a smaller web-friendly webp format, and also prepared a mobile version of the home page image with a mobile optimized ratio aspect to be used on smaller screens instead. With the use of media queries, the larger hero image gets now replaced on small screens with the mobile version.  
+
 This has improved the Lighthouse scores as follows:
 
+Desktop:  
 
-Desktop Lighthouse report from Google Chrome DevTools has been run to review performance, SEO, the best practices and accessibility of the site.
+![Lighthouse image](docs/testing/lighthouse-desktop-improved.png)  
 
-![Lighthouse image](docs/testing/lighthouse-desktop-improved.png)
+Mobile:  
+
+![Lighthouse mobil eimage](docs/testing/lighthouse-mobile.png)
 
 * **Color contrast:**
 
